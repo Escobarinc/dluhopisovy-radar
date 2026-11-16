@@ -123,3 +123,16 @@ footer.site-footer{height:138px;background:linear-gradient(120deg,#06263f,#031a3
 @keyframes radar-hit{0%{opacity:1;transform:scale(1.5)}8%{opacity:1;transform:scale(1)}70%{opacity:.25}100%{opacity:.15}}
 @keyframes radar-lock{0%{opacity:1;transform:scale(.6)}20%{opacity:0;transform:scale(3.2)}100%{opacity:0;transform:scale(3.2)}}
 @media(prefers-reduced-motion:reduce){#hero .radar-blip{opacity:1}}
+
+/* RADAR – body s popiskem emitenta a výnosu (popisky leží nad radarem, nejsou oříznuté kruhem) */
+#hero .radar-blip{width:10px;height:10px;margin:-5px 0 0 -5px}
+.radar-labels{position:absolute;left:calc(50% - 45px);top:18px;width:276px;height:276px;z-index:4;pointer-events:none}
+.radar-lbl{position:absolute;transform:translate(12px,-50%);white-space:nowrap;opacity:0;
+  font:700 12px/1 var(--sans);color:#fff;background:rgba(3,26,48,.88);border:1px solid rgba(31,212,155,.55);
+  padding:6px 9px;border-radius:8px;box-shadow:0 4px 14px rgba(3,26,48,.25);
+  animation:radar-lbl 4s ease-out infinite;animation-delay:calc(var(--ang) / 360 * 4s - 4s)}
+.radar-lbl b{color:#9ff7d6;margin-left:6px}
+@keyframes radar-lbl{0%{opacity:0;margin-top:4px}5%{opacity:1;margin-top:0}62%{opacity:1}75%{opacity:0}100%{opacity:0}}
+@media(max-width:900px){.radar-labels{left:60%;width:220px;height:220px}}
+@media(max-width:700px){.radar-labels{width:155px;height:155px;top:370px;left:12%}.radar-lbl{font-size:10px;padding:4px 7px;transform:translate(9px,-50%)}}
+@media(prefers-reduced-motion:reduce){.radar-lbl{opacity:1}}
