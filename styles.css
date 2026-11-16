@@ -108,3 +108,18 @@ footer.site-footer{height:138px;background:linear-gradient(120deg,#06263f,#031a3
 .btn-primary:hover{background:#3fe0ad}
 @media(max-width:1120px){.logo-img{height:44px}}
 @media(max-width:700px){.logo-img{height:40px}.footer-logo .logo-img{height:40px}}
+
+/* RADAR – animace „zaměření cíle“: paprsek se otáčí, zachycený bod blikne a kolem něj se rozběhne kroužek */
+#hero .radar-sweep{inset:7%;mask-image:none;-webkit-mask-image:none;mix-blend-mode:normal;
+  background:conic-gradient(from 0deg,transparent 0deg 250deg,rgba(31,212,155,.04) 270deg,rgba(31,212,155,.32) 352deg,rgba(170,255,225,.85) 359.5deg,transparent 360deg);
+  animation:radar-spin 4s linear infinite}
+#hero .radar-sweep:after{content:'';position:absolute;left:50%;top:0;width:2px;height:50%;margin-left:-1px;background:linear-gradient(#c9ffe9,rgba(31,212,155,.2));border-radius:2px}
+#hero .radar-blip{opacity:.15;animation:radar-hit 4s linear infinite;animation-delay:calc(var(--ang) / 360 * 4s - 4s)}
+#hero .radar-blip:after{content:'';position:absolute;inset:-5px;border:1.5px solid #9ff7d6;border-radius:50%;opacity:0;animation:radar-lock 4s ease-out infinite;animation-delay:inherit}
+#hero .blip-one{--ang:231}
+#hero .blip-two{--ang:63}
+#hero .blip-three{--ang:314}
+@keyframes radar-spin{to{transform:rotate(360deg)}}
+@keyframes radar-hit{0%{opacity:1;transform:scale(1.5)}8%{opacity:1;transform:scale(1)}70%{opacity:.25}100%{opacity:.15}}
+@keyframes radar-lock{0%{opacity:1;transform:scale(.6)}20%{opacity:0;transform:scale(3.2)}100%{opacity:0;transform:scale(3.2)}}
+@media(prefers-reduced-motion:reduce){#hero .radar-blip{opacity:1}}
