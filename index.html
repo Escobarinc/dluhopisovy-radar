@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="cs">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#f8fbfb">
+  <meta name="description" content="Dluhopisový Radar – nezávislý portál o emitentech a emisích. Přehlednější pohled na české firemní dluhopisy.">
+  <title>Dluhopisový Radar – Máme emise na radaru</title>
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <svg class="icon-library" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4 12h16m-7-7 7 7-7 7"/></symbol>
+    <symbol id="i-search" viewBox="0 0 24 24"><circle cx="10.7" cy="10.7" r="7.3"/><path d="m16.4 16.4 5 5"/></symbol>
+    <symbol id="i-play" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.3"/><path d="m10 8 6 4-6 4z"/></symbol>
+    <symbol id="i-laptop" viewBox="0 0 24 24"><path d="M4 16V5c0-1 .8-2 2-2h12c1.1 0 2 .9 2 2v7M2 19h13M1 21h15M16 14l7 6-3 1-1 2z"/></symbol>
+    <symbol id="i-layers" viewBox="0 0 24 24"><path d="m12 2 10 5.4-10 5.5L2 7.4 12 2zm-10 10 10 5.5L22 12M2 17l10 5 10-5"/></symbol>
+    <symbol id="i-bars" viewBox="0 0 24 24"><path d="M4 20v-5m5 5v-9m5 9V7m5 13V3"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="m3 12 6 6L21 5"/></symbol>
+    <symbol id="i-building" viewBox="0 0 24 24"><path d="M3 22V9h7v13M10 22V3h11v19M1 22h22M6 12v2m0 3v2m8-12v2m4-2v2m-4 3v2m4-2v2m-4 3v2m4-2v2"/></symbol>
+    <symbol id="i-calendar" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M7 2v6M17 2v6M3 10h18M7 14h2m3 0h2"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l4 3"/></symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path d="M5 5l14 14M19 5 5 19"/></symbol>
+  </svg>
+
+  <header class="site-header" id="top">
+    <div class="container header-inner">
+      <a class="logo" href="#top" aria-label="Dluhopisový Radar – úvod">
+        <span class="logo-radar" aria-hidden="true"><i></i><i></i><i></i></span>
+        <span class="logo-word">Dluhopisový Radar</span>
+      </a>
+      <p class="header-tagline">NEZÁVISLÝ PORTÁL<br>O EMITENTECH A EMISÍCH</p>
+      <nav class="desktop-nav" aria-label="Hlavní navigace">
+        <a href="#databases" data-open="emitters">Emitenti</a>
+        <a href="#databases" data-open="bonds">Emise</a>
+        <a href="#insights">Články</a>
+        <a href="#process">Jak funguje Radar</a>
+        <a href="#footer" data-open="about">O projektu</a>
+      </nav>
+      <button class="icon-button search-trigger" id="open-search" aria-label="Otevřít vyhledávání" type="button"><svg class="ico"><use href="#i-search"/></svg></button>
+      <button class="icon-button menu-trigger" id="menu-trigger" aria-label="Otevřít menu" aria-expanded="false" aria-controls="mobile-nav" type="button"><svg class="ico"><use href="#i-menu"/></svg></button>
+    </div>
+    <nav id="mobile-nav" class="mobile-nav" aria-label="Mobilní navigace" hidden>
+      <a href="#databases" data-open="emitters">Emitenti</a><a href="#databases" data-open="bonds">Emise</a><a href="#insights">Články</a><a href="#process">Jak funguje Radar</a><a href="#footer" data-open="about">O projektu</a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="hero" class="hero" aria-labelledby="hero-heading">
+      <div class="hero-photo" aria-hidden="true"></div>
+      <div class="hero-fade" aria-hidden="true"></div>
+      <div class="radar" aria-hidden="true">
+        <div class="radar-grid"></div>
+        <div class="radar-ring ring-a"></div><div class="radar-ring ring-b"></div><div class="radar-ring ring-c"></div>
+        <div class="radar-sweep"></div><span class="radar-blip blip-one"></span><span class="radar-blip blip-two"></span><span class="radar-blip blip-three"></span>
+        <div class="radar-core"><svg class="ico"><use href="#i-building"/></svg></div>
+      </div>
+      <div class="container hero-inner">
+        <div class="hero-copy">
+          <h1 id="hero-heading">Máme emise na radaru.<br>Než investujete své peníze,<br><span class="highlight-stroke">prověřte si emitenta.</span></h1>
+          <p>Nezávislý portál, který přináší ověřené informace o emitentech a emisích, odborné analýzy a srozumitelné srovnání nabídek. Abychom vám pomohli dělat lepší a informovanější investiční rozhodnutí.</p>
+          <div class="hero-buttons">
+            <button class="btn btn-primary" type="button" data-open="request">Prověřit emitenta <svg class="ico"><use href="#i-arrow"/></svg></button>
+            <a class="btn btn-outline" href="#process"><svg class="ico"><use href="#i-play"/></svg> Jak funguje Radar</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="process" aria-labelledby="process-heading">
+      <div class="container process-inner">
+        <div class="left-rail">
+          <div class="section-title-line">
+            <h2 id="process-heading"><span class="green-rule"></span>Jak funguje Dluhopisový Radar</h2>
+            <span class="eyebrow">OD POŽADAVKU K JASNĚJŠÍMU ROZHODNUTÍ</span>
+          </div>
+          <div class="process-list">
+            <div class="process-item"><span class="step-num">1</span><div class="step-icon"><svg class="ico"><use href="#i-laptop"/></svg></div><h3>Zadáte požadavek</h3><p>Emitenta, emisi nebo více nabídek,<br>které chcete prověřit.</p></div>
+            <div class="process-item"><span class="step-num">2</span><div class="step-icon"><svg class="ico"><use href="#i-layers"/></svg></div><h3>Provedeme analýzu</h3><p>Shromáždíme relevantní data, ověříme klíčové<br>informace a vyhodnotíme rizika.</p></div>
+            <div class="process-item"><span class="step-num">3</span><div class="step-icon"><svg class="ico"><use href="#i-bars"/></svg></div><h3>Porovnáme a vysvětlíme</h3><p>Přehledně porovnáme 2 a více emisí či nabídek,<br>zdůrazníme hlavní rozdíly a souvislosti.</p></div>
+            <div class="process-item"><span class="step-num">4</span><div class="step-icon"><svg class="ico"><use href="#i-check"/></svg></div><h3>Získáte jasnější obrázek</h3><p>Srozumitelný závěr, který vám pomůže učinit<br>informovanější investiční rozhodnutí.</p></div>
+          </div>
+        </div>
+        <aside class="sidebar-ad" id="sidebar-ad" aria-label="Reklamní prostor">
+          <span class="ad-eyebrow">REKLAMNÍ PROSTOR</span>
+          <h3>Zde může<br>být vaše<br>reklama</h3>
+          <span class="ad-line"></span>
+          <p>Oslovte čtenáře nezávislého portálu o dluhopisech.</p>
+          <button class="circle-arrow" type="button" data-open="advertise" aria-label="Informace o reklamě"><svg class="ico"><use href="#i-arrow"/></svg></button>
+          <div class="ad-photo" aria-hidden="true"></div>
+        </aside>
+      </div>
+    </section>
+
+    <section id="actions" aria-label="Naše služby">
+      <div class="container"><div class="left-rail action-grid">
+        <button class="action-card action-card--emitter" type="button" data-open="request">
+          <span class="action-icon"><svg class="ico"><use href="#i-building"/></svg></span>
+          <span class="action-copy"><strong>Prověření emitenta</strong><small>Získejte ucelený pohled na emitenta –<br>finanční stabilitu, podnikání, projekty,<br>vlastnickou strukturu a klíčová rizika.</small></span>
+          <span class="circle-arrow"><svg class="ico"><use href="#i-arrow"/></svg></span>
+        </button>
+        <button class="action-card action-card--comparison" type="button" data-open="compare">
+          <span class="action-icon"><svg class="ico"><use href="#i-layers"/></svg></span>
+          <span class="action-copy"><strong>Srovnání emisí</strong><small>Porovnejte 2 a více emisí / nabídek<br>od stejného či různých emitentů. Získejte<br>jasné rozdíly v podmínkách, výnosech a rizicích.</small></span>
+          <span class="circle-arrow"><svg class="ico"><use href="#i-arrow"/></svg></span>
+        </button>
+      </div></div>
+    </section>
+
+    <section id="insights" aria-labelledby="insights-heading">
+      <div class="container"><div class="left-rail">
+        <div class="section-title-line insights-title"><h2 id="insights-heading"><span class="green-rule"></span>Články, analýzy a komentáře</h2><span class="eyebrow">ODBORNÉ POHLEDY, AKTUÁLNÍ TÉMATA A PRAKTICKÉ ANALÝZY</span><button class="text-link" type="button" data-open="articles">Všechny články <svg class="ico"><use href="#i-arrow"/></svg></button></div>
+        <div class="article-grid">
+          <button class="article-card article-card--risks" type="button" data-open="article-risks"><span class="article-image"><img src="assets/article_risks.png" width="1080" height="520" loading="lazy" alt="Moderní rezidenční domy v zeleni"><span class="topic">ANALÝZA</span></span><span class="article-body"><strong>Jak číst emisní podmínky<br>a odhalit klíčová rizika</strong><span class="article-meta"><span><svg class="ico"><use href="#i-calendar"/></svg> 2. listopadu 2026</span><i></i><span><svg class="ico"><use href="#i-clock"/></svg> 8 min čtení</span></span></span></button>
+          <button class="article-card article-card--returns" type="button" data-open="article-returns"><span class="article-image"><img src="assets/article_returns.png" width="1080" height="520" loading="lazy" alt="Finanční graf a pero"><span class="topic">KOMENTÁŘ</span></span><span class="article-body"><strong>Výnos není všechno. Na co si dát<br>pozor u realitních dluhopisů</strong><span class="article-meta"><span><svg class="ico"><use href="#i-calendar"/></svg> 27. října 2026</span><i></i><span><svg class="ico"><use href="#i-clock"/></svg> 6 min čtení</span></span></span></button>
+          <button class="article-card article-card--developers" type="button" data-open="article-developers"><span class="article-image"><img src="assets/article_developers.png" width="1080" height="520" loading="lazy" alt="Moderní developerské administrativní budovy"><span class="topic">VZDĚLÁVÁNÍ</span></span><span class="article-body"><strong>Dluhopisy developerských skupin:<br>jak posoudit jejich kvalitu?</strong><span class="article-meta"><span><svg class="ico"><use href="#i-calendar"/></svg> 20. října 2026</span><i></i><span><svg class="ico"><use href="#i-clock"/></svg> 9 min čtení</span></span></span></button>
+        </div>
+      </div></div>
+    </section>
+
+    <section id="databases" aria-label="Databáze dluhopisů a emitentů">
+      <div class="container"><div class="db-grid">
+        <button class="db-card db-card--emitters" type="button" data-open="emitters"><span class="db-icon"><svg class="ico"><use href="#i-building"/></svg></span><span class="db-copy"><strong>Databáze emitentů</strong><small>Přehled prověřovaných společností, jejich profil<br>a klíčové informace.</small><em>Zobrazit databázi emitentů <svg class="ico"><use href="#i-arrow"/></svg></em></span></button>
+        <button class="db-card db-card--bonds" type="button" data-open="bonds"><span class="db-icon"><svg class="ico"><use href="#i-layers"/></svg></span><span class="db-copy"><strong>Databáze emisí</strong><small>Aktuální i historické emise na českém trhu<br>s hlavními parametry a zajištěním.</small><em>Zobrazit databázi emisí <svg class="ico"><use href="#i-arrow"/></svg></em></span></button>
+      </div></div>
+    </section>
+
+    <section id="adbanner" aria-label="Reklamní prostor pro inzerenty"><div class="container"><div class="ad-banner"><span class="ad-eyebrow">REKLAMNÍ PROSTOR</span><h2>Vaše značka mezi relevantními investory.</h2><button class="btn btn-primary" type="button" data-open="advertise">Více informací <svg class="ico"><use href="#i-arrow"/></svg></button></div></div></section>
+  </main>
+
+  <footer class="site-footer" id="footer"><div class="container footer-inner"><div class="footer-top"><a class="logo footer-logo" href="#top"><span class="logo-radar" aria-hidden="true"><i></i><i></i><i></i></span><span class="logo-word">Dluhopisový Radar</span></a><p class="header-tagline">NEZÁVISLÝ PORTÁL<br>O EMITENTECH A EMISÍCH</p><nav aria-label="Navigace v patičce"><a href="#databases" data-open="emitters">Emitenti</a><a href="#databases" data-open="bonds">Emise</a><a href="#insights">Články</a><a href="#process">Jak funguje Radar</a><a href="#footer" data-open="about">O projektu</a></nav></div><div class="footer-bottom"><span>© 2026 Dluhopisový Radar</span><span class="footer-separator">|</span><span>Nezávislý analytický portál o dluhopisech.</span><nav aria-label="Právní informace"><button type="button" data-open="privacy">Ochrana osobních údajů</button><span>|</span><button type="button" data-open="terms">Podmínky používání</button><span>|</span><button type="button" data-open="contact">Kontakt</button></nav></div></div></footer>
+
+  <div class="dialog-backdrop" id="dialog-backdrop" hidden>
+    <div class="dialog" role="dialog" aria-modal="true" aria-labelledby="dialog-title" tabindex="-1">
+      <div class="dialog-header"><div><span id="dialog-kicker" class="dialog-kicker">DLUHOPISOVÝ RADAR</span><h2 id="dialog-title">Informace</h2></div><button class="icon-button dialog-close" type="button" id="close-dialog" aria-label="Zavřít okno"><svg class="ico"><use href="#i-close"/></svg></button></div>
+      <div class="dialog-content" id="dialog-content"></div>
+    </div>
+  </div>
+  <noscript><p class="noscript-notice">Pro vyhledávání a formuláře je nutný zapnutý JavaScript. Ostatní obsah zůstává přístupný.</p></noscript>
+</body>
+</html>

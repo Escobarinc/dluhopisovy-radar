@@ -1,0 +1,15 @@
+{
+  "reference_width":1440,
+  "page_height":1799,
+  "tolerance_pct":3,
+  "sections":[
+    {"id":"header","selector":"header.site-header","height":82},
+    {"id":"hero","selector":"section#hero","height":430},
+    {"id":"process","selector":"section#process","height":413},
+    {"id":"actions","selector":"section#actions","height":184},
+    {"id":"insights","selector":"section#insights","height":310},
+    {"id":"databases","selector":"section#databases","height":139},
+    {"id":"adbanner","selector":"section#adbanner","height":103},
+    {"id":"footer","selector":"footer.site-footer","height":138}
+  ]
+}
