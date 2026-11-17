@@ -180,44 +180,87 @@ document.addEventListener('keydown',e=>{
 (function(){
   const form=document.getElementById('page-form');
   if(!form)return;
+  const MAX_FILE=10*1024*1024;
   const params=new URLSearchParams(location.search);
   form.querySelectorAll('[data-prefill]').forEach(el=>{const v=params.get(el.dataset.prefill);if(v)el.value=v;});
-  const errFor=el=>el.type==='checkbox'?form.querySelector(`[data-for="${el.name}"]`):el.parentElement.querySelector('.form-error');
+  const errFor=el=>el.type==='checkbox'?form.querySelector(`[data-for="${el.name}"]`):el.closest('.field')&&el.closest('.field').querySelector('.form-error');
+  const groupErr=g=>g.parentElement.querySelector('[data-group-error]');
   form.addEventListener('input',e=>{const el=e.target;if(el.getAttribute('aria-invalid')==='true'){el.removeAttribute('aria-invalid');const er=errFor(el);if(er)er.textContent='';}});
-  form.addEventListener('change',e=>{const el=e.target;if(el.type==='checkbox'&&el.required&&el.checked){const er=errFor(el);if(er)er.textContent='';}});
+  form.addEventListener('change',e=>{
+    const el=e.target;
+    if(el.type==='checkbox'){const g=el.closest('[data-required-group]');if(g&&g.querySelector('input:checked')){const er=groupErr(g);if(er)er.textContent='';}
+      if(el.required&&el.checked){const er=errFor(el);if(er)er.textContent='';}}
+    if(el.type==='file')showFiles(el);
+    markSteps();
+  });
+  // nahrané soubory: seznam a kontrola velikosti
+  function showFiles(input){
+    const box=input.closest('.doc-box')||form;
+    const list=box.querySelector('.file-list')||document.getElementById('file-list'),er=box.querySelector('[data-file-error]');if(!list)return;
+    const files=[...input.files];
+    list.innerHTML=files.map(f=>`<li class="${f.size>MAX_FILE?'too-big':''}">${escapeHTML(f.name)} <small>${(f.size/1048576).toFixed(1).replace('.',',')} MB</small></li>`).join('');
+    if(er)er.textContent=files.some(f=>f.size>MAX_FILE)?'Soubor je větší než 10 MB. Zmenšete ho nebo vložte odkaz.':'';
+  }
+  form.querySelectorAll('[data-reveal]').forEach(btn=>btn.addEventListener('click',()=>{const t=document.getElementById(btn.dataset.reveal);if(t){t.hidden=false;btn.hidden=true;const i=t.querySelector('input');if(i)i.focus();}}));
+  form.addEventListener('input',e=>{const box=e.target.closest('[data-require-one]');if(box){const er=box.querySelector('[data-one-error]');if(er)er.textContent='';box.classList.remove('is-invalid');}});
+  // kroky nahoře: aktuální část a vyplněné části
+  const steps=[...form.querySelectorAll('.req-steps a')];
+  const blocks=steps.map(a=>document.querySelector(a.getAttribute('href')));
+  function filled(bl){return [...bl.querySelectorAll('input,textarea')].some(el=>el.type==='checkbox'?el.checked&&el.name!=='marketing':el.type==='file'?el.files.length>0:el.value.trim()!=='');}
+  function markSteps(){steps.forEach((a,i)=>a.classList.toggle('is-done',!!blocks[i]&&filled(blocks[i])));}
+  if(steps.length&&'IntersectionObserver' in window){
+    const io=new IntersectionObserver(es=>es.forEach(en=>{if(en.isIntersecting){const i=blocks.indexOf(en.target);steps.forEach((a,j)=>a.classList.toggle('is-active',j===i));}}),{rootMargin:'-40% 0px -55% 0px'});
+    blocks.forEach(b=>b&&io.observe(b));
+  }
+  form.addEventListener('input',markSteps);markSteps();
+
   form.addEventListener('submit',e=>{
     e.preventDefault();
     let first=null;
+    const flag=(el,msg)=>{el.setAttribute('aria-invalid',String(!!msg));const er=errFor(el);if(er)er.textContent=msg;if(msg&&!first)first=el;};
     form.querySelectorAll('[required]').forEach(el=>{
       const v=el.type==='checkbox'?el.checked:el.value.trim();
-      const msg=!v?(el.type==='checkbox'?'Pro odeslání je potřeba souhlas.':'Vyplňte toto pole.'):(el.type==='email'&&!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(el.value.trim())?'Zadejte e-mail ve tvaru jmeno@domena.cz.':'');
-      el.setAttribute('aria-invalid',String(!!msg));
-      const er=errFor(el);if(er)er.textContent=msg;
-      if(msg&&!first)first=el;
+      flag(el,!v?(el.type==='checkbox'?'Pro odeslání je potřeba souhlas.':'Vyplňte toto pole.'):(el.type==='email'&&!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(el.value.trim())?'Zadejte e-mail ve tvaru jmeno@domena.cz.':''));
     });
+    form.querySelectorAll('input[type=url]').forEach(el=>{const v=el.value.trim();if(v)flag(el,/^https?:\/\/\S+\.\S+/.test(v)?'':'Zadejte celý odkaz začínající https://');});
+    form.querySelectorAll('[data-required-group]').forEach(g=>{
+      const ok=!!g.querySelector('input:checked'),er=groupErr(g);
+      if(er)er.textContent=ok?'':'Vyberte alespoň jednu možnost.';
+      if(!ok&&!first)first=g.querySelector('input');
+    });
+    form.querySelectorAll('[data-require-one]').forEach(box=>{
+      const ok=[...box.querySelectorAll('input')].some(i=>i.value.trim()),er=box.querySelector('[data-one-error]');
+      if(er)er.textContent=ok?'':'Vyplňte emitenta nebo název emise.';box.classList.toggle('is-invalid',!ok);
+      if(!ok&&!first)first=box.querySelector('input');
+    });
+    const fileInputs=[...form.querySelectorAll('input[type=file]')];
+    fileInputs.forEach(fi=>{if([...fi.files].some(f=>f.size>MAX_FILE)&&!first)first=fi;});
     const status=document.getElementById('form-status');
-    if(first){first.focus();status.innerHTML='';return;}
-    const d=new FormData(form),lines=[`Dluhopisový Radar – ${form.dataset.kind}`,`Datum: ${new Date().toLocaleString('cs-CZ')}`,''];
-    form.querySelectorAll('input,textarea').forEach(el=>{
-      if(el.type==='checkbox'&&el.name!=='souhlas')return;
-      if(el.name==='souhlas')return;
+    if(first){first.focus();first.scrollIntoView({block:'center'});status.innerHTML='';return;}
+
+    const d=new FormData(form),lines=[];
+    form.querySelectorAll('input:not([type=checkbox]):not([type=file]),textarea').forEach(el=>{
       const label=form.querySelector(`label[for="${el.id}"]`);
-      if(el.value.trim())lines.push(`${label?label.textContent.replace(' *',''):el.name}: ${el.value.trim()}`);
+      if(el.value.trim())lines.push(`${el.dataset.label?el.dataset.label:label?label.textContent.replace(/\s*\*|\(nepovinné\)/g,'').trim():el.name}: ${el.value.trim()}`);
     });
-    const zajem=d.getAll('zajem');if(zajem.length)lines.push(`Zaměřit se na: ${zajem.join(', ')}`);
-    const crm=sendToCrm({name:d.get('jmeno'),email:d.get('email'),phone:d.get('telefon')||'',consent:true,formular:form.dataset.kind,message:lines.slice(3).join('\n')});
+    form.querySelectorAll('.check-grid[data-label]').forEach(g=>{const v=[...g.querySelectorAll('input:checked')].map(i=>i.value);if(v.length)lines.push(`${g.dataset.label}: ${v.join('; ')}`);});
+    fileInputs.forEach(fi=>{if(fi.files.length)lines.push(`${fi.dataset.label||'Přiložené dokumenty'}: ${[...fi.files].map(f=>f.name).join(', ')}`);});
+    if(form.querySelector('[name=marketing]'))lines.push(`Marketingový souhlas: ${d.get('marketing')?'ano':'ne'}`);
+    const email=String(d.get('email')||'').trim();
+    const crm=sendToCrm({name:String(d.get('jmeno')||email),email,phone:d.get('telefon')||'',consent:true,formular:form.dataset.kind,message:lines.join('\n')});
+    const btn=form.querySelector('[type=submit]');
     if(crm){
-      const btn=form.querySelector('[type=submit]');btn.disabled=true;status.innerHTML='<div class="form-status">Odesílám…</div>';
-      crm.then(()=>{status.innerHTML='<div class="form-status"><strong>Děkujeme, poptávku jsme přijali.</strong><br>Ozveme se vám co nejdřív.</div>';form.reset();})
+      btn.disabled=true;status.innerHTML='<div class="form-status">Odesílám…</div>';
+      crm.then(()=>{status.innerHTML='<div class="form-status"><strong>Děkujeme, žádost jsme přijali.</strong><br>Výsledek vám pošleme na e-mail.</div>';form.reset();markSteps();form.querySelectorAll('.file-list').forEach(l=>l.innerHTML='');})
          .catch(e=>{status.innerHTML=`<div class="form-status">Odeslání se nepodařilo: ${escapeHTML(e.message||'zkuste to prosím znovu')}</div>`;})
          .finally(()=>{btn.disabled=false;});
       return;
     }
-    lines.push('','Ukázková verze: poptávka nebyla nikam odeslána.');
-    const url=URL.createObjectURL(new Blob([lines.join('\n')],{type:'text/plain;charset=utf-8'}));
-    const a=Object.assign(document.createElement('a'),{href:url,download:'dluhopisovy-radar-poptavka.txt'});
+    const text=[`Dluhopisový Radar – ${form.dataset.kind}`,`Datum: ${new Date().toLocaleString('cs-CZ')}`,'',...lines,'','Ukázková verze: žádost nebyla nikam odeslána.'].join('\n');
+    const url=URL.createObjectURL(new Blob([text],{type:'text/plain;charset=utf-8'}));
+    const a=Object.assign(document.createElement('a'),{href:url,download:'dluhopisovy-radar-zadost.txt'});
     document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),800);
-    status.innerHTML='<div class="form-status"><strong>Poptávka je připravená a stáhla se jako soubor.</strong><br>Ukázková verze ji zatím nikam neodesílá.</div>';
+    status.innerHTML='<div class="form-status"><strong>Žádost je připravená a stáhla se jako soubor.</strong><br>Ukázková verze ji zatím nikam neodesílá.</div>';
   });
 })();
 
