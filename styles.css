@@ -829,3 +829,4 @@ footer.site-footer,.footer-inner{height:auto}
 .article-image img[src$=".svg"]{object-fit:cover}
 .art-card{overflow:hidden}
 .art-cover{display:block;width:calc(100% + 48px);max-width:none;height:120px;margin:-24px -24px 6px;object-fit:cover}
+.footer-legal p{font-size:12px;line-height:1.65}
