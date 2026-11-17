@@ -456,10 +456,11 @@ document.querySelectorAll('.sa-slides,.jv-slides').forEach(box=>{
  document.addEventListener('visibilitychange',()=>document.hidden?stop():start());
  start();
 });
-/* Formulář srovnání – maximálně N zaškrtnutých oblastí (data-max) */
+/* Formulář srovnání – maximálně N zaškrtnutých oblastí (data-max); po dosažení limitu se ostatní volby zamknou */
 document.querySelectorAll('[data-max]').forEach(g=>{
- const max=+g.dataset.max,er=g.parentElement.querySelector('[data-max-error]');
- g.addEventListener('change',e=>{const on=g.querySelectorAll('input:checked');if(on.length>max){e.target.checked=false;if(er)er.textContent=`Vyberte nejvýše ${max} oblasti.`;}else if(er)er.textContent='';});
+ const max=+g.dataset.max,boxes=[...g.querySelectorAll('input[type=checkbox]')];
+ const sync=()=>{const n=boxes.filter(b=>b.checked).length;boxes.forEach(b=>{b.disabled=!b.checked&&n>=max;b.closest('.check-row')?.classList.toggle('is-locked',b.disabled)})};
+ g.addEventListener('change',sync);g.closest('form')?.addEventListener('reset',()=>setTimeout(sync));sync();
 });
 /* DLUHOPISOVÝ PRŮVODCE – výběr oblasti otevře její témata pod dlaždicemi */
 (()=>{
