@@ -896,3 +896,36 @@ section#insights{height:auto}
 .article-card{height:auto}
 .article-image{height:auto;aspect-ratio:16/9}
 .sidebar-ad{height:766px}
+/* SCHÉMA ZDROJŮ – vlastní vzhled (radar uprostřed, rovné vedení, vodorovné karty) */
+.flow{background:#fff;border:var(--line);padding:38px 30px 40px}
+.flow-src{flex-direction:row;justify-content:flex-start;gap:12px;padding:14px 14px 14px 12px;text-align:left;font:600 14px/1.25 var(--serif);border-radius:12px;border-top:3px solid var(--emerald);box-shadow:0 6px 18px rgba(3,26,48,.06)}
+.flow-src .ico{flex:none;width:40px;height:40px;padding:8px;border-radius:10px;background:#e8f6f0;color:var(--emerald);stroke-width:1.7}
+.flow-dot{width:11px;height:11px;margin-left:-5.5px;bottom:-6px;background:#fff;border:2px solid var(--emerald)}
+.flow-lines{height:96px}
+.flow-lines .fl-base path{fill:none;stroke:#c9e3d8;stroke-width:2;stroke-dasharray:none;animation:none;vector-effect:non-scaling-stroke}
+.flow-lines .fl-pulse path{fill:none;stroke:var(--emerald);stroke-width:2.4;stroke-linecap:round;stroke-dasharray:26 600;stroke-dashoffset:0;vector-effect:non-scaling-stroke;animation:fl-pulse 3.2s linear infinite}
+.flow-lines .fl-pulse path:nth-child(2){animation-delay:-.6s}.flow-lines .fl-pulse path:nth-child(3){animation-delay:-1.3s}.flow-lines .fl-pulse path:nth-child(4){animation-delay:-1.9s}.flow-lines .fl-pulse path:nth-child(5){animation-delay:-2.5s}
+@keyframes fl-pulse{from{stroke-dashoffset:26}to{stroke-dashoffset:-600}}
+.flow-note{border:0;border-left:3px solid var(--emerald);border-radius:0 12px 12px 0;background:#f3f8f6;font-size:14.5px}
+.flow-note .ico{width:40px;height:40px;padding:9px;border-radius:50%;background:var(--emerald);color:#fff;stroke-width:1.9}
+.flow-radar{width:164px;height:164px;background:radial-gradient(circle,#0b3c5a 0,#031a30 70%);box-shadow:0 0 0 8px rgba(31,212,155,.14),0 16px 36px rgba(3,26,48,.22)}
+.flow-radar span{position:relative;overflow:hidden;width:132px;height:132px;background:repeating-radial-gradient(circle,transparent 0 21px,rgba(159,247,214,.22) 21px 22px);border:1px solid rgba(159,247,214,.3)}
+.flow-radar span:before{content:'';position:absolute;inset:0;background:linear-gradient(90deg,transparent calc(50% - .5px),rgba(159,247,214,.18) 0 calc(50% + .5px),transparent 0),linear-gradient(0deg,transparent calc(50% - .5px),rgba(159,247,214,.18) 0 calc(50% + .5px),transparent 0)}
+.fr-sweep{position:absolute;inset:0;border-radius:50%;background:conic-gradient(from 0deg,rgba(31,212,155,.45),rgba(31,212,155,0) 25%);animation:nvSpin 4s linear infinite}
+@keyframes nvSpin{to{transform:rotate(360deg)}}
+.flow-radar .ico{position:relative;width:46px;height:46px;padding:10px;border-radius:50%;background:#1fd49b;color:#031a30;stroke-width:2.2;box-shadow:0 0 22px rgba(31,212,155,.6)}
+.flow-arrow{width:2px;height:40px;background:linear-gradient(var(--emerald),#c9e3d8)}
+.flow-arrow:after{width:10px;height:10px;border:0;border-radius:50%;background:var(--emerald);transform:translateX(-50%);bottom:-5px}
+.flow-out{border-top:4px solid var(--navy);border-radius:14px;padding:24px 24px 20px}
+.flow-tag{left:24px;right:auto;top:-13px;background:var(--emerald)}
+.flow-bld{width:58px;height:58px;border-radius:14px;background:var(--navy)}
+.flow-bld .ico{width:30px;height:30px;color:#9ff7d6;stroke-width:1.6}
+.flow-out-head{gap:18px}
+.flow-parts{gap:8px}
+.flow-parts li{flex-direction:row;justify-content:center;gap:6px;padding:10px 6px;border-radius:10px;background:#f1f8f5;font-size:12.5px}
+.flow-parts li+li{border-left:0}
+.flow-parts .ico{width:18px;height:18px;color:var(--emerald)}
+.flow-parts .flow-ok{display:none}
+@media(prefers-reduced-motion:reduce){.flow-lines .fl-pulse path,.fr-sweep{animation:none}}
+@media(max-width:900px){.flow-radar{width:120px;height:120px}.flow-radar span{width:96px;height:96px}}
+@media(max-width:560px){.flow-parts{grid-template-columns:repeat(2,minmax(0,1fr))}.flow-src{font-size:13px}}

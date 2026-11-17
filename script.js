@@ -377,7 +377,7 @@ document.addEventListener('keydown',e=>{
 
 // Úvod: při každém načtení tři náhodně vybrané články
 const PHOTO_COVERS=['emitent-7-ukazatelu','zajisteni-firemnich-dluhopisu','dluhopisy-od-a-do-z','desatero-cnb','statni-a-firemni-dluhopisy'];
-const COVER=slug=>PHOTO_COVERS.includes(slug)?`assets/photos/${slug}.jpg`:`assets/covers/${slug}.svg`;
+const COVER=slug=>PHOTO_COVERS.includes(slug)?`assets/photos/${slug}.jpg?v=2`:`assets/covers/${slug}.svg`;
 (function(){
   const grid=document.querySelector('#insights .article-grid');
   if(!grid||!RADAR_ARTICLES.length)return;
