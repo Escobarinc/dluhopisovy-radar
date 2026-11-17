@@ -232,3 +232,22 @@ footer.site-footer{height:138px;background:linear-gradient(120deg,#06263f,#031a3
 @media(max-width:700px){.process-item:not(:last-child):before{left:-26.5px;top:49px;bottom:-22px}}
 .process-item p{padding-left:16px}
 @media(max-width:700px){.process-item p{padding-left:0}}
+
+/* DLAŽDICE Prověření emitenta / Srovnání emisí – fotka pod jednotným překryvem, ikona nad nadpisem */
+section#actions{height:auto;padding:6px 0 26px}
+.action-grid{gap:18px;padding-top:0}
+.action-card{height:auto;min-height:0;display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:start;gap:0 22px;padding:26px}
+.action-card>.circle-arrow{position:static;align-self:end;width:42px;height:42px}
+.action-copy{padding:0;gap:10px}
+.action-copy strong{font-size:24px;line-height:1.1;white-space:normal}
+.action-copy small{font-size:15px;line-height:1.5;max-width:34em}
+.action-icon{grid-column:1 / -1;width:52px;height:52px;margin:0 0 14px;border-radius:14px;display:grid;place-items:center}
+.action-icon .ico{width:30px;height:30px;stroke-width:1.5}
+.action-card:hover{transform:translateY(-2px)}
+.action-card--emitter{background:linear-gradient(90deg,rgba(3,26,48,.94) 0%,rgba(3,26,48,.86) 60%,rgba(3,26,48,.55) 100%),url('assets/feature_emitter.png') right 45%/cover no-repeat;border-color:transparent}
+.action-card--emitter .action-icon{background:rgba(31,212,155,.16);color:var(--lime)}
+.action-card--emitter .action-copy small{color:#cfe0e6}
+.action-card--comparison{background:linear-gradient(90deg,#fff 0%,rgba(255,255,255,.96) 60%,rgba(255,255,255,.75) 100%),url('assets/feature_comparison.png') right center/cover no-repeat}
+.action-card--comparison .action-icon{background:#e1f6ee;color:var(--emerald)}
+@media(max-width:760px){.action-grid{grid-template-columns:1fr}}
+@media(max-width:700px){section#actions{padding:6px 0 20px}.action-card{padding:22px 20px}.action-copy strong{font-size:22px}.action-copy small{font-size:14px}}
