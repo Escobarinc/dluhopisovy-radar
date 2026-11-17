@@ -136,3 +136,39 @@ footer.site-footer{height:138px;background:linear-gradient(120deg,#06263f,#031a3
 @media(max-width:900px){.radar-labels{left:60%;width:220px;height:220px}}
 @media(max-width:700px){.radar-labels{width:155px;height:155px;top:370px;left:12%}.radar-lbl{font-size:10px;padding:4px 7px;transform:translate(9px,-50%)}}
 @media(prefers-reduced-motion:reduce){.radar-lbl{opacity:1}}
+
+/* PODSTRÁNKY (Emitenti, Emise, Články) – stejné písmo, rámečky a barvy jako úvod */
+.desktop-nav a[aria-current="page"],.mobile-nav a[aria-current="page"]{color:var(--emerald);text-decoration:underline;text-underline-offset:6px;text-decoration-thickness:2px}
+.footer-top nav a[aria-current="page"]{text-decoration:underline;text-underline-offset:4px}
+.page-head{padding:44px 0 26px;background:linear-gradient(180deg,#f3f8f6 0%,#fff 100%);border-bottom:var(--line)}
+.crumbs{margin:0 0 14px;font-size:var(--fs-meta);color:var(--muted)}
+.crumbs a{color:var(--emerald);font-weight:700}
+.page-head h1{margin:0;display:flex;align-items:center;font:700 calc(var(--fs-h2) * 1.25)/1.05 var(--serif);letter-spacing:var(--track-head)}
+.page-lead{margin:16px 0 0;max-width:62ch;font-size:18px;line-height:1.5;color:var(--muted)}
+.page-body{padding:30px 0 34px}
+.page-body .notice-sample{margin:0 0 20px}
+.list-tools{display:flex;align-items:center;gap:18px;flex-wrap:wrap;margin-bottom:16px}
+.list-tools .search-field{flex:1 1 320px;max-width:520px}
+.list-count{font-size:var(--fs-meta);color:var(--muted)}
+.data-list{display:grid;gap:10px}
+.data-row{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr) auto;align-items:center;gap:20px;padding:16px 20px;background:#fff;border:var(--line);border-radius:var(--r-card);box-shadow:var(--shadow-card)}
+.data-row strong{display:block;font:700 var(--fs-article)/1.2 var(--serif);letter-spacing:-.01em}
+.data-row small{display:block;margin-top:4px;font-size:var(--fs-text);color:var(--muted)}
+.data-figures{display:flex;gap:26px}
+.data-figures span{display:flex;flex-direction:column;font-size:var(--fs-meta);color:var(--muted)}
+.data-figures b{font:700 20px/1.2 var(--sans);color:var(--navy)}
+.data-figures b.yield{color:var(--emerald)}
+.data-row .btn{height:42px;min-width:0;padding:0 18px;font-size:14px}
+.data-empty{padding:28px;text-align:center;color:var(--muted);background:#fff;border:var(--line);border-radius:var(--r-card)}
+.sub-cta{padding:6px 0 56px}
+.sub-cta .action-grid{padding-top:0}
+.subpage-main .article-grid{margin-top:6px}
+@media(max-width:700px){
+  .page-head{padding:28px 0 20px}
+  .page-head h1{font-size:30px}
+  .page-lead{font-size:15px}
+  .data-row{grid-template-columns:1fr;gap:12px;padding:16px}
+  .data-row .btn{justify-self:start}
+  .sub-cta{padding-bottom:36px}
+}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}

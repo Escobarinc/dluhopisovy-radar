@@ -135,3 +135,22 @@ document.addEventListener('keydown',e=>{
  }
  if(e.key==='Tab'&&!backdrop.hidden){const focusables=[...dialog.querySelectorAll('button:not(:disabled), input:not(:disabled), textarea:not(:disabled), select:not(:disabled), a[href]')].filter(el=>el.offsetParent!==null);if(!focusables.length)return;const first=focusables[0],last=focusables[focusables.length-1];if(e.shiftKey&&document.activeElement===first){last.focus();e.preventDefault()}else if(!e.shiftKey&&document.activeElement===last){first.focus();e.preventDefault()}}
 });
+
+// Podstránky: seznam emitentů a emisí s vyhledáváním
+(function(){
+  const box=document.getElementById('emitter-list')||document.getElementById('bond-list');
+  if(!box)return;
+  const isEmitters=box.id==='emitter-list';
+  const clean=(n)=>n.replace(' — ukázka','');
+  const rows=isEmitters
+    ? issuers.map((r,i)=>({text:[clean(r.name),r.city,r.field].join(' '),html:`<div><strong>${escapeHTML(clean(r.name))}</strong><small>${escapeHTML(r.city)} · ${escapeHTML(r.field)}</small></div><div class="data-figures"><span>Výnos emise<b class="yield">${bonds[i].interest} %</b></span><span>Splatnost<b>${bonds[i].maturity}</b></span></div><button class="btn btn-primary" type="button" data-open="request">Prověřit emitenta</button>`}))
+    : bonds.map(b=>({text:[b.name,clean(b.issuer),b.interest,b.maturity].join(' '),html:`<div><strong>${escapeHTML(b.name)}</strong><small>Emitent: ${escapeHTML(clean(b.issuer))}</small></div><div class="data-figures"><span>Výnos p.a.<b class="yield">${b.interest} %</b></span><span>Splatnost<b>${b.maturity}</b></span></div><button class="btn btn-outline" type="button" data-open="compare">Porovnat</button>`}));
+  const q=document.getElementById('list-q'),count=document.getElementById('list-count');
+  const render=()=>{
+    const term=(q.value||'').trim().toLocaleLowerCase('cs');
+    const found=rows.filter(r=>r.text.toLocaleLowerCase('cs').includes(term));
+    box.innerHTML=found.length?found.map(r=>`<div class="data-row">${r.html}</div>`).join(''):`<p class="data-empty">Hledanému výrazu neodpovídá žádný záznam.</p>`;
+    count.textContent=`Zobrazeno ${found.length} z ${rows.length}`;
+  };
+  q.addEventListener('input',render);render();
+})();
