@@ -1100,3 +1100,58 @@ section#adbanner{height:auto;padding:8px 0 20px}
  .page-head--split .ph-main .ph-text .page-lead:first-child{margin-top:0}
  .page-head--split .ph-main .page-head-cta{grid-area:b;justify-self:start}
 }
+/* FORMULÁŘ SROVNÁNÍ – skupiny otázek ve světlých panelech */
+.req-group{margin:12px 0 0;padding:14px 16px 12px;border-radius:12px;background:#f3f7f8}
+.req-group-title{margin:0 0 10px;font:600 14px/1.3 var(--sans);color:var(--navy)}
+.req-group-hint{margin:-6px 0 10px;font-size:12.5px;color:#5d7684}
+.req-group .check-list{margin:0}
+.check-list--4{grid-template-columns:repeat(4,minmax(0,1fr))}
+.req-group--row{display:flex;align-items:center;gap:20px;flex-wrap:wrap}
+.req-group--row .req-group-title{margin:0}
+.req-group--row .check-list{flex:1}
+@media(max-width:700px){.check-list--4{grid-template-columns:1fr 1fr}.req-group--row{display:block}.req-group--row .req-group-title{margin-bottom:10px}}
+.req--cmp .req-block legend{flex-wrap:wrap}
+.req--cmp .req-block legend .req-legend-hint{flex-basis:100%;margin:6px 0 0 44px;text-align:left}
+/* DLUHOPISOVÝ PRŮVODCE – dlaždice oblastí a rozbalovací témata */
+.g-tiles{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
+.g-tile{display:flex;align-items:center;gap:12px;padding:16px 14px;border:var(--line);border-radius:14px;background:#fff;color:var(--navy);text-decoration:none;box-shadow:var(--shadow-card);transition:border-color .2s,background .2s,transform .2s}
+.g-tile:hover{border-color:var(--emerald);transform:translateY(-1px)}
+.g-tile.is-active{border-color:var(--emerald);background:#eef8f3}
+.gt-ico{flex:none;display:grid;place-items:center;width:44px;height:44px;border-radius:10px;background:#e8f6f0;color:var(--emerald)}
+.gt-ico .ico{width:24px;height:24px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.gt-az{font:700 14px/1 var(--serif);letter-spacing:-.5px}
+.gt-txt{flex:1;min-width:0}
+.gt-txt b{display:block;font:600 15px/1.25 var(--serif)}
+.gt-txt small{display:block;margin-top:3px;font-size:12.5px;color:#5d7684;line-height:1.35}
+.gt-chev{flex:none;width:18px;height:18px;fill:none;stroke:#8aa0ab;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.g-more-title{margin-top:40px}
+.g-head{display:flex;align-items:flex-start;gap:18px;margin-top:6px}
+.g-head h1{margin:0}
+.g-head .page-lead{margin-top:8px}
+.gt-ico--lg{width:64px;height:64px;border-radius:14px}
+.gt-ico--lg .ico{width:34px;height:34px}
+.g-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 36px;padding:10px 26px;border:var(--line);border-radius:18px;background:#fff;box-shadow:var(--shadow-card)}
+.g-item{border-bottom:1px solid #e3ebef}
+.g-item summary{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:15px 0;cursor:pointer;list-style:none;font:600 15px/1.35 var(--serif);color:var(--navy)}
+.g-item summary::-webkit-details-marker{display:none}
+.g-item summary:hover{color:var(--emerald)}
+.g-pm{position:relative;flex:none;width:22px;height:22px;border:1.5px solid #9fb2bb;border-radius:50%}
+.g-pm:before,.g-pm:after{content:'';position:absolute;left:50%;top:50%;width:10px;height:1.6px;margin:-.8px 0 0 -5px;background:#5d7684}
+.g-pm:after{transform:rotate(90deg);transition:transform .2s}
+.g-item[open] .g-pm{border-color:var(--emerald)}
+.g-item[open] .g-pm:before,.g-item[open] .g-pm:after{background:var(--emerald)}
+.g-item[open] .g-pm:after{transform:rotate(0)}
+.g-item[open] summary{color:var(--emerald)}
+.g-ans{padding:0 0 16px;font-size:14.5px;line-height:1.6;color:#2b4250}
+.g-ans p{margin:0 0 8px}.g-ans ul{margin:0 0 8px;padding-left:20px}
+.g-list--glossary{grid-template-columns:repeat(3,minmax(0,1fr))}
+.g-sources{margin-top:28px;max-width:820px;font-size:13.5px}
+.g-sources h2{font:600 18px/1.2 var(--serif);margin:0 0 8px}
+@media(max-width:1000px){.g-tiles{grid-template-columns:repeat(2,minmax(0,1fr))}.g-list--glossary{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:700px){.g-tiles,.g-list,.g-list--glossary{grid-template-columns:1fr}.g-list{padding:4px 16px}.g-head{gap:12px}.gt-ico--lg{width:48px;height:48px}}
+/* rozbalení jedné otázky neroztahuje sousední sloupec */
+.g-list{display:block;columns:2;column-gap:36px}
+.g-list--glossary{columns:3}
+.g-item{break-inside:avoid}
+@media(max-width:1000px){.g-list--glossary{columns:2}}
+@media(max-width:700px){.g-list,.g-list--glossary{columns:1}}
