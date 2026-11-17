@@ -254,3 +254,115 @@ section#actions{height:auto;padding:6px 0 26px}
 
 /* bez dlaždic služeb: reklamní pruh končí se sekcí článků */
 .sidebar-ad{height:688px}
+
+/* ==========================================================================
+   NOVÉ MENU s podmenu (Databáze, Články a analýzy)
+   ========================================================================== */
+.desktop-nav{gap:24px;margin-right:12px}
+.desktop-nav a,.nav-toggle{font:600 15px/1 var(--serif);color:var(--navy);white-space:nowrap}
+.nav-group{position:relative}
+.nav-toggle{display:inline-flex;align-items:center;gap:4px;padding:8px 0;background:none;border:0;cursor:pointer;transition:color .2s}
+.nav-toggle .chev{width:16px;height:16px;stroke-width:2;transition:transform .2s}
+.nav-toggle:hover,.nav-toggle.is-current{color:var(--emerald)}
+.nav-sub{position:absolute;top:calc(100% + 10px);left:-14px;z-index:40;min-width:200px;display:flex;flex-direction:column;padding:8px;background:#fff;border:var(--line);border-radius:12px;box-shadow:0 14px 34px rgba(3,26,48,.14);opacity:0;visibility:hidden;transform:translateY(6px);transition:opacity .18s,transform .18s,visibility .18s}
+.nav-sub:before{content:'';position:absolute;left:0;right:0;top:-12px;height:12px}
+.nav-sub a{padding:11px 14px;border-radius:8px;font-size:15px}
+.nav-sub a:hover{background:#e9f7f1;color:var(--emerald)}
+.nav-group:hover .nav-sub,.nav-group:focus-within .nav-sub,.nav-group.open .nav-sub{opacity:1;visibility:visible;transform:none}
+.nav-group:hover .chev,.nav-group.open .chev{transform:rotate(180deg)}
+@media(max-width:1400px){.header-inner>.header-tagline{display:none}}
+@media(max-width:1180px){
+  .desktop-nav{display:none}
+  .menu-trigger{display:inline-flex}
+  .search-trigger{margin-left:auto}
+  .mobile-nav:not([hidden]){display:flex;position:absolute;top:100%;left:0;right:0;flex-direction:column;padding:8px 24px 22px;background:#fff;box-shadow:0 12px 20px #0b23361f;gap:0;max-height:calc(100vh - 80px);overflow:auto}
+  .mobile-nav a{padding:13px 0;border-bottom:1px solid #eef2f4;font-weight:600}
+}
+.mnav-label{display:block;margin-top:14px;padding:6px 0 2px;font:700 var(--fs-label)/1.4 var(--sans);letter-spacing:2px;text-transform:uppercase;color:var(--muted)}
+.mobile-nav a.sub{padding-left:16px}
+/* patička: víc položek */
+.footer-top nav{gap:22px}
+.footer-top .header-tagline{display:none}
+@media(max-width:1120px){.footer-top{height:auto;flex-wrap:wrap;padding:12px 0}.footer-top nav{flex-wrap:wrap;gap:10px 18px;margin-left:0;width:100%}footer.site-footer{height:auto}.footer-inner{height:auto}}
+
+/* STRÁNKY S FORMULÁŘEM */
+.form-layout{display:grid;grid-template-columns:minmax(0,1fr) 360px;gap:32px;align-items:start}
+.page-form{padding:32px;background:#fff;border:var(--line);border-radius:var(--r-card);box-shadow:var(--shadow-card)}
+.page-form h2{margin:0 0 18px;font:600 24px/1.2 var(--serif);letter-spacing:-.02em}
+.form-sub{margin:26px 0 12px;font:600 17px/1.3 var(--serif)}
+.page-form .field{margin-bottom:4px}
+.page-form .field textarea{min-height:110px}
+.check-grid{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:18px}
+.check-chip{display:inline-flex;align-items:center;gap:9px;padding:10px 15px;border:var(--line);border-radius:999px;font-size:14px;font-weight:500;cursor:pointer;transition:background-color .15s,border-color .15s}
+.check-chip:hover{border-color:var(--teal)}
+.check-chip input{width:16px;height:16px;margin:0;accent-color:var(--emerald)}
+.check-chip:has(input:checked){background:#e9f7f1;border-color:var(--teal)}
+.consent{display:flex;gap:10px;align-items:flex-start;margin-top:18px;font-size:14px;line-height:1.45;color:var(--muted);cursor:pointer}
+.consent input{width:18px;height:18px;margin:1px 0 0;flex:none;accent-color:var(--emerald)}
+.page-form .form-actions{margin-top:22px}
+.page-form .form-actions .btn{height:50px;font-size:16px;padding:0 24px}
+.page-form [aria-invalid="true"]{border-color:#b23b36}
+.form-aside{position:sticky;top:100px;display:grid;gap:16px}
+.aside-card{padding:24px;background:#f5f9fa;border:var(--line);border-radius:var(--r-card)}
+.aside-card h2{margin:0 0 14px;font:600 19px/1.2 var(--serif)}
+.tick-list,.risk-list,.ask-list{list-style:none;margin:0;padding:0;display:grid;gap:10px;font-size:15px;line-height:1.45}
+.tick-list li,.risk-list li,.ask-list li{position:relative;padding-left:28px}
+.tick-list li:before{content:'';position:absolute;left:0;top:2px;width:18px;height:18px;border-radius:50%;background:#d6f3e8 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2300875a' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 12 4 4 8-8'/%3E%3C/svg%3E") center/12px no-repeat}
+.risk-list li:before{content:'';position:absolute;left:5px;top:7px;width:9px;height:9px;border-radius:50%;background:#e3a03c}
+.ask-list li:before{content:'?';position:absolute;left:0;top:1px;width:18px;height:18px;border-radius:50%;background:var(--navy);color:#fff;font:700 11px/18px var(--sans);text-align:center}
+.mini-steps{list-style:none;margin:0;padding:0;display:grid;gap:12px;font-size:14px;line-height:1.45;color:var(--muted)}
+.mini-steps li{display:flex;gap:12px;align-items:flex-start}
+.mini-steps b{flex:none;width:26px;height:26px;border-radius:50%;display:grid;place-items:center;background:var(--navy);color:#fff;font:600 13px/1 var(--serif)}
+.mini-steps li:last-child b{background:var(--lime);color:var(--navy)}
+.form-demo-note{margin:0;padding:12px 14px;border-left:3px solid var(--lime);background:#f0f9f5;font-size:13px;line-height:1.45;color:var(--muted)}
+@media(max-width:960px){.form-layout{grid-template-columns:1fr}.form-aside{position:static}}
+@media(max-width:700px){.page-form{padding:22px 18px}.page-form .form-actions .btn{width:100%;min-width:0}}
+
+/* JAK FUNGUJE RADAR */
+.page-body .section-title-line{margin-top:40px}
+.page-body .section-title-line:first-child{margin-top:0}
+.section-lead{max-width:70ch;margin:0 0 22px;font-size:16px;line-height:1.55;color:var(--muted)}
+.hiw-steps .process-list{margin-left:62px;max-width:1000px}
+@media(max-width:1120px){.hiw-steps .process-list{margin-left:44px}}
+.crit-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.crit-card{padding:22px 24px;background:#fff;border:var(--line);border-radius:var(--r-card);box-shadow:var(--shadow-card)}
+.crit-card h3{margin:0 0 8px;font:600 18px/1.25 var(--serif);letter-spacing:-.01em}
+.crit-card h3:before{content:'';display:block;width:28px;height:3px;margin-bottom:14px;background:var(--lime);border-radius:2px}
+.crit-card p{margin:0;font-size:15px;line-height:1.5;color:var(--muted)}
+.report{border:var(--line);border-radius:var(--r-card);overflow:hidden;box-shadow:var(--shadow-card);background:#fff}
+.report-head{display:flex;justify-content:space-between;align-items:flex-start;gap:20px;padding:24px 28px;background:linear-gradient(105deg,#06263f,#031a30);color:#fff}
+.report-kicker{font-size:13px;color:var(--lime);font-weight:600}
+.report-head h3{margin:6px 0 4px;font:600 24px/1.2 var(--serif);color:#fff}
+.report-head p{margin:0;font-size:14px;color:#cfe0e6}
+.report-badge{flex:none;padding:7px 12px;border-radius:999px;background:rgba(31,212,155,.16);color:var(--lime);font-size:12px;font-weight:600}
+.report-body{padding:26px 28px 28px}
+.report h4{margin:0 0 12px;font:600 16px/1.3 var(--serif)}
+.report-sum p{margin:0;max-width:80ch;font-size:15px;line-height:1.55;color:var(--muted)}
+.report-cols{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;margin-top:24px;padding-top:22px;border-top:var(--line)}
+.cta-row{display:flex;flex-wrap:wrap;gap:14px;margin:30px 0 20px}
+.cta-row .btn{min-width:0}
+@media(max-width:1100px){.crit-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:900px){.report-cols{grid-template-columns:1fr}}
+@media(max-width:700px){.crit-grid{grid-template-columns:1fr}.report-head{flex-direction:column;padding:20px}.report-body{padding:20px}.hiw-steps .process-list{margin-left:44px}}
+
+/* O RADARU */
+.about-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+.about-card{padding:28px;background:#fff;border:var(--line);border-radius:var(--r-card);box-shadow:var(--shadow-card)}
+.about-card h2{margin:0 0 10px;display:flex;align-items:center;gap:12px;font:600 22px/1.2 var(--serif);letter-spacing:-.02em}
+.about-card h2:before{content:'';width:28px;height:3px;background:var(--lime);border-radius:2px}
+.about-card p{margin:0 0 14px;font-size:15px;line-height:1.6;color:var(--muted);max-width:60ch}
+.about-card p:last-child{margin-bottom:0}
+.about-card .text-link{font-size:14px}
+.about-card--contact{grid-column:1 / -1;display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:6px 24px;background:#f5f9fa}
+.about-card--contact h2,.about-card--contact p{grid-column:1}
+.about-card--contact .btn{grid-column:2;grid-row:1 / span 2;min-width:0}
+.about-disclaimer{margin:24px 0 10px;font-size:13px;color:var(--muted)}
+@media(max-width:760px){.about-grid{grid-template-columns:1fr}.about-card--contact{grid-template-columns:1fr}.about-card--contact .btn{grid-column:1;grid-row:auto;justify-self:start;margin-top:8px}}
+
+/* ČLÁNKY – filtr podle typu */
+.cat-filter{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 20px}
+.cat-filter a{padding:9px 16px;border:var(--line);border-radius:999px;font:600 14px/1 var(--serif);color:var(--navy);background:#fff;transition:background-color .15s,border-color .15s}
+.cat-filter a:hover{border-color:var(--teal)}
+.cat-filter a[aria-current="true"]{background:var(--navy);border-color:var(--navy);color:#fff}
+.article-card[hidden]{display:none}
+@media(max-width:1180px) and (min-width:901px){.hero h1{font-size:38px}.hero p{font-size:16px;margin:18px 0}}

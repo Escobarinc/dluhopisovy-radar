@@ -74,18 +74,19 @@ function openArticles(){
 function openExplorer(kind){
  state={kind,type:kind==='bonds'?'bonds':kind==='emitters'?'emitters':'all',query:''};
  const title=kind==='emitters'?'Databáze emitentů':kind==='bonds'?'Databáze emisí':'Vyhledávání na Radaru';
- openDialog(title,'PROHLEDÁVÁNÍ DATABÁZE',`<div class="notice-sample">Ukázková databáze: záznamy níže jsou fiktivní, vytvořené jen pro ověření vyhledávání. Nejsou prověřené ani aktuální investiční nabídky.</div><label class="search-field"><svg class="ico"><use href="#i-search"/></svg><input id="search-query" type="search" placeholder="Zadejte emitenta, emisi nebo město" autocomplete="off" aria-label="Hledat v databázi"></label><div class="filters" role="group" aria-label="Filtrovat záznamy"><button class="filter-pill" data-filter="all" aria-pressed="false" type="button">Vše</button><button class="filter-pill" data-filter="emitters" aria-pressed="false" type="button">Emitenti</button><button class="filter-pill" data-filter="bonds" aria-pressed="false" type="button">Emise</button></div><p id="result-count" class="form-note" aria-live="polite"></p><ul class="result-list" id="result-list"></ul>`);
+ openDialog(title,'PROHLEDÁVÁNÍ DATABÁZE',`<div class="notice-sample">Ukázková databáze: záznamy níže jsou fiktivní, vytvořené jen pro ověření vyhledávání. Nejsou prověřené ani aktuální investiční nabídky.</div><label class="search-field"><svg class="ico"><use href="#i-search"/></svg><input id="search-query" type="search" placeholder="Zadejte emitenta, emisi, město nebo téma článku" autocomplete="off" aria-label="Hledat v databázi"></label><div class="filters" role="group" aria-label="Filtrovat záznamy"><button class="filter-pill" data-filter="all" aria-pressed="false" type="button">Vše</button><button class="filter-pill" data-filter="emitters" aria-pressed="false" type="button">Emitenti</button><button class="filter-pill" data-filter="bonds" aria-pressed="false" type="button">Emise</button><button class="filter-pill" data-filter="articles" aria-pressed="false" type="button">Články</button></div><p id="result-count" class="form-note" aria-live="polite"></p><ul class="result-list" id="result-list"></ul>`);
  updateResults();
  document.getElementById('search-query').focus();
 }
 function updateResults(){
  const list=document.getElementById('result-list');if(!list)return;
  document.querySelectorAll('.filter-pill').forEach(btn=>btn.setAttribute('aria-pressed',String(btn.dataset.filter===state.type)));
- const raw=(state.type==='emitters'?issuers:state.type==='bonds'?bonds:[...issuers,...bonds]);
+ const arts=Object.entries(articles).map(([id,a])=>({id,name:a.title,type:'Článek',kind:a.kind,date:a.date,text:a.intro}));
+ const raw=(state.type==='emitters'?issuers:state.type==='bonds'?bonds:state.type==='articles'?arts:[...issuers,...bonds,...arts]);
  const q=state.query.trim().toLocaleLowerCase('cs');
- const found=raw.filter(r=>[r.name,r.city,r.field,r.issuer,r.interest,r.maturity].filter(v=>v!==undefined).join(' ').toLocaleLowerCase('cs').includes(q));
- document.getElementById('result-count').textContent=`Zobrazeno ${found.length} z ${raw.length} ukázkových záznamů`;
- list.innerHTML=found.length?found.map(r=>`<li class="result-item"><div><strong>${escapeHTML(r.name)}</strong><small>${r.type==='Emitent'?escapeHTML(`${r.city} · ${r.field}`):`Modelový výnos ${r.interest} % p.a. · splatnost ${r.maturity}`}</small></div><span class="result-tag">${r.type}</span></li>`).join(''):'<li class="no-results">Pro zadaný výraz nebyl v ukázkových záznamech nalezen žádný výsledek.</li>';
+ const found=raw.filter(r=>[r.name,r.city,r.field,r.issuer,r.interest,r.maturity,r.kind,r.text].filter(v=>v!==undefined).join(' ').toLocaleLowerCase('cs').includes(q));
+ document.getElementById('result-count').textContent=`Zobrazeno ${found.length} z ${raw.length} záznamů`;
+ list.innerHTML=found.length?found.map(r=>`<li class="result-item"><div><strong>${escapeHTML(r.name)}</strong><small>${r.type==='Emitent'?escapeHTML(`${r.city} · ${r.field}`):r.type==='Článek'?escapeHTML(`${r.kind.charAt(0)+r.kind.slice(1).toLocaleLowerCase('cs')} · ${r.date}`):`Modelový výnos ${r.interest} % p.a. · splatnost ${r.maturity}`}</small></div>${r.type==='Článek'?`<button class="dialog-secondary" type="button" data-open="${r.id}">Číst</button>`:`<span class="result-tag">${r.type}</span>`}</li>`).join(''):'<li class="no-results">Pro zadaný výraz nebyl v ukázkových záznamech nalezen žádný výsledek.</li>';
 }
 function openByType(kind){
  if(['request','compare','advertise','contact'].includes(kind))return openForm(kind);
@@ -143,8 +144,8 @@ document.addEventListener('keydown',e=>{
   const isEmitters=box.id==='emitter-list';
   const clean=(n)=>n.replace(' — ukázka','');
   const rows=isEmitters
-    ? issuers.map((r,i)=>({text:[clean(r.name),r.city,r.field].join(' '),html:`<div><strong>${escapeHTML(clean(r.name))}</strong><small>${escapeHTML(r.city)} · ${escapeHTML(r.field)}</small></div><div class="data-figures"><span>Výnos emise<b class="yield">${bonds[i].interest} %</b></span><span>Splatnost<b>${bonds[i].maturity}</b></span></div><button class="btn btn-primary" type="button" data-open="request">Prověřit emitenta</button>`}))
-    : bonds.map(b=>({text:[b.name,clean(b.issuer),b.interest,b.maturity].join(' '),html:`<div><strong>${escapeHTML(b.name)}</strong><small>Emitent: ${escapeHTML(clean(b.issuer))}</small></div><div class="data-figures"><span>Výnos p.a.<b class="yield">${b.interest} %</b></span><span>Splatnost<b>${b.maturity}</b></span></div><button class="btn btn-outline" type="button" data-open="compare">Porovnat</button>`}));
+    ? issuers.map((r,i)=>({text:[clean(r.name),r.city,r.field].join(' '),html:`<div><strong>${escapeHTML(clean(r.name))}</strong><small>${escapeHTML(r.city)} · ${escapeHTML(r.field)}</small></div><div class="data-figures"><span>Výnos emise<b class="yield">${bonds[i].interest} %</b></span><span>Splatnost<b>${bonds[i].maturity}</b></span></div><a class="btn btn-primary" href="proverit-emitenta.html?emitent=${encodeURIComponent(clean(r.name))}">Prověřit emitenta</a>`}))
+    : bonds.map(b=>({text:[b.name,clean(b.issuer),b.interest,b.maturity].join(' '),html:`<div><strong>${escapeHTML(b.name)}</strong><small>Emitent: ${escapeHTML(clean(b.issuer))}</small></div><div class="data-figures"><span>Výnos p.a.<b class="yield">${b.interest} %</b></span><span>Splatnost<b>${b.maturity}</b></span></div><a class="btn btn-outline" href="porovnat-emise.html?emise=${encodeURIComponent(b.name)}">Porovnat</a>`}));
   const q=document.getElementById('list-q'),count=document.getElementById('list-count');
   const render=()=>{
     const term=(q.value||'').trim().toLocaleLowerCase('cs');
@@ -153,4 +154,63 @@ document.addEventListener('keydown',e=>{
     count.textContent=`Zobrazeno ${found.length} z ${rows.length}`;
   };
   q.addEventListener('input',render);render();
+})();
+
+// Rozbalovací menu (Databáze, Články a analýzy)
+(function(){
+  const groups=[...document.querySelectorAll('.nav-group')];
+  const close=(except)=>groups.forEach(g=>{if(g!==except){g.classList.remove('open');g.querySelector('.nav-toggle').setAttribute('aria-expanded','false');}});
+  groups.forEach(g=>g.querySelector('.nav-toggle').addEventListener('click',()=>{const open=!g.classList.contains('open');close(g);g.classList.toggle('open',open);g.querySelector('.nav-toggle').setAttribute('aria-expanded',String(open));}));
+  document.addEventListener('click',e=>{if(!e.target.closest('.nav-group'))close();});
+  document.addEventListener('keydown',e=>{if(e.key==='Escape')close();});
+})();
+
+// Stránky s formulářem (Prověřit emitenta, Porovnat emise)
+(function(){
+  const form=document.getElementById('page-form');
+  if(!form)return;
+  const params=new URLSearchParams(location.search);
+  form.querySelectorAll('[data-prefill]').forEach(el=>{const v=params.get(el.dataset.prefill);if(v)el.value=v;});
+  const errFor=el=>el.type==='checkbox'?form.querySelector(`[data-for="${el.name}"]`):el.parentElement.querySelector('.form-error');
+  form.addEventListener('input',e=>{const el=e.target;if(el.getAttribute('aria-invalid')==='true'){el.removeAttribute('aria-invalid');const er=errFor(el);if(er)er.textContent='';}});
+  form.addEventListener('change',e=>{const el=e.target;if(el.type==='checkbox'&&el.required&&el.checked){const er=errFor(el);if(er)er.textContent='';}});
+  form.addEventListener('submit',e=>{
+    e.preventDefault();
+    let first=null;
+    form.querySelectorAll('[required]').forEach(el=>{
+      const v=el.type==='checkbox'?el.checked:el.value.trim();
+      const msg=!v?(el.type==='checkbox'?'Pro odeslání je potřeba souhlas.':'Vyplňte toto pole.'):(el.type==='email'&&!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(el.value.trim())?'Zadejte e-mail ve tvaru jmeno@domena.cz.':'');
+      el.setAttribute('aria-invalid',String(!!msg));
+      const er=errFor(el);if(er)er.textContent=msg;
+      if(msg&&!first)first=el;
+    });
+    const status=document.getElementById('form-status');
+    if(first){first.focus();status.innerHTML='';return;}
+    const d=new FormData(form),lines=[`Dluhopisový Radar – ${form.dataset.kind}`,`Datum: ${new Date().toLocaleString('cs-CZ')}`,''];
+    form.querySelectorAll('input,textarea').forEach(el=>{
+      if(el.type==='checkbox'&&el.name!=='souhlas')return;
+      if(el.name==='souhlas')return;
+      const label=form.querySelector(`label[for="${el.id}"]`);
+      if(el.value.trim())lines.push(`${label?label.textContent.replace(' *',''):el.name}: ${el.value.trim()}`);
+    });
+    const zajem=d.getAll('zajem');if(zajem.length)lines.push(`Zaměřit se na: ${zajem.join(', ')}`);
+    lines.push('','Ukázková verze: poptávka nebyla nikam odeslána.');
+    const url=URL.createObjectURL(new Blob([lines.join('\n')],{type:'text/plain;charset=utf-8'}));
+    const a=Object.assign(document.createElement('a'),{href:url,download:'dluhopisovy-radar-poptavka.txt'});
+    document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),800);
+    status.innerHTML='<div class="form-status"><strong>Poptávka je připravená a stáhla se jako soubor.</strong><br>Ukázková verze ji zatím nikam neodesílá.</div>';
+  });
+})();
+
+// Filtr článků podle typu (#analyzy, #komentare, #vzdelavani)
+(function(){
+  const bar=document.querySelector('.cat-filter');
+  if(!bar)return;
+  const apply=()=>{
+    const cat=location.hash.replace('#','');
+    const valid=['analyzy','komentare','vzdelavani'].includes(cat)?cat:'';
+    document.querySelectorAll('.article-card[data-cat]').forEach(c=>c.hidden=!!valid&&c.dataset.cat!==valid);
+    bar.querySelectorAll('a').forEach(a=>a.setAttribute('aria-current',String(a.dataset.cat===valid)));
+  };
+  addEventListener('hashchange',apply);apply();
 })();

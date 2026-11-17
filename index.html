@@ -10,8 +10,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=12">
-  <script defer src="script.js?v=12"></script>
+  <link rel="stylesheet" href="styles.css?v=13">
+  <script defer src="script.js?v=13"></script>
 </head>
 <body>
   <svg class="icon-library" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
@@ -35,17 +35,11 @@
         <img class="logo-img" src="assets/logo.png" width="165" height="52" alt="Dluhopisový Radar">
       </a>
       <p class="header-tagline">NEZÁVISLÝ PORTÁL <br>O EMITENTECH A EMISÍCH</p>
-      <nav class="desktop-nav" aria-label="Hlavní navigace">
-        <a href="emitenti.html">Emitenti</a>
-        <a href="emise.html">Emise</a>
-        <a href="clanky.html">Články</a>
-      </nav>
+      <nav class="desktop-nav" aria-label="Hlavní navigace"><a href="proverit-emitenta.html">Prověřit emitenta</a><a href="porovnat-emise.html">Porovnat emise</a><div class="nav-group"><button class="nav-toggle" type="button" aria-expanded="false" aria-haspopup="true">Databáze <svg class="ico chev" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button><div class="nav-sub"><a href="emitenti.html">Emitenti</a><a href="emise.html">Emise</a></div></div><div class="nav-group"><button class="nav-toggle" type="button" aria-expanded="false" aria-haspopup="true">Články a analýzy <svg class="ico chev" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button><div class="nav-sub"><a href="clanky.html#analyzy">Analýzy</a><a href="clanky.html#komentare">Komentáře</a><a href="clanky.html#vzdelavani">Vzdělávání</a></div></div><a href="jak-funguje.html">Jak funguje Radar</a><a href="o-radaru.html">O Radaru</a></nav>
       <button class="icon-button search-trigger" id="open-search" aria-label="Otevřít vyhledávání" type="button"><svg class="ico"><use href="#i-search"/></svg></button>
       <button class="icon-button menu-trigger" id="menu-trigger" aria-label="Otevřít menu" aria-expanded="false" aria-controls="mobile-nav" type="button"><svg class="ico"><use href="#i-menu"/></svg></button>
     </div>
-    <nav id="mobile-nav" class="mobile-nav" aria-label="Mobilní navigace" hidden>
-      <a href="emitenti.html">Emitenti</a><a href="emise.html">Emise</a><a href="clanky.html">Články</a>
-    </nav>
+    <nav id="mobile-nav" class="mobile-nav" aria-label="Mobilní navigace" hidden><a href="proverit-emitenta.html">Prověřit emitenta</a><a href="porovnat-emise.html">Porovnat emise</a><span class="mnav-label">Databáze</span><a href="emitenti.html" class="sub">Emitenti</a><a href="emise.html" class="sub">Emise</a><span class="mnav-label">Články a analýzy</span><a href="clanky.html#analyzy" class="sub">Analýzy</a><a href="clanky.html#komentare" class="sub">Komentáře</a><a href="clanky.html#vzdelavani" class="sub">Vzdělávání</a><a href="jak-funguje.html">Jak funguje Radar</a><a href="o-radaru.html">O Radaru</a></nav>
   </header>
 
   <main>
@@ -64,8 +58,8 @@
           <h1 id="hero-heading">Máme emise na radaru. <br>Než investujete své peníze, <br><span class="highlight-stroke">prověřte si emitenta.</span></h1>
           <p>Nezávislý portál, který přináší ověřené informace o emitentech a emisích, odborné analýzy a srozumitelné srovnání nabídek. Abychom vám pomohli dělat lepší a informovanější investiční rozhodnutí.</p>
           <div class="hero-buttons">
-            <button class="btn btn-primary" type="button" data-open="request">Prověřit emitenta <svg class="ico"><use href="#i-arrow"/></svg></button>
-            <button class="btn btn-outline" type="button" data-open="compare"><svg class="ico" viewBox="0 0 24 24"><rect x="3" y="4" width="7" height="16" rx="1.5"/><rect x="14" y="4" width="7" height="16" rx="1.5"/><path d="M5.5 9h2M5.5 12.5h2M5.5 16h2M16.5 9h2M16.5 12.5h2M16.5 16h2"/></svg> Srovnání emisí</button>
+            <a class="btn btn-primary" href="proverit-emitenta.html">Prověřit emitenta <svg class="ico"><use href="#i-arrow"/></svg></a>
+            <a class="btn btn-outline" href="porovnat-emise.html"><svg class="ico" viewBox="0 0 24 24"><rect x="3" y="4" width="7" height="16" rx="1.5"/><rect x="14" y="4" width="7" height="16" rx="1.5"/><path d="M5.5 9h2M5.5 12.5h2M5.5 16h2M16.5 9h2M16.5 12.5h2M16.5 16h2"/></svg> Srovnání emisí</a>
           </div>
         </div>
       </div>
@@ -117,7 +111,7 @@
     <section id="adbanner" aria-label="Reklamní prostor pro inzerenty"><div class="container"><div class="ad-banner"><span class="ad-eyebrow">REKLAMNÍ PROSTOR</span><h2>Vaše značka mezi relevantními investory.</h2><button class="btn btn-primary" type="button" data-open="advertise">Více informací <svg class="ico"><use href="#i-arrow"/></svg></button></div></div></section>
   </main>
 
-  <footer class="site-footer" id="footer"><div class="container footer-inner"><div class="footer-top"><a class="logo footer-logo" href="index.html"><img class="logo-img" src="assets/logo-light.png" width="139" height="44" alt="Dluhopisový Radar"></a><p class="header-tagline">NEZÁVISLÝ PORTÁL <br>O EMITENTECH A EMISÍCH</p><nav aria-label="Navigace v patičce"><a href="emitenti.html">Emitenti</a><a href="emise.html">Emise</a><a href="clanky.html">Články</a></nav></div><div class="footer-bottom"><span>© 2026 Dluhopisový Radar</span><span class="footer-separator">|</span><span>Nezávislý analytický portál o dluhopisech.</span><nav aria-label="Právní informace"><button type="button" data-open="privacy">Ochrana osobních údajů</button><span>|</span><button type="button" data-open="terms">Podmínky používání</button><span>|</span><button type="button" data-open="contact">Kontakt</button></nav></div></div></footer>
+  <footer class="site-footer" id="footer"><div class="container footer-inner"><div class="footer-top"><a class="logo footer-logo" href="index.html"><img class="logo-img" src="assets/logo-light.png" width="139" height="44" alt="Dluhopisový Radar"></a><p class="header-tagline">NEZÁVISLÝ PORTÁL <br>O EMITENTECH A EMISÍCH</p><nav aria-label="Navigace v patičce"><a href="proverit-emitenta.html">Prověřit emitenta</a><a href="porovnat-emise.html">Porovnat emise</a><a href="emitenti.html">Emitenti</a><a href="emise.html">Emise</a><a href="clanky.html">Články</a><a href="jak-funguje.html">Jak funguje Radar</a><a href="o-radaru.html">O Radaru</a></nav></div><div class="footer-bottom"><span>© 2026 Dluhopisový Radar</span><span class="footer-separator">|</span><span>Nezávislý analytický portál o dluhopisech.</span><nav aria-label="Právní informace"><button type="button" data-open="privacy">Ochrana osobních údajů</button><span>|</span><button type="button" data-open="terms">Podmínky používání</button><span>|</span><button type="button" data-open="contact">Kontakt</button></nav></div></div></footer>
 
   <div class="dialog-backdrop" id="dialog-backdrop" hidden>
     <div class="dialog" role="dialog" aria-modal="true" aria-labelledby="dialog-title" tabindex="-1">

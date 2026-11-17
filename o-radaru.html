@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="cs">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#f8fbfb">
+  <link rel="icon" type="image/png" href="assets/logo-emblem.png">
+  <meta name="description" content="Kdo stojí za Dluhopisovým Radarem, jak je financován a jak nás kontaktovat.">
+  <title>O Radaru – Dluhopisový Radar</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css?v=13">
+  <script defer src="script.js?v=13"></script>
+</head>
+<body class="subpage">
+  <svg class="icon-library" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4 12h16m-7-7 7 7-7 7"/></symbol>
+    <symbol id="i-search" viewBox="0 0 24 24"><circle cx="10.7" cy="10.7" r="7.3"/><path d="m16.4 16.4 5 5"/></symbol>
+    <symbol id="i-play" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.3"/><path d="m10 8 6 4-6 4z"/></symbol>
+    <symbol id="i-laptop" viewBox="0 0 24 24"><path d="M4 16V5c0-1 .8-2 2-2h12c1.1 0 2 .9 2 2v7M2 19h13M1 21h15M16 14l7 6-3 1-1 2z"/></symbol>
+    <symbol id="i-layers" viewBox="0 0 24 24"><path d="m12 2 10 5.4-10 5.5L2 7.4 12 2zm-10 10 10 5.5L22 12M2 17l10 5 10-5"/></symbol>
+    <symbol id="i-bars" viewBox="0 0 24 24"><path d="M4 20v-5m5 5v-9m5 9V7m5 13V3"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="m3 12 6 6L21 5"/></symbol>
+    <symbol id="i-building" viewBox="0 0 24 24"><path d="M3 22V9h7v13M10 22V3h11v19M1 22h22M6 12v2m0 3v2m8-12v2m4-2v2m-4 3v2m4-2v2m-4 3v2m4-2v2"/></symbol>
+    <symbol id="i-calendar" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M7 2v6M17 2v6M3 10h18M7 14h2m3 0h2"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l4 3"/></symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path d="M5 5l14 14M19 5 5 19"/></symbol>
+  </svg>
+
+  <header class="site-header" id="top">
+    <div class="container header-inner">
+      <a class="logo" href="index.html" aria-label="Dluhopisový Radar – úvod">
+        <img class="logo-img" src="assets/logo.png" width="165" height="52" alt="Dluhopisový Radar">
+      </a>
+      <p class="header-tagline">NEZÁVISLÝ PORTÁL <br>O EMITENTECH A EMISÍCH</p>
+      <nav class="desktop-nav" aria-label="Hlavní navigace"><a href="proverit-emitenta.html">Prověřit emitenta</a><a href="porovnat-emise.html">Porovnat emise</a><div class="nav-group"><button class="nav-toggle" type="button" aria-expanded="false" aria-haspopup="true">Databáze <svg class="ico chev" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button><div class="nav-sub"><a href="emitenti.html">Emitenti</a><a href="emise.html">Emise</a></div></div><div class="nav-group"><button class="nav-toggle" type="button" aria-expanded="false" aria-haspopup="true">Články a analýzy <svg class="ico chev" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button><div class="nav-sub"><a href="clanky.html#analyzy">Analýzy</a><a href="clanky.html#komentare">Komentáře</a><a href="clanky.html#vzdelavani">Vzdělávání</a></div></div><a href="jak-funguje.html">Jak funguje Radar</a><a href="o-radaru.html" aria-current="page">O Radaru</a></nav>
+      <button class="icon-button search-trigger" id="open-search" aria-label="Otevřít vyhledávání" type="button"><svg class="ico"><use href="#i-search"/></svg></button>
+      <button class="icon-button menu-trigger" id="menu-trigger" aria-label="Otevřít menu" aria-expanded="false" aria-controls="mobile-nav" type="button"><svg class="ico"><use href="#i-menu"/></svg></button>
+    </div>
+    <nav id="mobile-nav" class="mobile-nav" aria-label="Mobilní navigace" hidden><a href="proverit-emitenta.html">Prověřit emitenta</a><a href="porovnat-emise.html">Porovnat emise</a><span class="mnav-label">Databáze</span><a href="emitenti.html" class="sub">Emitenti</a><a href="emise.html" class="sub">Emise</a><span class="mnav-label">Články a analýzy</span><a href="clanky.html#analyzy" class="sub">Analýzy</a><a href="clanky.html#komentare" class="sub">Komentáře</a><a href="clanky.html#vzdelavani" class="sub">Vzdělávání</a><a href="jak-funguje.html">Jak funguje Radar</a><a href="o-radaru.html" aria-current="page">O Radaru</a></nav>
+  </header>
+
+  <main class="subpage-main">
+    <section class="page-head"><div class="container">
+      <p class="crumbs"><a href="index.html">Úvod</a> <span aria-hidden="true">/</span> O Radaru</p>
+      <h1><span class="green-rule"></span>O Radaru</h1>
+      <p class="page-lead">Dluhopisový Radar je nezávislý portál o emitentech a emisích firemních dluhopisů. Pomáhá investorům zorientovat se dřív, než se rozhodnou.</p>
+    </div></section>
+    <section class="page-body"><div class="container">
+      <div class="about-grid">
+        <div class="about-card"><h2>Nezávislost</h2><p>Nejsme emitent ani zprostředkovatel dluhopisů a neprodáváme žádné investice. Za zařazení do databáze ani za výsledek prověření si nikdo nemůže zaplatit. Naším cílem je, aby investor věděl, do čeho jde.</p></div>
+        <div class="about-card"><h2>Provozovatel</h2><p>Údaje o provozovateli (název, IČO a sídlo) doplníme před spuštěním webu.</p></div>
+        <div class="about-card"><h2>Financování reklamou</h2><p>Portál je pro čtenáře zdarma. Provoz financujeme z reklamy, která je na webu vždy zřetelně označená jako reklamní prostor. Inzerenti nemají vliv na obsah článků ani na výsledky prověření.</p><button class="text-link" type="button" data-open="advertise">Možnosti reklamy <svg class="ico"><use href="#i-arrow"/></svg></button></div>
+        <div class="about-card"><h2>Metodika</h2><p>U emitentů a emisí sledujeme šest oblastí: emitenta a skupinu, finanční zdraví, účel emise, zajištění, emisní podmínky a transparentnost. Vycházíme z veřejných zdrojů.</p><a class="text-link" href="jak-funguje.html#metodika">Celá metodika <svg class="ico"><use href="#i-arrow"/></svg></a></div>
+        <div class="about-card about-card--contact"><h2>Kontakt</h2><p>Máte dotaz, tip na emitenta nebo zájem o spolupráci? Napište nám.</p><button class="btn btn-primary" type="button" data-open="contact">Napsat zprávu <svg class="ico"><use href="#i-arrow"/></svg></button></div>
+      </div>
+      <p class="about-disclaimer">Informace na webu mají informační a vzdělávací charakter. Nejsou investičním doporučením, nabídkou ani výzvou k úpisu.</p>
+    </div></section>
+  </main>
+
+  <footer class="site-footer" id="footer"><div class="container footer-inner"><div class="footer-top"><a class="logo footer-logo" href="index.html"><img class="logo-img" src="assets/logo-light.png" width="139" height="44" alt="Dluhopisový Radar"></a><p class="header-tagline">NEZÁVISLÝ PORTÁL <br>O EMITENTECH A EMISÍCH</p><nav aria-label="Navigace v patičce"><a href="proverit-emitenta.html">Prověřit emitenta</a><a href="porovnat-emise.html">Porovnat emise</a><a href="emitenti.html">Emitenti</a><a href="emise.html">Emise</a><a href="clanky.html">Články</a><a href="jak-funguje.html">Jak funguje Radar</a><a href="o-radaru.html" aria-current="page">O Radaru</a></nav></div><div class="footer-bottom"><span>© 2026 Dluhopisový Radar</span><span class="footer-separator">|</span><span>Nezávislý analytický portál o dluhopisech.</span><nav aria-label="Právní informace"><button type="button" data-open="privacy">Ochrana osobních údajů</button><span>|</span><button type="button" data-open="terms">Podmínky používání</button><span>|</span><button type="button" data-open="contact">Kontakt</button></nav></div></div></footer>
+
+  <div class="dialog-backdrop" id="dialog-backdrop" hidden>
+    <div class="dialog" role="dialog" aria-modal="true" aria-labelledby="dialog-title" tabindex="-1">
+      <div class="dialog-header"><div><span id="dialog-kicker" class="dialog-kicker">DLUHOPISOVÝ RADAR</span><h2 id="dialog-title">Informace</h2></div><button class="icon-button dialog-close" type="button" id="close-dialog" aria-label="Zavřít okno"><svg class="ico"><use href="#i-close"/></svg></button></div>
+      <div class="dialog-content" id="dialog-content"></div>
+    </div>
+  </div>
+  <noscript><p class="noscript-notice">Pro vyhledávání a formuláře je nutný zapnutý JavaScript. Ostatní obsah zůstává přístupný.</p></noscript>
+</body>
+</html>
