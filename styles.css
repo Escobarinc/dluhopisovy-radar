@@ -1193,3 +1193,8 @@ section#adbanner{height:auto;padding:8px 0 20px}
 .method-cta .btn{width:100%;justify-content:center;margin-bottom:12px}
 .method-cta .text-link{display:inline-flex}
 @media(max-width:900px){.method-side{margin-top:18px}}
+/* Formuláře – stejná mezera pod nadpisem otázky ve všech bodech */
+.req-block>legend+*{margin-top:-15px!important}
+.req-block .req-info--block{margin-bottom:12px}
+.req-block .req-group{margin-top:0}
+.req-block .req-group+.req-group{margin-top:12px}
