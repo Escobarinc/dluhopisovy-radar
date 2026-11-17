@@ -172,3 +172,55 @@ footer.site-footer{height:138px;background:linear-gradient(120deg,#06263f,#031a3
   .sub-cta{padding-bottom:36px}
 }
 .sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+
+/* PÍSMO: nadpisy Poppins (jako logo), texty Inter. Proměnná --serif teď nese písmo nadpisů. */
+:root{--serif:'Poppins',Arial,Helvetica,sans-serif;--sans:'Inter',Arial,Helvetica,sans-serif}
+.hero h1,.section-title-line h2,.insights-title h2,.process-item h3,.action-copy strong,.db-copy strong,.article-body strong,.ad-banner h2,.sidebar-ad h3,.step-num,.page-head h1,.data-row strong,.dialog-header h2,.dialog-content h3{font-weight:600;letter-spacing:-.025em}
+.btn,.desktop-nav a,.mobile-nav a{font-family:var(--serif);font-weight:600}
+.hero h1{font-size:46px;line-height:1.06;text-wrap:balance}
+.hero-copy{width:600px}
+.hero p{color:#3a4a58}
+/* kroky: dlouhý název se zalomí, nepřekryje popis */
+.process-item h3{white-space:normal;line-height:1.12}
+.process-item p{padding-right:18px}
+.process-item p br{display:none}
+/* radar se drží vpravo od nadpisu */
+.radar,.radar-labels{left:max(calc(50% - 45px),650px)}
+@media(max-width:1120px){
+  .hero-copy{width:50%}
+  .radar,.radar-labels{left:56%}
+  .process-item{grid-template-columns:70px minmax(0,1fr) minmax(0,1.2fr)}
+  .radar-lbl:nth-child(-n+2){transform:translate(calc(-100% - 12px),-50%)}
+}
+@media(max-width:900px){
+  .hero-copy{width:53%}
+  .radar,.radar-labels{left:60%}
+  .hero h1{font-size:34px}
+  .hero p{font-size:15px;margin:18px 0}
+  .hero-buttons{gap:12px}
+  .btn,.btn-primary,.btn-outline{padding:0 18px;min-width:0}
+  .process-item{grid-template-columns:84px minmax(0,1fr) minmax(0,1.25fr)}
+  .section-title-line .eyebrow{display:none}
+}
+@media(max-width:700px){
+  .radar,.radar-labels{left:12%}
+  .radar-lbl:nth-child(-n+2){transform:translate(9px,-50%)}
+  .hero-copy{width:100%}
+  .hero h1{font-size:clamp(30px,8vw,44px)}
+  .btn{min-width:220px}
+}
+
+/* KROKY – tmavá čísla, poslední krok (výsledek) jako tmavá karta */
+.step-num{background:var(--navy);border-color:var(--navy);color:#fff;font-size:19px}
+.process-item:last-child .step-num{background:var(--lime);border-color:var(--lime);color:var(--navy)}
+.process-list:before{background:var(--navy);width:1.5px}
+.process-item h3{font-size:21px}
+.process-item:last-child{background:linear-gradient(105deg,#06263f,#031a30);border-color:#031a30}
+.process-item:last-child h3{color:#fff}
+.process-item:last-child p{color:#cfe0e6}
+.process-item:last-child .step-icon{color:var(--lime);border-right-color:rgba(255,255,255,.25)}
+@media(max-width:700px){.step-num{font-size:16px}.process-item h3{font-size:19px}}
+@media(max-width:1300px){.section-title-line .eyebrow{display:none}}
+.step-icon .ico{width:36px;height:36px;stroke-width:1.4}
+@media(max-width:700px){.step-icon .ico{width:30px;height:30px}}
+@media(max-width:700px){.process-item{grid-template-columns:46px minmax(0,1fr)}.process-item p{padding-right:0}}
