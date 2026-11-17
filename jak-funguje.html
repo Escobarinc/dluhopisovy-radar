@@ -2,116 +2,14 @@
 <html lang="cs">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="theme-color" content="#f8fbfb">
-  <link rel="icon" type="image/png" href="assets/logo-emblem.png">
-  <meta name="description" content="Postup, metodika a ukázka výstupu Dluhopisového Radaru.">
-  <title>Jak funguje Dluhopisový Radar – metodika a ukázka výstupu</title>
-  <link rel="stylesheet" href="assets/fonts.css?v=1">
-  <link rel="stylesheet" href="styles.css?v=76">
-  <script defer src="script.js?v=65"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Metodika – Dluhopisový Radar</title>
+  <meta name="robots" content="noindex">
+  <link rel="canonical" href="o-radaru.html#metodika">
+  <meta http-equiv="refresh" content="0; url=o-radaru.html#metodika">
+  <script>location.replace('o-radaru.html'+(location.hash||'#metodika'));</script>
 </head>
-<body class="subpage">
-  <svg class="icon-library" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
-    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4 12h16m-7-7 7 7-7 7"/></symbol>
-    <symbol id="i-search" viewBox="0 0 24 24"><circle cx="10.7" cy="10.7" r="7.3"/><path d="m16.4 16.4 5 5"/></symbol>
-    <symbol id="i-play" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.3"/><path d="m10 8 6 4-6 4z"/></symbol>
-    <symbol id="i-laptop" viewBox="0 0 24 24"><path d="M4 16V5c0-1 .8-2 2-2h12c1.1 0 2 .9 2 2v7M2 19h13M1 21h15M16 14l7 6-3 1-1 2z"/></symbol>
-    <symbol id="i-layers" viewBox="0 0 24 24"><path d="m12 2 10 5.4-10 5.5L2 7.4 12 2zm-10 10 10 5.5L22 12M2 17l10 5 10-5"/></symbol>
-    <symbol id="i-bars" viewBox="0 0 24 24"><path d="M4 20v-5m5 5v-9m5 9V7m5 13V3"/></symbol>
-    <symbol id="i-check" viewBox="0 0 24 24"><path d="m3 12 6 6L21 5"/></symbol>
-    <symbol id="i-building" viewBox="0 0 24 24"><path d="M3 22V9h7v13M10 22V3h11v19M1 22h22M6 12v2m0 3v2m8-12v2m4-2v2m-4 3v2m4-2v2m-4 3v2m4-2v2"/></symbol>
-    <symbol id="i-calendar" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M7 2v6M17 2v6M3 10h18M7 14h2m3 0h2"/></symbol>
-    <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l4 3"/></symbol>
-    <symbol id="i-menu" viewBox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18"/></symbol>
-    <symbol id="i-close" viewBox="0 0 24 24"><path d="M5 5l14 14M19 5 5 19"/></symbol>
-  </svg>
-
-  <header class="site-header" id="top">
-    <div class="container header-inner">
-      <a class="logo" href="index.html" aria-label="Dluhopisový Radar – úvod">
-        <img class="logo-img" src="assets/logo.png" width="165" height="52" alt="Dluhopisový Radar">
-      </a>
-      <p class="header-tagline">NEZÁVISLÝ PORTÁL <br>O EMITENTECH A EMISÍCH</p>
-      <nav class="desktop-nav" aria-label="Hlavní navigace"><a href="proverit-emitenta.html">Prověřit emitenta</a><a href="porovnat-emise.html">Porovnat emise</a><div class="nav-group"><button class="nav-toggle" type="button" aria-expanded="false" aria-haspopup="true">Databáze <svg class="ico chev" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button><div class="nav-sub"><a href="emitenti.html">Emitenti</a><a href="emise.html">Emise</a></div></div><div class="nav-group"><button class="nav-toggle" type="button" aria-expanded="false" aria-haspopup="true">Články a průvodce <svg class="ico chev" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button><div class="nav-sub"><a href="clanky.html">Články</a><a href="pruvodce.html">Průvodce</a></div></div><a href="jak-funguje.html" aria-current="page">Jak funguje Radar</a><a href="o-radaru.html">O Radaru</a></nav>
-      <button class="icon-button search-trigger" id="open-search" aria-label="Otevřít vyhledávání" type="button"><svg class="ico"><use href="#i-search"/></svg></button>
-      <button class="icon-button menu-trigger" id="menu-trigger" aria-label="Otevřít menu" aria-expanded="false" aria-controls="mobile-nav" type="button"><svg class="ico"><use href="#i-menu"/></svg></button>
-    </div>
-    <nav id="mobile-nav" class="mobile-nav" aria-label="Mobilní navigace" hidden><a href="proverit-emitenta.html">Prověřit emitenta</a><a href="porovnat-emise.html">Porovnat emise</a><span class="mnav-label">Databáze</span><a href="emitenti.html" class="sub">Emitenti</a><a href="emise.html" class="sub">Emise</a><span class="mnav-label">Články a průvodce</span><a href="clanky.html" class="sub">Články</a><a href="pruvodce.html" class="sub">Průvodce</a><a href="jak-funguje.html" aria-current="page">Jak funguje Radar</a><a href="o-radaru.html">O Radaru</a></nav>
-  </header>
-
-  <main class="subpage-main">
-    <section class="page-head"><div class="container">
-      <p class="crumbs"><a href="index.html">Úvod</a> <span aria-hidden="true">/</span> Jak funguje Radar</p>
-      <h1><span class="green-rule"></span>Jak funguje Dluhopisový Radar</h1>
-      <p class="page-sub">Veřejná data. Přehledně a na jednom místě.</p>
-      <p class="page-lead">Informace o emitentech a dluhopisových emisích jsou rozptýlené v obchodních rejstřících, účetních závěrkách, emisních podmínkách a dalších veřejných evidencích.</p>
-      <p class="page-lead"><strong>Dluhopisový Radar tyto informace vyhledává, propojuje a zpracovává do jednotného informačního výstupu.</strong> Ušetříme vám čas strávený dohledáváním dokumentů a sestavováním informací z různých zdrojů.</p>
-      <nav class="jump" aria-label="Na této stránce"><a href="#postup">Čtyři kroky</a><a href="#metodika">Metodika</a><a href="#ukazka">Ukázková prověrka</a></nav>
-    </div></section>
-
-    <section class="page-body"><div class="container">
-      <div class="section-title-line" id="postup"><h2><span class="green-rule"></span>Čtyři kroky k výsledku</h2></div>
-      <div class="hiw-steps"><div class="process-list"><div class="process-item"><span class="step-num">1</span><div class="step-icon"><svg class="ico" viewBox="0 0 24 24"><path d="M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2"/><rect x="9" y="3" width="6" height="4" rx="2"/><path d="M9 12h.01M13 12h2M9 16h.01M13 16h2"/></svg></div><h3>Zadání požadavku</h3><p>Vyberete prověření konkrétního emitenta nebo srovnání dvou či více emisí. Uvedete společnosti, emise a případné oblasti zájmu.</p></div><div class="process-item"><span class="step-num">2</span><div class="step-icon"><svg class="ico" viewBox="0 0 24 24"><circle cx="10" cy="10" r="7"/><path d="m21 21-6-6M7.5 12.5V11M10 12.5V7.5M12.5 12.5v-3"/></svg></div><h3>Dohledání informací</h3><p>Shromáždíme dostupné údaje z veřejných rejstříků, účetních dokumentů a emisních podkladů.</p></div><div class="process-item"><span class="step-num">3</span><div class="step-icon"><svg class="ico" viewBox="0 0 24 24"><path d="m12 2 10 5.4-10 5.5L2 7.4 12 2zm-10 10 10 5.5L22 12M2 17l10 5 10-5"/></svg></div><h3>Zpracování dat</h3><p>Informace roztřídíme, sjednotíme jejich strukturu a doplníme odkazy na zdrojové dokumenty.</p></div><div class="process-item"><span class="step-num">4</span><div class="step-icon"><svg class="ico" viewBox="0 0 24 24"><path d="M14 3v4a1 1 0 0 0 1 1h4"/><path d="M17 21H7a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h7l5 5v11a2 2 0 0 1-2 2z"/><path d="m9 15 2 2 4-4"/></svg></div><h3>Předání výstupu</h3><p>Získáte přehledný dokument s dohledanými informacemi, jejich zdroji a označením údajů, které nebylo možné doložit.</p></div></div></div>
-    </div></section>
-
-    <section class="method-sec" id="metodika"><div class="container">
-      <div class="section-title-line"><h2><span class="green-rule"></span>Metodika zpracování</h2></div>
-      <p class="page-sub">Jak pracujeme s veřejnými informacemi</p>
-      <p class="section-lead">Naše metodika stanovuje postup, podle kterého dohledáváme, zpracováváme a prezentujeme informace o emitentech a dluhopisových emisích.</p>
-      <ol class="method-list"><li><span class="method-n">1</span><div><h3>Zdroje informací</h3><p>Při zpracování využíváme zejména:</p><ul class="src-list"><li><strong>Obchodní rejstřík</strong> – identifikační údaje, statutární orgány, historie a zveřejněné změny.</li><li><strong>Sbírku listin</strong> – účetní závěrky, výroční zprávy a další zveřejněné dokumenty.</li><li><strong>ARES</strong> – identifikace podnikatelských subjektů a návazné registry.</li><li><strong>Českou národní banku</strong> – veřejně dostupné evidence a informace o prospektech.</li><li><strong>Insolvenční rejstřík</strong> – veřejné záznamy o insolvenčních řízeních.</li><li><strong>Emisní dokumentaci</strong> – emisní podmínky, prospekty a případné další dostupné dokumenty.</li><li><strong>Další veřejné zdroje</strong> – pokud jsou relevantní pro konkrétní požadavek.</li></ul></div></li><li><span class="method-n">2</span><div><h3>Identifikace a dohledání</h3><p>Nejprve identifikujeme konkrétní společnost nebo emisi. Následně dohledáme související dokumenty a údaje dostupné ve veřejných zdrojích.</p></div></li><li><span class="method-n">3</span><div><h3>Extrakce a sjednocení údajů</h3><p>Získané informace převádíme do jednotné struktury. Účetní údaje, závazky, emisní parametry a další informace zařazujeme do příslušných kategorií.</p><p>U srovnání emisí používáme shodné kategorie pro všechny zahrnuté emise.</p></div></li><li><span class="method-n">4</span><div><h3>Zdroje a časová platnost</h3><p>U zveřejněných údajů uvádíme jejich původ a relevantní období nebo datum. Finanční informace z různých účetních období prezentujeme s odpovídajícím označením.</p></div></li><li><span class="method-n">5</span><div><h3>Nedostupné a neúplné informace</h3><p>Pokud údaj není veřejně dostupný nebo jej nelze z použitých podkladů doložit, ve výstupu jej označíme jako nedostupný či nedoložený.</p><p>Chybějící informace nenahrazujeme odhady. Pokud se zdroje rozcházejí, rozdíl uvedeme s odkazem na příslušné dokumenty.</p></div></li></ol>
-      <div class="method-limits">
-        <h3>Co naše metodika nezahrnuje</h3>
-        <p><strong>Dluhopisový Radar neprovádí hodnocení bonity, nepřiděluje ratingy a nevytváří pořadí emitentů nebo emisí podle jejich kvality či bezpečnosti.</strong></p>
-        <p>Neověřujeme nezávisle pravdivost všech skutečností uvedených ve zdrojových dokumentech a nezaručujeme jejich úplnost ani aktuálnost.</p>
-        <p>Naším výstupem je strukturovaný soubor doložitelných informací, nikoliv investiční doporučení.</p>
-      </div>
-    </div></section>
-
-    <section class="page-body" id="ukazka"><div class="container">
-      <div class="section-title-line"><h2><span class="green-rule"></span>Ukázková prověrka emitenta</h2></div>
-      <p class="page-sub">Podívejte se, jak vypadá výsledný dokument</p>
-      <p class="section-lead">Výsledkem prověření je přehledně strukturovaný dokument, který soustřeďuje dostupné informace o konkrétním emitentovi na jednom místě. Jednotlivé části jsou uspořádány podle témat a obsahují odkazy na použité zdroje.</p>
-      <h3 class="sub-h">Co v ukázkové prověrce uvidíte?</h3>
-      <div class="know-grid"><div class="know-card"><span class="know-n">01</span><h3>Identifikační údaje emitenta</h3><p>Název společnosti, IČO, sídlo, vznik a statutární orgány.</p></div><div class="know-card"><span class="know-n">02</span><h3>Historie a vlastnická struktura</h3><p>Dostupné údaje o vlastnících, souvisejících společnostech a změnách v obchodním rejstříku.</p></div><div class="know-card"><span class="know-n">03</span><h3>Finanční údaje</h3><p>Přehled vybraných účetních položek a jejich vývoj v dostupných účetních obdobích.</p></div><div class="know-card"><span class="know-n">04</span><h3>Závazky a dluhopisové emise</h3><p>Veřejně dohledatelné informace o financování společnosti a souvisejících emisích.</p></div><div class="know-card"><span class="know-n">05</span><h3>Ručení a zajištění</h3><p>Informace obsažené v dostupné emisní dokumentaci a souvisejících podkladech.</p></div><div class="know-card"><span class="know-n">06</span><h3>Zdroje a dostupnost dokumentů</h3><p>Odkazy na použité dokumenty, jejich data a přehled informací, které nebylo možné doložit.</p></div></div>
-      <div class="sample-cta">
-        <div><h3>Prohlédněte si ukázkový výstup</h3><p>Ukázkový dokument slouží k představení struktury a rozsahu informačního výstupu. Nepředstavuje hodnocení investiční kvality ani doporučení.</p></div>
-        <a class="btn btn-primary" href="ukazkova-proverka.html">Zobrazit ukázkovou prověrku <svg class="ico"><use href="#i-arrow"/></svg></a>
-      </div>
-    </div></section>
-
-    <section class="final-cta"><div class="container">
-      <h2>Potřebujete prověřit konkrétní emisi?</h2>
-      <div class="cta-row"><a class="btn btn-primary" href="proverit-emitenta.html">Prověřit emitenta <svg class="ico"><use href="#i-arrow"/></svg></a><a class="btn btn-ghost-light" href="porovnat-emise.html">Srovnat emise</a></div>
-    </div></section>
-  </main>
-
-  <footer class="site-footer ft2"><div class="container">
-  <div class="ft2-top">
-    <div class="ft2-brand">
-      <a class="logo footer-logo" href="index.html"><img class="logo-img" src="assets/logo-light.png" width="139" height="44" alt="Dluhopisový Radar"></a>
-      <p>Veřejná data o emitentech a dluhopisových emisích na jednom místě.</p>
-    </div>
-    <nav class="ft2-col" aria-label="Služby"><h3>Služby</h3><a href="proverit-emitenta.html">Prověřit emitenta</a><a href="porovnat-emise.html">Porovnat emise</a><a href="ukazkova-proverka.html">Ukázková prověrka</a></nav>
-    <nav class="ft2-col" aria-label="Databáze"><h3>Databáze</h3><a href="emitenti.html">Emitenti</a><a href="emise.html">Emise</a></nav>
-    <nav class="ft2-col" aria-label="Obsah"><h3>Obsah</h3><a href="clanky.html">Články</a><a href="pruvodce.html">Průvodce</a><a href="jak-funguje.html" aria-current="page">Jak funguje Radar</a><a href="o-radaru.html">O Radaru</a></nav>
-    <nav class="ft2-col" aria-label="Kontakt"><h3>Kontakt</h3><a href="o-radaru.html#kontakt">Napište nám</a><a href="o-radaru.html#kontakt">Inzerce a spolupráce</a></nav>
-  </div>
-  <div class="footer-legal">
-      <p><strong>Dluhopisový Radar</strong> je nezávislý informační a analytický portál zaměřený na korporátní dluhopisy a jejich emitenty. Při zpracování informací vycházíme z veřejně dostupných zdrojů. U zveřejňovaných údajů uvádíme jejich zdroje. Dluhopisy neprodáváme ani nezprostředkováváme jejich nákup. Neposkytujeme investiční poradenství, individuální doporučení ani závazné hodnocení bonity emitentů. Veškeré analýzy, srovnání a publikované informace slouží výhradně k informačním a vzdělávacím účelům.</p>
-    </div>
-  <div class="ft2-bottom">
-    <p>© 2026 Dluhopisový Radar · Provozovatel 9394 Group s.r.o., Československé armády 1328/9, 742 21 Kopřivnice · IČO 299 89 019</p>
-    <nav aria-label="Právní informace"><a href="zasady-ochrany-osobnich-udaju.html">Ochrana osobních údajů</a><a href="zasady-cookies.html">Zásady cookies</a><button type="button" data-open="terms">Podmínky používání</button><button type="button" data-open-cookies>Nastavení cookies</button><a href="o-radaru.html#kontakt">Kontakt</a></nav>
-  </div>
-</div></footer>
-
-  <div class="dialog-backdrop" id="dialog-backdrop" hidden>
-    <div class="dialog" role="dialog" aria-modal="true" aria-labelledby="dialog-title" tabindex="-1">
-      <div class="dialog-header"><div><span id="dialog-kicker" class="dialog-kicker">DLUHOPISOVÝ RADAR</span><h2 id="dialog-title">Informace</h2></div><button class="icon-button dialog-close" type="button" id="close-dialog" aria-label="Zavřít okno"><svg class="ico"><use href="#i-close"/></svg></button></div>
-      <div class="dialog-content" id="dialog-content"></div>
-    </div>
-  </div>
-  <noscript><p class="noscript-notice">Pro vyhledávání a formuláře je nutný zapnutý JavaScript. Ostatní obsah zůstává přístupný.</p></noscript>
+<body>
+  <p>Stránka se přesunula: <a href="o-radaru.html#metodika">O Dluhopisovém Radaru – metodika</a>.</p>
 </body>
 </html>
