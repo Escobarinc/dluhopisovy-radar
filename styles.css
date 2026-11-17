@@ -509,3 +509,80 @@ footer.site-footer,.footer-inner{height:auto}
 @media(max-width:1000px){.cmp-radar{display:none}}
 @media(max-width:760px){.ebox-grid,.doc-grid{grid-template-columns:1fr}.check-list--3{grid-template-columns:1fr}.req-legend-hint{display:none}}
 @media(prefers-reduced-motion:reduce){.cmp-radar i{opacity:1}}
+
+/* PROVĚŘENÍ EMITENTA – úvodní texty nad formulářem */
+.page-sub{margin:14px 0 0;font:600 22px/1.3 var(--serif);letter-spacing:-.015em;color:var(--emerald)}
+.page-head .page-lead+.page-lead{margin-top:10px}
+.page-lead strong{color:var(--navy);font-weight:600}
+.page-head-cta{margin-top:24px;min-width:0}
+.know-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.know-card{padding:24px;background:#fff;border:var(--line);border-radius:var(--r-card);box-shadow:var(--shadow-card)}
+.know-n{display:block;margin-bottom:12px;font:600 15px/1 var(--serif);color:var(--emerald)}
+.know-card h3{margin:0 0 8px;font:600 18px/1.25 var(--serif);letter-spacing:-.01em}
+.know-card p{margin:0;font-size:15px;line-height:1.55;color:var(--muted)}
+.know-note{margin:16px 0 0;font-size:14px;font-style:italic;color:var(--muted)}
+.info-pair{margin-top:44px}
+.info-pair .about-card h2{font-size:20px}
+.info-pair .about-card p strong{color:var(--navy);font-weight:600}
+.req-title{margin:12px 0 0;font:600 38px/1.08 var(--serif);letter-spacing:-.025em;color:#fff}
+.req-title span{display:block;color:var(--lime)}
+.req-info strong{font-weight:600}
+@media(max-width:1100px){.know-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:700px){.know-grid{grid-template-columns:1fr}.page-sub{font-size:18px}.req-title{font-size:28px}.req-title span{display:inline}}
+.req-alt{margin:16px 0 0;font-size:15px;color:var(--muted);text-align:center}
+.req-alt a{color:var(--emerald);font-weight:600;text-decoration:underline;text-underline-offset:3px}
+.req--cmp .req-title:after{content:'';display:block;width:150px;height:4px;margin-top:14px;border-radius:4px;background:var(--lime)}
+
+/* GRAFIKA – ze zdrojů jeden přehled */
+.flow{position:relative;margin:6px 0 0;padding:34px 30px 36px;background:linear-gradient(180deg,#f3f8f6,#f7fafb);border:var(--line);border-radius:20px}
+.flow .ico{fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.flow-sources{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:18px;max-width:900px;margin:0 auto}
+.flow-src{position:relative;display:flex;flex-direction:column;align-items:center;gap:12px;padding:22px 10px 20px;background:#fff;border:var(--line);border-radius:14px;box-shadow:var(--shadow-card);text-align:center;font:600 15px/1.25 var(--serif);color:var(--navy)}
+.flow-src .ico{width:44px;height:44px;color:var(--navy);stroke-width:1.4}
+.flow-dot{position:absolute;left:50%;bottom:-5px;width:9px;height:9px;margin-left:-4.5px;border-radius:50%;background:var(--emerald)}
+.flow-lines{display:block;width:100%;max-width:900px;height:110px;margin:0 auto}
+.flow-lines path{fill:none;stroke:var(--teal);stroke-width:1.6;stroke-dasharray:5 6;vector-effect:non-scaling-stroke;animation:flow-dash 1.4s linear infinite}
+@keyframes flow-dash{to{stroke-dashoffset:-22}}
+.flow-mid{display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);align-items:center;gap:36px;max-width:900px;margin:-4px auto 0}
+.flow-note{display:flex;align-items:center;gap:14px;padding:18px 20px;background:#fff;border:1px solid #cfe8dd;border-radius:14px;font-size:15px;line-height:1.4;color:var(--navy)}
+.flow-note .ico{flex:none;width:38px;height:38px;color:var(--emerald)}
+.flow-funnel{width:170px;height:170px;border-radius:50%;display:grid;place-items:center;background:#fff;box-shadow:0 0 0 10px rgba(31,212,155,.12),0 14px 34px rgba(3,26,48,.12)}
+.flow-funnel span{width:132px;height:132px;border-radius:50%;display:grid;place-items:center;background:radial-gradient(circle,#e4f7ef 0%,#d3f1e5 100%)}
+.flow-funnel .ico{width:62px;height:62px;color:var(--emerald);stroke-width:2.4}
+.flow-arrow{width:2px;height:46px;margin:6px auto 4px;background:var(--emerald);position:relative}
+.flow-arrow:after{content:'';position:absolute;left:50%;bottom:-1px;width:12px;height:12px;border-right:2px solid var(--emerald);border-bottom:2px solid var(--emerald);transform:translateX(-50%) rotate(45deg)}
+.flow-out{position:relative;max-width:560px;margin:10px auto 0;padding:26px 26px 18px;background:#fff;border:var(--line);border-radius:16px;box-shadow:0 14px 34px rgba(3,26,48,.1)}
+.flow-tag{position:absolute;top:-11px;right:18px;padding:4px 10px;border-radius:999px;background:var(--navy);color:#fff;font:600 11px/1.4 var(--sans)}
+.flow-out-head{display:flex;align-items:center;gap:22px;padding-bottom:18px;border-bottom:var(--line)}
+.flow-bld{flex:none;width:90px;height:90px;border-radius:50%;display:grid;place-items:center;background:#e4f7ef}
+.flow-bld .ico{width:46px;height:46px;color:var(--navy);stroke-width:1.4}
+.flow-out h3{margin:0 0 8px;font:600 21px/1.2 var(--serif);color:var(--navy)}
+.flow-out h3 i{font-style:normal;color:var(--emerald);margin:0 4px}
+.flow-out p{margin:2px 0 0;font-size:15px;color:var(--muted)}
+.flow-out p b{font-weight:600;color:var(--emerald)}
+.flow-parts{list-style:none;margin:0;padding:16px 0 0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr))}
+.flow-parts li{display:flex;flex-direction:column;align-items:center;gap:6px;font:600 13px/1.25 var(--serif);color:var(--navy);text-align:center}
+.flow-parts li+li{border-left:var(--line)}
+.flow-parts .ico{width:26px;height:26px;color:var(--navy)}
+.flow-ok{width:20px;height:20px;fill:none;stroke:var(--emerald);stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round}
+.flow+.info-pair{margin-top:40px}
+@media(max-width:900px){
+  .flow{padding:24px 16px 28px}
+  .flow-sources{grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+  .flow-dot,.flow-lines{display:none}
+  .flow-mid{grid-template-columns:1fr;gap:14px;margin-top:26px;justify-items:center}
+  .flow-note{width:100%}
+  .flow-funnel{order:-1;width:120px;height:120px}
+  .flow-funnel span{width:92px;height:92px}
+  .flow-funnel .ico{width:44px;height:44px}
+}
+@media(max-width:560px){
+  .flow-sources{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .flow-src{font-size:14px;padding:16px 8px}
+  .flow-src .ico{width:36px;height:36px}
+  .flow-out-head{flex-direction:column;align-items:flex-start;gap:14px}
+  .flow-bld{width:64px;height:64px}.flow-bld .ico{width:34px;height:34px}
+  .flow-parts{grid-template-columns:repeat(2,minmax(0,1fr));gap:14px 0}
+  .flow-parts li:nth-child(3){border-left:0}
+}
+@media(prefers-reduced-motion:reduce){.flow-lines path{animation:none}}
