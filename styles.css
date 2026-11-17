@@ -808,3 +808,8 @@ footer.site-footer,.footer-inner{height:auto}
 @media(max-width:700px){.op-kv div{grid-template-columns:1fr}.operator{padding:20px}}
 .url-field label:not(.sr-only) ~ .ico{top:39px;bottom:auto}
 .about-card .text-link{white-space:normal;flex-wrap:wrap}
+
+/* CELKOVÉ ZMENŠENÍ – písmo i prvky o 20 % na počítači, o 15 % na tabletu, o 8 % na mobilu */
+@media(min-width:1181px){body{zoom:.8}}
+@media(min-width:701px) and (max-width:1180px){body{zoom:.85}}
+@media(max-width:700px){body{zoom:.92}}
