@@ -1155,3 +1155,16 @@ section#adbanner{height:auto;padding:8px 0 20px}
 .g-item{break-inside:avoid}
 @media(max-width:1000px){.g-list--glossary{columns:2}}
 @media(max-width:700px){.g-list,.g-list--glossary{columns:1}}
+/* Průvodce – panel vybrané oblasti pod dlaždicemi */
+.g-arrow{width:2px;height:28px;margin:14px auto 10px;background:var(--emerald);position:relative}
+.g-arrow:after{content:'';position:absolute;left:50%;bottom:-1px;width:9px;height:9px;border-right:2px solid var(--emerald);border-bottom:2px solid var(--emerald);transform:translateX(-50%) rotate(45deg)}
+.g-panel{scroll-margin-top:90px;padding:24px 26px 18px;border:var(--line);border-radius:18px;background:#fbfdfc;box-shadow:var(--shadow-card)}
+.g-head--panel{margin:0 0 16px}
+.g-head--panel h2{margin:0;font:600 26px/1.15 var(--serif);color:var(--navy)}
+.g-head--panel p{margin:6px 0 0;font-size:14.5px;color:#3b5463;max-width:70ch}
+.g-panel .g-list{box-shadow:none}
+.g-src{margin-top:14px;font-size:13px}
+.g-src summary{cursor:pointer;font-weight:600;color:#5d7684}
+.g-src .sources{margin:8px 0 0}
+.g-disc{margin-top:18px}
+@media(max-width:700px){.g-panel{padding:16px 12px}.g-head--panel h2{font-size:21px}}
