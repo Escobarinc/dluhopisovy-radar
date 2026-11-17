@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="cs">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#f8fbfb">
+  <link rel="icon" type="image/png" href="assets/logo-emblem.png">
+  <meta name="description" content="Zajištění patří k důležitým vlastnostem dluhopisové emise. Neříká však samo o sobě, zda emitent dokáže včas platit úroky a splatit jistinu. Jeho význam se nejlé">
+  <title>Zajištění firemních dluhopisů: jaké existují možnosti a co znamenají pro investora? – Dluhopisový Radar</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css?v=25">
+  <script defer src="script.js?v=25"></script>
+</head>
+<body class="subpage">
+  <svg class="icon-library" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4 12h16m-7-7 7 7-7 7"/></symbol>
+    <symbol id="i-search" viewBox="0 0 24 24"><circle cx="10.7" cy="10.7" r="7.3"/><path d="m16.4 16.4 5 5"/></symbol>
+    <symbol id="i-play" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.3"/><path d="m10 8 6 4-6 4z"/></symbol>
+    <symbol id="i-laptop" viewBox="0 0 24 24"><path d="M4 16V5c0-1 .8-2 2-2h12c1.1 0 2 .9 2 2v7M2 19h13M1 21h15M16 14l7 6-3 1-1 2z"/></symbol>
+    <symbol id="i-layers" viewBox="0 0 24 24"><path d="m12 2 10 5.4-10 5.5L2 7.4 12 2zm-10 10 10 5.5L22 12M2 17l10 5 10-5"/></symbol>
+    <symbol id="i-bars" viewBox="0 0 24 24"><path d="M4 20v-5m5 5v-9m5 9V7m5 13V3"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="m3 12 6 6L21 5"/></symbol>
+    <symbol id="i-building" viewBox="0 0 24 24"><path d="M3 22V9h7v13M10 22V3h11v19M1 22h22M6 12v2m0 3v2m8-12v2m4-2v2m-4 3v2m4-2v2m-4 3v2m4-2v2"/></symbol>
+    <symbol id="i-calendar" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M7 2v6M17 2v6M3 10h18M7 14h2m3 0h2"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l4 3"/></symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path d="M5 5l14 14M19 5 5 19"/></symbol>
+  </svg>
+
+  <header class="site-header" id="top">
+    <div class="container header-inner">
+      <a class="logo" href="index.html" aria-label="Dluhopisový Radar – úvod">
+        <img class="logo-img" src="assets/logo.png" width="165" height="52" alt="Dluhopisový Radar">
+      </a>
+      <p class="header-tagline">NEZÁVISLÝ PORTÁL <br>O EMITENTECH A EMISÍCH</p>
+      <nav class="desktop-nav" aria-label="Hlavní navigace"><a href="proverit-emitenta.html">Prověřit emitenta</a><a href="porovnat-emise.html">Porovnat emise</a><div class="nav-group"><button class="nav-toggle" type="button" aria-expanded="false" aria-haspopup="true">Databáze <svg class="ico chev" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button><div class="nav-sub"><a href="emitenti.html">Emitenti</a><a href="emise.html">Emise</a></div></div><div class="nav-group"><button class="nav-toggle is-current" type="button" aria-expanded="false" aria-haspopup="true">Články a analýzy <svg class="ico chev" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button><div class="nav-sub"><a href="clanky.html#analyzy">Analýzy</a><a href="clanky.html#komentare">Komentáře</a><a href="clanky.html#vzdelavani">Vzdělávání</a></div></div><a href="jak-funguje.html">Jak funguje Radar</a><a href="o-radaru.html">O Radaru</a></nav>
+      <button class="icon-button search-trigger" id="open-search" aria-label="Otevřít vyhledávání" type="button"><svg class="ico"><use href="#i-search"/></svg></button>
+      <button class="icon-button menu-trigger" id="menu-trigger" aria-label="Otevřít menu" aria-expanded="false" aria-controls="mobile-nav" type="button"><svg class="ico"><use href="#i-menu"/></svg></button>
+    </div>
+    <nav id="mobile-nav" class="mobile-nav" aria-label="Mobilní navigace" hidden><a href="proverit-emitenta.html">Prověřit emitenta</a><a href="porovnat-emise.html">Porovnat emise</a><span class="mnav-label">Databáze</span><a href="emitenti.html" class="sub">Emitenti</a><a href="emise.html" class="sub">Emise</a><span class="mnav-label">Články a analýzy</span><a href="clanky.html#analyzy" class="sub">Analýzy</a><a href="clanky.html#komentare" class="sub">Komentáře</a><a href="clanky.html#vzdelavani" class="sub">Vzdělávání</a><a href="jak-funguje.html">Jak funguje Radar</a><a href="o-radaru.html">O Radaru</a></nav>
+  </header>
+
+  <main class="subpage-main">
+    <section class="page-head page-head--article"><div class="container">
+      <p class="crumbs"><a href="index.html">Úvod</a> <span aria-hidden="true">/</span> <a href="clanky.html">Články</a> <span aria-hidden="true">/</span> Zajištění firemních dluhopisů</p>
+      <p class="art-kicker"><span class="art-chip">Analýza</span>Vzdělávací článek 03 · Finanční gramotnost</p>
+      <h1>Zajištění firemních dluhopisů: jaké existují možnosti a co znamenají pro investora?</h1>
+      <p class="page-lead art-lead">Zajištění patří k důležitým vlastnostem dluhopisové emise. Neříká však samo o sobě, zda emitent dokáže včas platit úroky a splatit jistinu. Jeho význam se nejlépe ukáže tehdy, když běžné splácení přestane fungovat.</p>
+      <p class="art-meta art-meta--head">Redakce Dluhopisového Radaru · listopad 2026 · 7 min čtení</p>
+    </div></section>
+    <section class="page-body"><div class="container art-layout">
+      <article class="prose">
+<h2 id="proc-se-dluhopisy-zajistuji">Proč se dluhopisy zajišťují</h2>
+<p>Při vydání dluhopisů vzniká mezi společností a investory věřitelský vztah. Emitent získá kapitál a zaváže se k plnění podle emisních podmínek. Obvykle má vyplácet úroky a v určeném termínu vrátit dlužnou částku. Dokud své závazky plní, investor zpravidla nepotřebuje žádný ze zajišťovacích mechanismů využít.</p>
+<p>Zajištění vytváří <strong>další právní možnost uspokojení pohledávky</strong> pro případ, že emitent závazky neplní. Může se vztahovat k určitému majetku, k právu, které bylo převedeno za účelem zajištění, nebo k závazku další osoby. Nejde tedy o jediný univerzální postup; pod stejným označením se mohou skrývat podstatně odlišné konstrukce.</p>
+<h2 id="schopnost-splacet-a-ochrana-pri-nesplaceni">Schopnost splácet a ochrana při nesplácení</h2>
+<p>U každé emise je užitečné oddělit dvě otázky. <strong>První:</strong> z jakých peněžních toků má emitent závazky běžně splácet? Odpověď souvisí s jeho podnikáním, zadlužením a finanční stabilitou. <strong>Druhá:</strong> co se stane, pokud splácení selže? Právě zde vstupuje do hry zajištění, jeho rozsah a způsob uplatnění.</p>
+<p>Zajištěná emise tak může být lépe chráněna při potížích dlužníka, přestože samotný dlužník není finančně silný. A naopak nezajištěný dluhopis mimořádně bonitní společnosti může vykazovat nižší pravděpodobnost nesplacení než zajištěná emise slabšího podniku. Jedno hledisko nenahrazuje druhé.</p>
+<aside class="callout"><p class="callout-label">Základní princip</p><p>Zajištění může posílit postavení věřitele, nikoli odstranit úvěrové riziko. Rozhoduje nejen jeho existence, ale také právní účinnost, dostupná hodnota a možnost vymáhání.</p></aside>
+<h2 id="majetkove-formy-zajisteni">Majetkové formy zajištění</h2>
+<p>Jednou z cest je vyhradit pro uspokojení pohledávek určitou majetkovou hodnotu. Typickým příkladem je zástavní právo, které však zdaleka nemusí vzniknout pouze k nemovitosti.</p>
+<h3>Zástavní právo k nemovitosti</h3>
+<p>Zástavou může být například pozemek, bytový dům nebo komerční objekt. Pokud jsou splněny právní podmínky výkonu zástavního práva, může být pohledávka uspokojena z hodnoty tohoto majetku. Při posuzování není podstatná jen částka uvedená v odhadu. Důležité je také pořadí zástavních práv, případná další zatížení a to, kolik by nemovitost skutečně vynesla při prodeji.</p>
+<p>Pro investora je rozdíl mezi majetkem, který má určitou účetní či odhadní hodnotu, a majetkem, jehož zpeněžení může reálně přinést peníze. Konečnou částku ovlivňují podmínky trhu, náklady i čas.</p>
+<h3>Zástavní právo k dalšímu majetku a právům</h3>
+<p>Zástavou mohou být za splnění zákonných podmínek také obchodní podíly, akcie, pohledávky, peněžní prostředky na účtech nebo movité věci, například technologie či výrobní zařízení. U každého druhu majetku se ale jinak posuzuje hodnota a její stabilita. Prodej fungujícího stroje nebo obchodního podílu může být složitější než prodej snadno obchodovatelného cenného papíru.</p>
+<p>Pokud se zastavují pohledávky, záleží také na tom, zda dlužníci těchto pohledávek skutečně zaplatí. U obchodních podílů hraje roli stav společnosti, jejíž podíl je zastaven. Samotný název zastaveného aktiva proto neříká vše.</p>
+<h3>Zajišťovací převod práva</h3>
+<p>Další možností je zajišťovací převod práva. Dlužník nebo jiná osoba za sjednaných podmínek dočasně převede určité právo na věřitele jako zajištění dluhu. Pokud je závazek splněn, právní vztah se vypořádá podle zákona a smlouvy. Při nesplnění může nastoupit sjednaný a zákonný způsob uspokojení.</p>
+<p>Tento mechanismus se liší od zástavního práva, protože pracuje s převodem samotného práva. Pro jeho účinnost jsou rozhodující konkrétní ujednání a povaha převáděného majetku.</p>
+<aside class="callout"><p class="callout-label">Podstatné rozlišení</p><p>Majetkové zajištění neznamená, že investor automaticky vlastní zastavenou nemovitost nebo jiný majetek. Má práva vyplývající z příslušného zajišťovacího vztahu, jejichž rozsah určují právní předpisy a dokumentace.</p></aside>
+<h2 id="ruceni-a-financni-zaruky-odpovednost-dalsich-osob">Ručení a finanční záruky: odpovědnost dalších osob</h2>
+<p>Zajištění nemusí být navázáno na konkrétní věc. Někdy spočívá v tom, že za splnění dluhu převezme odpovědnost další osoba. Z pohledu věřitele jde o odlišný princip: místo nároku na hodnotu určitého majetku vzniká za stanovených podmínek nárok na plnění vůči někomu dalšímu.</p>
+<h3>Ručení fyzické osoby</h3>
+<p>Za závazky emitenta se může písemným ručitelským prohlášením zaručit například vlastník nebo jiná osoba spojená s podnikem. Pokud emitent neplní, může věřitel za podmínek občanského zákoníku požadovat plnění po ručiteli. Takové ručení rozšiřuje okruh osob, vůči nimž lze pohledávku uplatňovat.</p>
+<p>Jeho ekonomická síla však není dána samotným podpisem. Záleží na majetku ručitele, jeho vlastních závazcích, rozsahu ručení a schopnosti dluh skutečně uhradit. Ručení osoby bez odpovídajících prostředků může mít jen omezenou praktickou hodnotu.</p>
+<h3>Ručení jiné společnosti</h3>
+<p>Podobně může ručit právnická osoba, například mateřská společnost či jiná firma ze skupiny. Pro věřitele může být významné, že za dluhem stojí subjekt s širším podnikáním a majetkovou základnou. Vždy však záleží na jeho vlastní bonitě a na tom, zda má odpovídající nezávislé zdroje.</p>
+<p>Samotná příslušnost ke skupině podniků ještě není ručením. Rozhoduje právně závazné ujednání, nikoli pouze obecné ujištění, že skupina projekt podporuje. A pokud mají emitent a ručitel stejné ekonomické problémy, může být dodatečná ochrana slabší, než na první pohled vypadá.</p>
+<h3>Finanční a bankovní záruka</h3>
+<p>U finanční záruky se výstavce zavazuje plnit podle podmínek uvedených v záruční listině. Pokud je výstavcem banka, jde o bankovní záruku. Oproti běžnému ručení má finanční záruka odlišnou právní konstrukci; důležité jsou zejména podmínky, za nichž ji lze čerpat, její limit a doba platnosti.</p>
+<p>Bankovní záruka kvalitní banky může představovat silný nástroj ochrany. Ani zde ale nestačí samotný název: význam má rozsah krytí, podmínky uplatnění i úvěrová kvalita výstavce.</p>
+<h3>Zajišťovací směnka a směnečné rukojemství</h3>
+<p>Jako doplňkový prostředek se v praxi může objevit také směnka a směnečné rukojemství, označované jako aval. Tyto nástroje vytvářejí specifické směnečné závazky, ale samy o sobě nevyčleňují majetek, z něhož budou věřitelé určitě uspokojeni. Jejich skutečná hodnota je proto opět spojena s platební schopností zavázaných osob.</p>
+<h2 id="co-urcuje-skutecnou-kvalitu-zajisteni">Co určuje skutečnou kvalitu zajištění</h2>
+<p>Dvě emise mohou být obě popsány jako „zajištěné“, a přesto investorům poskytovat výrazně odlišnou ochranu. Důvodem je několik navzájem propojených okolností, které nelze vyčíst pouze z marketingového označení.</p>
+<h3>Právní existence a rozsah</h3>
+<p>Nejprve musí být zřejmé, zda zajištění skutečně vzniklo a je účinné. Například u zástavy může být důležitý zápis do příslušného rejstříku. Dokumentace má současně vymezovat, <strong>které pohledávky kryje</strong> – zda jen jistinu, nebo rovněž úroky a případné další nároky – a do jaké výše.</p>
+<h3>Hodnota majetku a pořadí věřitelů</h3>
+<p>U majetkového zajištění je zásadní nejen hodnota aktiva, ale i možné přednostní nároky jiných věřitelů. Zpeněžení navíc bývá spojeno s náklady. Proto nemusí ani relativně vysoká hodnota majetku znamenat úplné uhrazení všech dluhopisových pohledávek.</p>
+<div class="table-wrap"><table>
+<thead><tr><th>Ilustrační příklad · Prodej zastaveného majetku</th><th></th></tr></thead>
+<tbody>
+<tr><td>Dluhopisové pohledávky</td><td>50 mil. Kč</td></tr>
+<tr><td>Původní odhad zastaveného majetku</td><td>80 mil. Kč</td></tr>
+<tr><td>Skutečný výtěžek zpeněžení</td><td>55 mil. Kč</td></tr>
+<tr><td>Pohledávka s přednostním pořadím</td><td>20 mil. Kč</td></tr>
+<tr><td>Zjednodušené náklady zpeněžení</td><td>5 mil. Kč</td></tr>
+<tr><td>Zbývá pro dluhopisové věřitele</td><td>30 mil. Kč</td></tr>
+</tbody></table></div>
+<p class="table-note">V tomto zjednodušeném modelu by ze zajištění připadlo dluhopisovým věřitelům 30 milionů Kč, tedy 60 % jejich pohledávek. Zbytek by mohli uplatňovat podle příslušných pravidel, avšak bez jistoty dalšího uspokojení. Příklad neřeší skutečnou strukturu insolvenčních nákladů ani rozdělování výtěžku v konkrétním řízení.</p>
+<h3>Vymahatelnost, čas a změny v čase</h3>
+<p>I právně platné zajištění může být obtížné uplatnit. Prodej majetku může trvat, ručitel se může bránit námitkami a hodnota aktiv se může během života emise měnit. Proto má význam sledovat také pravidla oceňování, kontroly a případného doplňování zajištění. Důležitá je především použitelnost ochrany ve chvíli, kdy ji věřitelé potřebují.</p>
+<h2 id="jak-se-zajisteni-spravuje-a-co-z-nej-vyplyva">Jak se zajištění spravuje a co z něj vyplývá</h2>
+<h3>Agent pro zajištění</h3>
+<p>U dluhopisů bývá velký počet věřitelů, a proto může být praktické, aby práva ze zajištění vykonávala jedna určená osoba. Český zákon o dluhopisech pro tento účel upravuje <strong>agenta pro zajištění</strong>. Ten za zákonných a smluvních podmínek jedná vlastním jménem ve prospěch oprávněných osob, a to i při výkonu zajištění či v insolvenčním řízení.</p>
+<p>Agent nepředstavuje další majetek ani ručitele. Zajištění spravuje, uplatňuje příslušná práva a informuje oprávněné osoby. Záleží na tom, kdo funkci vykonává a jak jsou nastavena pravidla nakládání se získaným plněním.</p>
+<h3>Kombinace více forem zajištění</h3>
+<p>U jedné emise mohou souběžně existovat různé prostředky, například zástava majetku a ručení jiné společnosti. Kombinace může rozšířit možnosti uspokojení, záleží však na tom, zda se zdroje krýt nepřekrývají a jsou skutečně dostupné. Více dokumentů nemusí znamenat více nezávislých zdrojů peněz.</p>
+<h3>Jak zajištění číst s porozuměním</h3>
+<p>K porozumění konkrétní emisi pomáhá několik otázek: <strong>Co přesně pohledávku zajišťuje? Kdo zajištění poskytuje? Co a v jakém rozsahu pokrývá? Kdo jej může uplatnit? Jaká částka by mohla zbýt po zohlednění dalších nároků a nákladů?</strong> Odpovědi mají vycházet z emisních podmínek a souvisejících dokumentů.</p>
+<h3>Závěr: význam má obsah, nikoli samotný název</h3>
+<p>Zajištění může významně posílit ochranu věřitelů, když se emitent dostane do problémů. Pod označením „zajištěný dluhopis“ se ovšem mohou skrývat velmi rozdílné právní i ekonomické situace. Zástava majetku, ručení osoby a finanční záruka nefungují stejně a nelze je jednoduše hodnotit jedním měřítkem.</p>
+<p><strong>Smyslem zajištění je nabídnout další cestu k uspokojení pohledávky; jeho skutečná síla se pozná až podle konkrétních práv, hodnot a možností jejich uplatnění.</strong> Proto zůstávají dvě věci stejně důležité: schopnost emitenta běžně splácet a kvalita ochrany pro případ, že se tak nestane.</p>
+<h2 id="odborne-zdroje-a-pravni-ramec">Odborné zdroje a právní rámec</h2>
+<ol class="sources">
+<li><a href="https://www.cnb.cz/cs/spotrebitel/ochrana_spotrebitele/desatero_investor_podnik_dluhopisy.html" rel="noopener" target="_blank">Česká národní banka – Desatero pro drobné investory do korporátních dluhopisů</a></li>
+<li><a href="https://www.zakonyprolidi.cz/cs/2004-190#p20" rel="noopener" target="_blank">Zákon č. 190/2004 Sb., o dluhopisech – zejména § 20 a § 20a (agent pro zajištění)</a></li>
+<li><a href="https://e-sbirka.gov.cz/sb/2012/89" rel="noopener" target="_blank">Zákon č. 89/2012 Sb., občanský zákoník – zajištění dluhu a zástavní právo</a></li>
+<li><a href="https://www.zakonyprolidi.cz/cs/2006-182#p298" rel="noopener" target="_blank">Zákon č. 182/2006 Sb., insolvenční zákon – zejména § 298</a></li>
+<li><a href="https://www.businessinfo.cz/navody/zajisteni-a-utvrzeni-dluhu-ppbi/" rel="noopener" target="_blank">BusinessInfo.cz – Zajištění a utvrzení dluhu</a></li>
+<li><a href="https://www.businessinfo.cz/navody/smenky-ppbi/2/" rel="noopener" target="_blank">BusinessInfo.cz – Směnky a směnečné rukojemství</a></li>
+</ol>
+
+        <p class="art-disclaimer">Článek má informační a vzdělávací charakter. Není investičním doporučením, nabídkou ani výzvou k nákupu či prodeji dluhopisů.</p>
+      </article>
+      <aside class="art-aside">
+        <nav class="aside-card art-toc" aria-label="Obsah článku"><h2>Obsah článku</h2><ol><li><a href="#proc-se-dluhopisy-zajistuji">Proč se dluhopisy zajišťují</a></li><li><a href="#schopnost-splacet-a-ochrana-pri-nesplaceni">Schopnost splácet a ochrana při nesplácení</a></li><li><a href="#majetkove-formy-zajisteni">Majetkové formy zajištění</a></li><li><a href="#ruceni-a-financni-zaruky-odpovednost-dalsich-osob">Ručení a finanční záruky: odpovědnost dalších osob</a></li><li><a href="#co-urcuje-skutecnou-kvalitu-zajisteni">Co určuje skutečnou kvalitu zajištění</a></li><li><a href="#jak-se-zajisteni-spravuje-a-co-z-nej-vyplyva">Jak se zajištění spravuje a co z něj vyplývá</a></li><li><a href="#odborne-zdroje-a-pravni-ramec">Odborné zdroje a právní rámec</a></li></ol></nav>
+        <div class="aside-card art-cta"><h2>Zvažujete konkrétní emisi?</h2><p>Zjistěte, kdo za ní stojí a jak hospodaří.</p><a class="btn btn-primary" href="proverit-emitenta.html">Prověřit emitenta</a><a class="text-link" href="porovnat-emise.html">Porovnat více emisí <svg class="ico"><use href="#i-arrow"/></svg></a></div>
+      </aside>
+    </div>
+    <div class="container art-more"><div class="section-title-line"><h2><span class="green-rule"></span>Další články</h2></div><div class="art-grid"><a class="art-card" href="clanek-emitent-7-ukazatelu.html" data-cat="analyzy"><span class="art-chip">Analýza</span><strong>Jak poznat kvalitního emitenta dluhopisů? Sedm klíčových ukazatelů</strong><span class="art-perex">Výše úroku je jen jedna část příběhu. Rozhodující je finanční síla skutečného dlužníka – a u projektových společností také to, zda za jejich závazky právně odpovídá silnější společnost skupiny.</span><span class="art-meta">listopad 2026 · 7 min čtení</span></a><a class="art-card" href="clanek-statni-a-firemni-dluhopisy.html" data-cat="komentare"><span class="art-chip">Komentář</span><strong>Státní a firemní dluhopisy: v čem se skutečně liší?</strong><span class="art-perex">Dluhopis je vždy závazek někoho jiného. Někdy si prostřednictvím dluhopisů půjčuje stát, jindy podnik, který chce financovat své aktivity. Formálně jde o podobný nástroj, ekonomicky však o dvě odlišné situace. Rozhodující není samotný název cenného papíru, ale povaha dlužníka a zdroje, z nichž bude svůj dluh splácet.</span><span class="art-meta">listopad 2026 · 7 min čtení</span></a><a class="art-card" href="clanek-dluhopisy-od-a-do-z.html" data-cat="vzdelavani"><span class="art-chip">Vzdělávání</span><strong>Dluhopisy od A do Z: Jak fungují a proč do nich lidé investují</strong><span class="art-perex">Dluhopisy patří mezi nejstarší a nejrozšířenější finanční nástroje na světě. Prostřednictvím dluhopisů získávají financování státy, města i soukromé společnosti. Pro investory představují možnost pravidelného úrokového příjmu a mohou tvořit důležitou součást investičního portfolia. Jak ale dluhopisy skutečně fungují, odkud se bere jejich výnos a jaká rizika jsou s nimi spojena?</span><span class="art-meta">listopad 2026 · 10 min čtení</span></a><a class="art-card" href="clanek-desatero-cnb.html" data-cat="vzdelavani"><span class="art-chip">Vzdělávání</span><strong>Desatero ČNB k podnikovým dluhopisům: Deset zásad, kterým je dobré rozumět</strong><span class="art-perex">Podnikové dluhopisy umožňují společnostem získávat kapitál přímo od investorů. Jejich držitelé se tím nestávají spoluvlastníky firmy, ale jejími věřiteli. Právě tato jednoduchá skutečnost je klíčem k porozumění výnosům, emisním podmínkám i rizikům, která s sebou firemní dluhopisy nesou.</span><span class="art-meta">listopad 2026 · 6 min čtení</span></a></div></div>
+    </section>
+  </main>
+
+  <footer class="site-footer" id="footer"><div class="container footer-inner"><div class="footer-top"><a class="logo footer-logo" href="index.html"><img class="logo-img" src="assets/logo-light.png" width="139" height="44" alt="Dluhopisový Radar"></a><p class="header-tagline">NEZÁVISLÝ PORTÁL <br>O EMITENTECH A EMISÍCH</p><nav aria-label="Navigace v patičce"><a href="proverit-emitenta.html">Prověřit emitenta</a><a href="porovnat-emise.html">Porovnat emise</a><a href="emitenti.html">Emitenti</a><a href="emise.html">Emise</a><a href="clanky.html">Články</a><a href="jak-funguje.html">Jak funguje Radar</a><a href="o-radaru.html">O Radaru</a></nav></div><div class="footer-legal">
+      <p><strong>Dluhopisový Radar</strong> je nezávislý informační a analytický portál zaměřený na korporátní dluhopisy, jejich emitenty a investiční rizika. Portál je financován z reklamy a při zpracování informací vychází z veřejně dostupných zdrojů, zejména z evidencí České národní banky, registru ARES a Sbírky listin obchodního rejstříku. U zveřejňovaných údajů uvádíme jejich zdroje.</p>
+      <p>Dluhopisy neprodáváme ani nezprostředkováváme jejich nákup. Neposkytujeme investiční poradenství, individuální doporučení ani závazné hodnocení bonity emitentů. Veškeré analýzy, srovnání a publikované informace slouží výhradně k informačním a vzdělávacím účelům.</p>
+      <p>Investice do korporátních dluhopisů nejsou pojištěny jako bankovní vklady a jsou spojeny s rizikem ztráty části nebo celé investované částky. Historické výsledky nezaručují budoucí výnosy. Před investičním rozhodnutím doporučujeme prostudovat aktuální emisní podmínky, případný prospekt konkrétní emise a v případě potřeby se poradit s kvalifikovaným odborníkem.</p>
+    </div><div class="footer-bottom"><span>© 2026 Dluhopisový Radar</span><span class="footer-separator">|</span><span>Nezávislý analytický portál o dluhopisech.</span><nav aria-label="Právní informace"><button type="button" data-open="privacy">Ochrana osobních údajů</button><span>|</span><button type="button" data-open="terms">Podmínky používání</button><span>|</span><button type="button" data-open="contact">Kontakt</button></nav></div></div></footer>
+
+  <div class="dialog-backdrop" id="dialog-backdrop" hidden>
+    <div class="dialog" role="dialog" aria-modal="true" aria-labelledby="dialog-title" tabindex="-1">
+      <div class="dialog-header"><div><span id="dialog-kicker" class="dialog-kicker">DLUHOPISOVÝ RADAR</span><h2 id="dialog-title">Informace</h2></div><button class="icon-button dialog-close" type="button" id="close-dialog" aria-label="Zavřít okno"><svg class="ico"><use href="#i-close"/></svg></button></div>
+      <div class="dialog-content" id="dialog-content"></div>
+    </div>
+  </div>
+  <noscript><p class="noscript-notice">Pro vyhledávání a formuláře je nutný zapnutý JavaScript. Ostatní obsah zůstává přístupný.</p></noscript>
+</body>
+</html>
