@@ -830,3 +830,58 @@ footer.site-footer,.footer-inner{height:auto}
 .art-card{overflow:hidden}
 .art-cover{display:block;width:calc(100% + 48px);max-width:none;height:120px;margin:-24px -24px 6px;object-fit:cover}
 .footer-legal p{font-size:12px;line-height:1.65}
+
+/* Karty „Co zjistíte / Co porovnáváme“ – pět v jedné řadě */
+@media(min-width:1101px){
+  .know-grid--5{grid-template-columns:repeat(5,minmax(0,1fr));gap:14px}
+  .know-grid--5 .know-card{padding:18px 18px 20px}
+  .know-grid--5 .know-n{margin-bottom:8px}
+  .know-grid--5 .know-card h3{font-size:16px;margin-bottom:6px}
+  .know-grid--5 .know-card p{font-size:14px;line-height:1.5}
+}
+.req+.page-body{padding-top:48px}
+
+/* TMAVÝ PRUH S FORMULÁŘEM – bez fotky, jen čistý tmavý přechod */
+.req-photo{display:none}
+
+/* ÚVOD – stejná šířka jako hlavička, sekce a patička (fotka končí na okraji obsahu) */
+section#hero{width:calc(100% - 80px);max-width:var(--site-width);margin:0 auto;border-radius:0 0 20px 20px}
+section#hero .container{width:100%}
+.hero-photo{border-radius:20px}
+.hero-copy{left:0}
+@media(max-width:1120px){section#hero{width:calc(100% - 48px)}}
+@media(max-width:700px){section#hero{width:calc(100% - 32px)}.hero-photo{border-radius:16px}}
+
+/* KROKY – čísla přesně pod zelenou čárkou nadpisu, karty začínají pod prvním slovem nadpisu */
+.process-list,.hiw-steps .process-list{margin-left:72px}
+.step-num{left:-65.5px}
+.process-item:not(:last-child):before{left:-44px}
+@media(max-width:1120px){
+  .process-list,.hiw-steps .process-list{margin-left:72px}
+  .step-num{left:-65.5px}
+  .process-item:not(:last-child):before{left:-44px}
+}
+@media(max-width:700px){
+  .process-list,.hiw-steps .process-list{margin-left:42px}
+  .step-num{left:-43.5px}
+  .process-item:not(:last-child):before{left:-26px}
+}
+
+
+/* ZÁPATÍ – sloupce s nadpisy, právní text, spodní pruh s provozovatelem */
+.ft2 .container{padding:44px 0 0}
+.ft2-top{display:grid;grid-template-columns:minmax(0,1.6fr) repeat(4,minmax(0,1fr));gap:32px;padding-bottom:30px;border-bottom:1px solid rgba(255,255,255,.14)}
+.ft2-brand p{margin:14px 0 0;max-width:30ch;font-size:14px;line-height:1.55;color:#b9cad2}
+.ft2-col{display:flex;flex-direction:column;gap:10px}
+.ft2-col h3{margin:0 0 4px;font:700 var(--fs-label)/1.4 var(--sans);letter-spacing:2px;text-transform:uppercase;color:var(--lime)}
+.ft2-col a{font-size:14px;color:#e6eef2}
+.ft2-col a:hover{color:#fff;text-decoration:underline;text-underline-offset:3px}
+.ft2 .footer-legal{padding:22px 0;border-bottom:1px solid rgba(255,255,255,.14)}
+.ft2-bottom{display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap;padding:16px 0 22px;font-size:12.5px;color:#b9cad2}
+.ft2-bottom p{margin:0}
+.ft2-bottom nav{display:flex;gap:20px}
+.ft2-bottom nav a,.ft2-bottom nav button{padding:0;border:0;background:none;font:inherit;color:#e6eef2;cursor:pointer}
+.ft2-bottom nav a:hover,.ft2-bottom nav button:hover{text-decoration:underline}
+@media(max-width:900px){.ft2-top{grid-template-columns:repeat(2,minmax(0,1fr))}.ft2-brand{grid-column:1/-1}}
+@media(max-width:520px){.ft2-top{grid-template-columns:1fr}.ft2-bottom{flex-direction:column;align-items:flex-start}}
+.ft2-col a[aria-current="page"]{color:var(--lime)}
