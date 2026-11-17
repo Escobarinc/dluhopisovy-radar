@@ -251,3 +251,6 @@ section#actions{height:auto;padding:6px 0 26px}
 .action-card--comparison .action-icon{background:#e1f6ee;color:var(--emerald)}
 @media(max-width:760px){.action-grid{grid-template-columns:1fr}}
 @media(max-width:700px){section#actions{padding:6px 0 20px}.action-card{padding:22px 20px}.action-copy strong{font-size:22px}.action-copy small{font-size:14px}}
+
+/* bez dlaždic služeb: reklamní pruh končí se sekcí článků */
+.sidebar-ad{height:688px}
