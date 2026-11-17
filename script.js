@@ -376,9 +376,11 @@ document.addEventListener('keydown',e=>{
 })();
 
 // Úvod: při každém načtení tři náhodně vybrané články
+const PHOTO_COVERS=['emitent-7-ukazatelu','zajisteni-firemnich-dluhopisu','dluhopisy-od-a-do-z','desatero-cnb','statni-a-firemni-dluhopisy'];
+const COVER=slug=>PHOTO_COVERS.includes(slug)?`assets/photos/${slug}.jpg`:`assets/covers/${slug}.svg`;
 (function(){
   const grid=document.querySelector('#insights .article-grid');
   if(!grid||!RADAR_ARTICLES.length)return;
   const pick=RADAR_ARTICLES.slice().sort(()=>Math.random()-.5).slice(0,3);
-  grid.innerHTML=pick.map(a=>`<a class="article-card" href="clanek-${a.slug}.html"><span class="article-image"><img src="assets/covers/${a.slug}.svg" width="720" height="260" alt=""><span class="topic">${escapeHTML(a.label.toUpperCase())}</span></span><span class="article-body"><strong>${escapeHTML(a.title)}</strong><span class="article-meta"><span><svg class="ico"><use href="#i-calendar"/></svg> ${escapeHTML(a.date.charAt(0).toUpperCase()+a.date.slice(1))}</span><i></i><span><svg class="ico"><use href="#i-clock"/></svg> ${a.mins} min čtení</span></span></span></a>`).join('');
+  grid.innerHTML=pick.map(a=>`<a class="article-card" href="clanek-${a.slug}.html"><span class="article-image"><img src="${COVER(a.slug)}" width="1200" height="675" alt=""><span class="topic">${escapeHTML(a.label.toUpperCase())}</span></span><span class="article-body"><strong>${escapeHTML(a.title)}</strong><span class="article-meta"><span><svg class="ico"><use href="#i-calendar"/></svg> ${escapeHTML(a.date.charAt(0).toUpperCase()+a.date.slice(1))}</span><i></i><span><svg class="ico"><use href="#i-clock"/></svg> ${a.mins} min čtení</span></span></span></a>`).join('');
 })();

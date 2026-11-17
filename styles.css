@@ -885,3 +885,8 @@ section#hero .container{width:100%}
 @media(max-width:900px){.ft2-top{grid-template-columns:repeat(2,minmax(0,1fr))}.ft2-brand{grid-column:1/-1}}
 @media(max-width:520px){.ft2-top{grid-template-columns:1fr}.ft2-bottom{flex-direction:column;align-items:flex-start}}
 .ft2-col a[aria-current="page"]{color:var(--lime)}
+.footer-legal{max-width:1040px}
+
+/* FOTKY – úvod (Flow Building) a obálky článků */
+.hero-photo{background-image:url('assets/photos/hero-flow.jpg');background-position:68% 55%}
+.article-image img,.art-cover{object-fit:cover;object-position:center}
