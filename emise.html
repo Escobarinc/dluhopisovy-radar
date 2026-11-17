@@ -10,8 +10,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=20">
-  <script defer src="script.js?v=20"></script>
+  <link rel="stylesheet" href="styles.css?v=23">
+  <script defer src="script.js?v=23"></script>
 </head>
 <body class="subpage">
   <svg class="icon-library" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
@@ -43,15 +43,47 @@
   </header>
 
   <main class="subpage-main">
-    <section class="page-head"><div class="container">
-      <p class="crumbs"><a href="index.html">Úvod</a> <span aria-hidden="true">/</span> Emise</p>
-      <h1><span class="green-rule"></span>Databáze emisí</h1>
-      <p class="page-lead">Aktuální emise firemních dluhopisů s hlavními parametry: výnos, splatnost a emitent. Vyšší výnos obvykle znamená i vyšší riziko, proto se před investicí vyplatí znát podmínky emise.</p>
+    <section class="page-head page-head--db"><div class="container">
+      <p class="crumbs"><a href="index.html">Úvod</a> <span aria-hidden="true">/</span> Databáze <span aria-hidden="true">/</span> Emise</p>
+      <h1>Evidované emise</h1>
+      <p class="page-lead">Korporátní dluhopisy vydané v Česku, po jednotlivých emisích podle ISIN. U každé emise vidíte firmu, která si přes ni půjčuje, a přes ni i její hospodaření.</p>
     </div></section>
-    <section class="page-body"><div class="container">
-      <p class="notice-sample">Ukázková data: všechny záznamy na této stránce jsou smyšlené a slouží jen k předvedení webu. Nejde o skutečné nabídky ani investiční doporučení.</p>
-      <div class="list-tools"><label class="search-field"><svg class="ico"><use href="#i-search"/></svg><span class="sr-only">Hledat emisi</span><input type="search" id="list-q" placeholder="Hledat podle emise nebo emitenta" autocomplete="off"></label><span class="list-count" id="list-count" aria-live="polite"></span></div>
-      <div class="data-list" id="bond-list"></div>
+
+    <section class="page-body page-body--db"><div class="container">
+      <form class="db-filter" id="db-filter" role="search">
+        <div class="flt flt-q"><label for="db-q">Hledat</label>
+          <div class="search-field"><svg class="ico"><use href="#i-search"/></svg><input id="db-q" type="search" placeholder="ISIN nebo název emitenta" autocomplete="off"></div></div>
+        <div class="flt-row">
+          <div class="flt"><label for="flt-emitent">Emitent</label><select id="flt-emitent"><option value="">Všichni</option></select></div>
+          <div class="flt"><label for="flt-kupon">Pevný kupón</label><select id="flt-kupon"><option value="">Jakýkoli</option><option value="0-6">Do 6 %</option><option value="6-8">6–8 %</option><option value="8">Nad 8 %</option></select></div>
+          <div class="flt"><label for="flt-stav">Stav splatnosti</label><select id="flt-stav"><option value="">Jakýkoli</option><option value="aktivni">Před splatností</option><option value="splaceno">Splaceno</option></select></div>
+          <div class="flt"><label for="flt-splatnost">Splatnost</label><select id="flt-splatnost"><option value="">Jakákoli</option><option value="-2027">Do roku 2027</option><option value="2028-2030">2028–2030</option><option value="2031-">2031 a později</option></select></div>
+          <div class="flt"><label for="flt-zajisteni">Zajištění</label><select id="flt-zajisteni"><option value="">Jakékoli</option><option value="zajistena">Zajištěná</option><option value="nezajistena">Nezajištěná</option><option value="nezjisteno">Nezjištěno</option></select></div>
+          <div class="flt"><label for="flt-min">Minimální investice</label><select id="flt-min"><option value="">Jakákoli</option><option value="10000">Do 10 000 Kč</option><option value="50000">Do 50 000 Kč</option><option value="50001">Nad 50 000 Kč</option></select></div>
+          <button class="btn db-go" type="submit">Zobrazit</button>
+        </div>
+      </form>
+
+      <p class="notice-sample db-sample">Ukázková data: emise v tabulce jsou smyšlené a slouží k předvedení databáze. Po napojení na naši databázi se zde zobrazí skutečné emise se zdrojem u každého údaje.</p>
+
+      <div class="db-bar">
+        <p class="db-count" id="db-count" aria-live="polite"></p>
+        <div class="seg" role="group" aria-label="Řadit podle">
+          <button type="button" data-sort="doloz" aria-pressed="true">Doložení</button>
+          <button type="button" data-sort="kupon" aria-pressed="false">Kupónu</button>
+          <button type="button" data-sort="splatnost" aria-pressed="false">Splatnosti</button>
+          <button type="button" data-sort="emitent" aria-pressed="false">Emitenta</button>
+          <button type="button" data-sort="isin" aria-pressed="false">ISIN</button>
+        </div>
+      </div>
+
+      <div class="db-table-wrap">
+        <table class="db-table db-table--emise" id="db-table" data-kind="emise">
+          <thead><tr><th class="c-n">#</th><th>ISIN</th><th>Emitent</th><th class="num">Kupón p.a.</th><th>Splatnost</th><th class="num">Jmenovitá hodnota</th><th>Zajištění</th><th>Doložené údaje</th><th class="c-act"><span class="sr-only">Akce</span></th></tr></thead>
+          <tbody id="db-body"></tbody>
+        </table>
+      </div>
+      <nav class="db-pager" id="db-pager" aria-label="Stránkování"></nav>
     </div></section>
   </main>
 

@@ -10,8 +10,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=20">
-  <script defer src="script.js?v=20"></script>
+  <link rel="stylesheet" href="styles.css?v=23">
+  <script defer src="script.js?v=23"></script>
 </head>
 <body class="subpage">
   <svg class="icon-library" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
@@ -43,15 +43,45 @@
   </header>
 
   <main class="subpage-main">
-    <section class="page-head"><div class="container">
-      <p class="crumbs"><a href="index.html">Úvod</a> <span aria-hidden="true">/</span> Emitenti</p>
-      <h1><span class="green-rule"></span>Databáze emitentů</h1>
-      <p class="page-lead">Přehled společností, které vydávají dluhopisy a které máme na radaru. U každého emitenta najdete sídlo a obor podnikání. Pokud vás zajímá podrobnější pohled, zadejte nám jeho prověření.</p>
+    <section class="page-head page-head--db"><div class="container">
+      <p class="crumbs"><a href="index.html">Úvod</a> <span aria-hidden="true">/</span> Databáze <span aria-hidden="true">/</span> Emitenti</p>
+      <h1>Emitenti korporátních dluhopisů</h1>
+      <p class="page-lead">Kdo si od investorů půjčuje a jak na tom je. Přehled skládáme z evidencí České národní banky a centrálního depozitáře, registru ARES, Sbírky listin a emisní dokumentace.</p>
     </div></section>
-    <section class="page-body"><div class="container">
-      <p class="notice-sample">Ukázková data: všechny záznamy na této stránce jsou smyšlené a slouží jen k předvedení webu. Nejde o skutečné nabídky ani investiční doporučení.</p>
-      <div class="list-tools"><label class="search-field"><svg class="ico"><use href="#i-search"/></svg><span class="sr-only">Hledat emitenta</span><input type="search" id="list-q" placeholder="Hledat podle názvu, města nebo oboru" autocomplete="off"></label><span class="list-count" id="list-count" aria-live="polite"></span></div>
-      <div class="data-list" id="emitter-list"></div>
+
+    <section class="page-body page-body--db"><div class="container">
+      <form class="db-filter" id="db-filter" role="search">
+        <div class="flt flt-q"><label for="db-q">Hledat</label>
+          <div class="search-field"><svg class="ico"><use href="#i-search"/></svg><input id="db-q" type="search" placeholder="Název firmy, IČO nebo sídlo" autocomplete="off"></div></div>
+        <div class="flt-row">
+          <div class="flt"><label for="flt-pocet">Počet emisí</label><select id="flt-pocet"><option value="">Jakýkoli</option><option value="1">1 emise</option><option value="2-5">2–5 emisí</option><option value="6">6 a více</option></select></div>
+          <div class="flt"><label for="flt-aktivni">Emise před splatností</label><select id="flt-aktivni"><option value="">Nerozhoduje</option><option value="ano">Má aktivní emise</option><option value="ne">Všechny splacené</option></select></div>
+          <div class="flt"><label for="flt-sidlo">Sídlo</label><select id="flt-sidlo"><option value="">Kdekoli</option></select></div>
+          <div class="flt"><label for="flt-forma">Právní forma</label><select id="flt-forma"><option value="">Jakákoli</option><option value="a.s.">Akciová společnost</option><option value="s.r.o.">Společnost s r. o.</option></select></div>
+          <div class="flt"><label for="flt-stari">Stáří firmy</label><select id="flt-stari"><option value="">Nerozhoduje</option><option value="0-3">Do 3 let</option><option value="3-10">3–10 let</option><option value="10">Nad 10 let</option></select></div>
+          <div class="flt"><label for="flt-zaverka">Účetní závěrka</label><select id="flt-zaverka"><option value="">Nerozhoduje</option><option value="ano">Zveřejněná</option><option value="ne">Chybí</option></select></div>
+          <button class="btn db-go" type="submit">Zobrazit</button>
+        </div>
+      </form>
+
+      <p class="notice-sample db-sample">Ukázková data: emitenti v tabulce jsou smyšlení a slouží k předvedení databáze. Po napojení na naši databázi se zde zobrazí skuteční emitenti se zdrojem u každého údaje.</p>
+
+      <div class="db-bar">
+        <p class="db-count" id="db-count" aria-live="polite"></p>
+        <div class="seg" role="group" aria-label="Řadit podle">
+          <button type="button" data-sort="emise" aria-pressed="true">Emisí</button>
+          <button type="button" data-sort="nazev" aria-pressed="false">Názvu</button>
+          <button type="button" data-sort="stari" aria-pressed="false">Stáří</button>
+        </div>
+      </div>
+
+      <div class="db-table-wrap">
+        <table class="db-table" id="db-table" data-kind="emitenti">
+          <thead><tr><th class="c-n">#</th><th>Emitent</th><th>IČO</th><th>Sídlo</th><th class="num">Emise celkem</th><th class="num">Před splatností</th><th class="num">Účetní závěrky</th><th class="c-act"><span class="sr-only">Akce</span></th></tr></thead>
+          <tbody id="db-body"></tbody>
+        </table>
+      </div>
+      <nav class="db-pager" id="db-pager" aria-label="Stránkování"></nav>
     </div></section>
   </main>
 

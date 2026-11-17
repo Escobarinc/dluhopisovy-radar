@@ -276,3 +276,99 @@ document.addEventListener('keydown',e=>{
   };
   addEventListener('hashchange',apply);apply();
 })();
+
+// Databáze: Emitenti a Emise (filtry, řazení, stránkování).
+// Zatím ukázková data. Po napojení na CRM se sem načtou /api/public/ic/emitenti a /api/public/ic/emise
+// – stačí naplnit pole DB.emitenti a DB.emise ve stejném tvaru a zavolat render().
+(function(){
+  const table=document.getElementById('db-table');
+  if(!table)return;
+  const KIND=table.dataset.kind, PER=25, YEAR=new Date().getFullYear();
+  const clean=n=>n.replace(' — ukázka','');
+  // IČO a ISIN v ukázce jsou záměrně neplatné, aby se nepletly se skutečnými firmami.
+  const demoIco=i=>{for(let k=0;;k++){const d=String(91000000+i*137+k).split('').map(Number);const sum=d.slice(0,7).reduce((a,x,j)=>a+x*(8-j),0);const c=(11-sum%11)%10;if(d[7]!==c)return d.join('');}};
+  const STREETS=['Ukázková','Vzorová','Příkladná','Demonstrační','Modelová','Testovací'];
+  const emitenti=issuers.map((r,i)=>{
+    const zalozeno=2006+((i*5)%17);
+    return {ico:demoIco(i),nazev:clean(r.name),obor:r.field,mesto:r.city,sidlo:`${STREETS[i%6]} ${10+i*7}, ${r.city}`,
+      forma:i%3===0?'s.r.o.':'a.s.',zalozeno,zaverky:i%7===3?0:Math.min(YEAR-zalozeno,1+(i*3)%6)};
+  });
+  const ZAJ=['zajistena','nezajistena','zajistena','nezjisteno'];
+  const emise=[];
+  emitenti.forEach((e,i)=>{
+    const n=1+(i*3)%6;
+    for(let k=0;k<n;k++){
+      const idx=emise.length;
+      const kupon=i%9===4&&k===0?null:+(5.2+((i+k*2)%9)*0.45).toFixed(2);
+      const splatnost=2024+((i+k*3)%9);
+      const jmen=[1000,10000,50000,100000][(i+k)%4];
+      const zaj=ZAJ[(i+k)%4];
+      const doloz=[kupon!=null,true,zaj!=='nezjisteno',e.zaverky>0,(i+k)%3!==1].filter(Boolean).length;
+      emise.push({isin:'CZDEMO'+String(idx+1).padStart(6,'0'),ico:e.ico,emitent:e.nazev,nazev:`${e.nazev} ${kupon!=null?kupon.toFixed(2).replace('.',','):'–'}/${String(splatnost).slice(2)}`,
+        kupon,splatnost,aktivni:splatnost>YEAR,jmen,min:jmen<10000?10000:jmen,zajisteni:zaj,doloz});
+    }
+  });
+  emitenti.forEach(e=>{const m=emise.filter(x=>x.ico===e.ico);e.emise=m.length;e.aktivni=m.filter(x=>x.aktivni).length;});
+
+  const $=id=>document.getElementById(id);
+  const cz=n=>n.toLocaleString('cs-CZ');
+  const pct=n=>n==null?'<span class="na">Nezjištěno</span>':n.toFixed(2).replace('.',',')+' %';
+  const ZT={zajistena:'Zajištěná',nezajistena:'Nezajištěná',nezjisteno:'<span class="na">Nezjištěno</span>'};
+  const ICO_CMP='<svg class="ico" viewBox="0 0 24 24"><path d="M7 20h10M6 6l6-1 6 1M12 3v17M9 12 6 6l-3 6a3 3 0 0 0 6 0M21 12l-3-6-3 6a3 3 0 0 0 6 0"/></svg>';
+  const ICO_CHK='<svg class="ico" viewBox="0 0 24 24"><path d="M3 21h10M5 21V6l7-3v9"/><circle cx="16.5" cy="16.5" r="3.5"/><path d="m21 21-2-2"/></svg>';
+  let sort=KIND==='emise'?'doloz':'emise', page=1;
+
+  // naplnění výběrů ze záznamů
+  if(KIND==='emitenti'){const s=$('flt-sidlo');[...new Set(emitenti.map(e=>e.mesto))].sort((a,b)=>a.localeCompare(b,'cs')).forEach(c=>s.add(new Option(c,c)));}
+  else{const s=$('flt-emitent');emitenti.slice().sort((a,b)=>a.nazev.localeCompare(b.nazev,'cs')).forEach(e=>s.add(new Option(e.nazev,e.ico)));}
+
+  function rows(){
+    const q=$('db-q').value.trim().toLocaleLowerCase('cs'), v=id=>($(id)||{}).value||'';
+    if(KIND==='emitenti'){
+      return emitenti.filter(e=>{
+        if(q&&![e.nazev,e.ico,e.sidlo].join(' ').toLocaleLowerCase('cs').includes(q))return false;
+        const p=v('flt-pocet');if(p==='1'&&e.emise!==1||p==='2-5'&&(e.emise<2||e.emise>5)||p==='6'&&e.emise<6)return false;
+        const a=v('flt-aktivni');if(a==='ano'&&!e.aktivni||a==='ne'&&e.aktivni)return false;
+        if(v('flt-sidlo')&&e.mesto!==v('flt-sidlo'))return false;
+        if(v('flt-forma')&&e.forma!==v('flt-forma'))return false;
+        const st=v('flt-stari'),age=YEAR-e.zalozeno;if(st==='0-3'&&age>3||st==='3-10'&&(age<3||age>10)||st==='10'&&age<=10)return false;
+        const z=v('flt-zaverka');if(z==='ano'&&!e.zaverky||z==='ne'&&e.zaverky)return false;
+        return true;
+      }).sort((a,b)=>sort==='nazev'?a.nazev.localeCompare(b.nazev,'cs'):sort==='stari'?a.zalozeno-b.zalozeno:b.emise-a.emise||a.nazev.localeCompare(b.nazev,'cs'));
+    }
+    return emise.filter(e=>{
+      if(q&&![e.isin,e.emitent,e.nazev].join(' ').toLocaleLowerCase('cs').includes(q))return false;
+      if(v('flt-emitent')&&e.ico!==v('flt-emitent'))return false;
+      const k=v('flt-kupon');if(k&&(e.kupon==null||k==='0-6'&&e.kupon>=6||k==='6-8'&&(e.kupon<6||e.kupon>8)||k==='8'&&e.kupon<=8))return false;
+      const st=v('flt-stav');if(st==='aktivni'&&!e.aktivni||st==='splaceno'&&e.aktivni)return false;
+      const sp=v('flt-splatnost');if(sp==='-2027'&&e.splatnost>2027||sp==='2028-2030'&&(e.splatnost<2028||e.splatnost>2030)||sp==='2031-'&&e.splatnost<2031)return false;
+      if(v('flt-zajisteni')&&e.zajisteni!==v('flt-zajisteni'))return false;
+      const m=v('flt-min');if(m==='10000'&&e.min>10000||m==='50000'&&e.min>50000||m==='50001'&&e.min<=50000)return false;
+      return true;
+    }).sort((a,b)=>sort==='kupon'?(b.kupon??-1)-(a.kupon??-1):sort==='splatnost'?a.splatnost-b.splatnost:sort==='emitent'?a.emitent.localeCompare(b.emitent,'cs'):sort==='isin'?a.isin.localeCompare(b.isin):b.doloz-a.doloz||a.isin.localeCompare(b.isin));
+  }
+  function render(){
+    const all=rows(), pages=Math.max(1,Math.ceil(all.length/PER));page=Math.min(page,pages);
+    const from=(page-1)*PER, list=all.slice(from,from+PER), unit=KIND==='emise'?'emisí':'emitentů';
+    $('db-count').textContent=all.length?`Řádky ${from+1}–${from+list.length} z ${all.length} ${unit}`:`Žádný záznam z ${KIND==='emise'?emise.length:emitenti.length} ${unit}`;
+    $('db-body').innerHTML=list.length?list.map((r,i)=>KIND==='emitenti'?
+      `<tr><td class="c-n">${from+i+1}</td><td><strong>${escapeHTML(r.nazev)}</strong><small>${escapeHTML(r.obor)}, ${r.forma}</small></td><td class="mono">${r.ico}</td><td>${escapeHTML(r.sidlo)}</td><td class="num">${r.emise}</td><td class="num">${r.aktivni}</td><td class="num">${r.zaverky?r.zaverky+' let':'<span class="na">Chybí</span>'}</td>
+        <td class="c-act"><a class="act" href="proverit-emitenta.html?emitent=${encodeURIComponent(r.nazev)}" title="Prověřit emitenta" aria-label="Prověřit ${escapeHTML(r.nazev)}">${ICO_CHK}</a><a class="act" href="emise.html?emitent=${r.ico}" title="Emise tohoto emitenta" aria-label="Emise emitenta ${escapeHTML(r.nazev)}"><svg class="ico"><use href="#i-layers"/></svg></a></td></tr>`:
+      `<tr><td class="c-n">${from+i+1}</td><td class="mono"><strong>${r.isin}</strong></td><td>${escapeHTML(r.emitent)}</td><td class="num">${pct(r.kupon)}</td><td>${r.splatnost}${r.aktivni?'':'<small>splaceno</small>'}</td><td class="num">${cz(r.jmen)} Kč</td><td>${ZT[r.zajisteni]}</td>
+        <td><span class="doloz" title="Doloženo ${r.doloz} z 5 klíčových údajů" aria-label="Doloženo ${r.doloz} z 5 klíčových údajů">${'<i class="on"></i>'.repeat(r.doloz)}${'<i></i>'.repeat(5-r.doloz)}</span></td>
+        <td class="c-act"><a class="act" href="porovnat-emise.html?emise=${encodeURIComponent(r.isin)}" title="Porovnat emisi" aria-label="Porovnat ${r.isin}">${ICO_CMP}</a><a class="act" href="proverit-emitenta.html?emitent=${encodeURIComponent(r.emitent)}" title="Prověřit emitenta" aria-label="Prověřit ${escapeHTML(r.emitent)}">${ICO_CHK}</a></td></tr>`
+    ).join(''):`<tr><td colspan="9" class="db-empty">Zadaným filtrům neodpovídá žádný záznam. <button type="button" class="link-inline" id="db-reset">Zrušit filtry</button></td></tr>`;
+    const heads=[...table.querySelectorAll('thead th')].map(th=>th.textContent.trim());
+    table.querySelectorAll('#db-body tr').forEach(tr=>[...tr.cells].forEach((td,i)=>{if(heads[i]&&i>1)td.dataset.l=heads[i];}));
+    const pg=$('db-pager');
+    pg.innerHTML=pages>1?Array.from({length:pages},(_,i)=>`<button type="button" data-page="${i+1}"${i+1===page?' aria-current="page"':''}>${i+1}</button>`).join(''):'';
+  }
+  $('db-filter').addEventListener('submit',e=>{e.preventDefault();page=1;render();});
+  $('db-filter').addEventListener('change',()=>{page=1;render();});
+  $('db-q').addEventListener('input',()=>{page=1;render();});
+  document.querySelector('.seg').addEventListener('click',e=>{const b=e.target.closest('[data-sort]');if(!b)return;sort=b.dataset.sort;page=1;document.querySelectorAll('.seg [data-sort]').forEach(x=>x.setAttribute('aria-pressed',String(x===b)));render();});
+  $('db-pager').addEventListener('click',e=>{const b=e.target.closest('[data-page]');if(!b)return;page=+b.dataset.page;render();table.scrollIntoView({block:'start'});});
+  table.addEventListener('click',e=>{if(e.target.id==='db-reset'){$('db-filter').reset();page=1;render();}});
+  const pre=new URLSearchParams(location.search).get('emitent');if(pre&&$('flt-emitent'))$('flt-emitent').value=pre;
+  render();
+})();
