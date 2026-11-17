@@ -1059,3 +1059,44 @@ section#adbanner{height:auto;padding:8px 0 20px}
 .req .know-grid--stack .know-card h3{font-size:17px;line-height:1.2;margin:0 0 8px}
 .req .know-grid--stack .know-card p{font-size:13px;line-height:1.45}
 @media(max-width:1000px){.req .know-grid--stack{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px}.req .know-grid--stack .know-card{width:auto;aspect-ratio:auto;min-height:190px}}
+/* Úvod podstránky – text přes celou levou část až ke krokům vpravo */
+.page-head--split .container{gap:44px}
+.page-head--split .ph-main .page-lead,.page-head--split .ph-main .page-sub{max-width:none}
+/* ÚVOD PODSTRÁNKY v2 – text přes celou šířku, pod ním vlevo schéma zdrojů a vpravo kroky */
+.page-head--split .container{display:block}
+.page-head--split .ph-main{max-width:none}
+.ph-row{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr);gap:40px;align-items:start;margin-top:34px}
+.ph-flow .ph-steps-title,.ph-row .ph-steps-title{margin-left:0}
+.ph-row .ph-steps .ph-steps-title{margin-left:50px}
+.ph-flow-lead{margin:0 0 14px;font-size:14px;color:#3b5463}
+.ph-flow .flow{margin:0;padding:24px 16px 26px}
+.ph-flow .flow-sources--7{max-width:none;column-gap:1.2%;row-gap:8px}
+.ph-flow .flow-sources--7~.flow-lines{max-width:none;height:80px}
+.ph-flow .flow-sources--7 .flow-src{flex-direction:column;justify-content:flex-start;text-align:center;gap:6px;padding:10px 4px 12px;font-size:11px;min-height:88px;border-top-width:3px}
+.ph-flow .flow-sources--7 .flow-src .ico{width:28px;height:28px;padding:5px}
+.ph-flow .flow-mid{gap:14px;max-width:none}
+.ph-flow .flow-note{padding:12px;font-size:12.5px;gap:10px}
+.ph-flow .flow-note .ico{width:32px;height:32px;padding:7px}
+.ph-flow .flow-radar{width:130px;height:130px}
+.ph-flow .flow-radar span{width:104px;height:104px}
+.ph-flow .flow-out{max-width:480px}
+@media(max-width:1000px){.ph-row{grid-template-columns:1fr}.ph-row .ph-steps{max-width:560px}}
+@media(max-width:900px){.ph-flow .flow-sources--7 .flow-src{min-height:0;flex-direction:row;text-align:left;font-size:12.5px}}
+/* ÚVOD – schéma a kroky jako dva stejně vysoké panely vedle sebe */
+.page-head--split .ph-row{align-items:stretch;gap:24px}
+.page-head--split .ph-flow,.page-head--split .ph-steps{background:#fff;border:var(--line);border-radius:18px;padding:24px 26px;box-shadow:var(--shadow-card);display:flex;flex-direction:column}
+.page-head--split .ph-flow .flow{border:0;padding:8px 0 0;background:none;flex:1;display:flex;flex-direction:column;justify-content:center}
+.page-head--split .ph-row .ph-steps .ph-steps-title{margin-left:0}
+.page-head--split .ph-steps .hiw-steps{flex:1;display:flex}
+.page-head--split .ph-steps .process-list{flex:1;display:flex;flex-direction:column;justify-content:space-between}
+.page-head--split .ph-steps .process-item{margin-bottom:0}
+/* ÚVOD – nadpis, podnadpis a tlačítko vlevo, text vpravo zarovnaný s nadpisem */
+@media(min-width:1001px){
+ .page-head--split .ph-main{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);column-gap:56px;grid-template-areas:"c c" "h t" "s t" "b t";align-items:start}
+ .page-head--split .ph-main .crumbs{grid-area:c}
+ .page-head--split .ph-main h1{grid-area:h}
+ .page-head--split .ph-main .page-sub{grid-area:s}
+ .page-head--split .ph-main .ph-text{grid-area:t}
+ .page-head--split .ph-main .ph-text .page-lead:first-child{margin-top:0}
+ .page-head--split .ph-main .page-head-cta{grid-area:b;justify-self:start}
+}
