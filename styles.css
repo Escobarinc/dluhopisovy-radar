@@ -1198,3 +1198,6 @@ section#adbanner{height:auto;padding:8px 0 20px}
 .req-block .req-info--block{margin-bottom:12px}
 .req-block .req-group{margin-top:0}
 .req-block .req-group+.req-group{margin-top:12px}
+/* Formuláře – nadpis otázky nesedí na dělicí čáře (legend jako běžný obsah) */
+.req-block>legend{float:left;width:100%;margin-bottom:14px}
+.req-block>legend+*{clear:both;margin-top:0!important}
