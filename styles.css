@@ -1015,3 +1015,47 @@ section#adbanner{height:auto;padding:8px 0 20px}
 .jv-name em{font-style:normal;color:#b38055}
 .jv-copy .jv-sub{font:600 10.5px/1.2 var(--sans);letter-spacing:2.4px;text-transform:uppercase;color:#b38055}
 @media(max-width:700px){.jv-slides{left:0;right:0}.jv-copy strong.jv-name{font-size:23px}}
+/* SCHÉMA – 7 zdrojů */
+.flow-sources--7{grid-template-columns:repeat(7,minmax(0,1fr));gap:12px;max-width:1000px}
+.flow-sources--7~.flow-lines{max-width:1000px}
+.flow-sources--7 .flow-src{gap:8px;padding:12px 8px 14px 9px;font-size:12.5px;line-height:1.2;align-items:center;min-height:74px;hyphens:auto}
+.flow-sources--7 .flow-src .ico{width:32px;height:32px;padding:6px;border-radius:8px}
+@media(max-width:900px){.flow-sources--7{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:560px){.flow-sources--7{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.flow-sources--7 .flow-src{hyphens:manual}
+.req-info--block{margin:4px 0 14px}
+/* ŽÁDOST – karty „Co zjistíte / porovnáváme“ na výšku vedle formuláře (místo nadpisu, bodů a radaru) */
+.req-know-title{display:flex;align-items:center;margin:0 0 18px;font:600 28px/1.15 var(--serif);letter-spacing:-.5px;color:#fff}
+.req-know-title .green-rule{flex:none;width:36px;margin-right:12px}
+.know-grid--stack{display:flex;flex-direction:column;gap:10px}
+.req .know-grid--stack .know-card{padding:14px 16px;border-radius:12px;background:rgba(255,255,255,.05);border:1px solid rgba(159,247,214,.18);box-shadow:none;min-height:0}
+.req .know-grid--stack .know-n{color:#5fe3b0}
+.req .know-grid--stack .know-card h3{color:#fff;margin:4px 0}
+.req .know-grid--stack .know-card p{color:#b9cfd8;margin:0}
+.req .req-intro--know .know-note{margin:12px 0 0;color:#8fb3c2;font-size:12.5px}
+/* ÚVOD PODSTRÁNKY – kroky „Jak … probíhá?“ vpravo vedle úvodního textu */
+.page-head--split .container{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,500px);gap:56px;align-items:center}
+.ph-steps-title{margin:0 0 14px 50px;font:600 22px/1.2 var(--serif);letter-spacing:-.3px;color:var(--navy)}
+.page-head .ph-steps .hiw-steps .process-list{margin:0 0 0 50px}
+.page-head .ph-steps .process-list:before{left:-31px}
+.page-head .ph-steps .step-num{left:-50px;width:36px;height:36px;font-size:18px;top:50%;margin-top:-18px}
+.page-head .ph-steps .process-item{height:auto;min-height:0;grid-template-columns:44px minmax(0,1fr);grid-template-rows:auto auto;column-gap:12px;row-gap:2px;padding:12px 14px;margin-bottom:8px;background:#fff}
+.page-head .ph-steps .process-item:last-child{background:var(--navy)}
+.page-head .ph-steps .step-icon{grid-row:1/3;height:40px;border-right:1px solid #cfdde3}
+.page-head .ph-steps .step-icon .ico{width:24px;height:24px}
+.page-head .ph-steps .process-item h3{grid-column:2;margin:0;font-size:16px;line-height:1.2;white-space:normal}
+.page-head .ph-steps .process-item p{grid-column:2;margin:0;padding:0;font-size:12.5px;line-height:1.4}
+@media(max-width:1000px){.page-head--split .container{grid-template-columns:1fr;gap:28px}.page-head .ph-steps{max-width:560px}}
+/* ŽÁDOST – karty jako kostky, rozložené po celé výšce formuláře, vystředěné */
+@media(min-width:1001px){
+ .req-grid:has(.req-intro--know){align-items:stretch}
+ .req-intro--know{display:flex;flex-direction:column;align-items:center;min-height:0}
+ .req-intro--know .req-know-title{align-self:flex-start}
+ .req-intro--know .know-grid--stack{flex:1;justify-content:space-around;align-items:center;gap:22px;width:100%}
+ .req-intro--know .know-note{text-align:center}
+}
+.req .know-grid--stack .know-card{width:250px;max-width:100%;aspect-ratio:1/1;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:20px 20px;border-radius:16px;background:linear-gradient(160deg,rgba(255,255,255,.08),rgba(255,255,255,.03));border:1px solid rgba(159,247,214,.22)}
+.req .know-grid--stack .know-n{display:grid;place-items:center;width:38px;height:38px;margin-bottom:10px;border-radius:50%;background:rgba(95,227,176,.14);border:1px solid rgba(95,227,176,.45);color:#5fe3b0;font:700 14px/1 var(--sans)}
+.req .know-grid--stack .know-card h3{font-size:17px;line-height:1.2;margin:0 0 8px}
+.req .know-grid--stack .know-card p{font-size:13px;line-height:1.45}
+@media(max-width:1000px){.req .know-grid--stack{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px}.req .know-grid--stack .know-card{width:auto;aspect-ratio:auto;min-height:190px}}
