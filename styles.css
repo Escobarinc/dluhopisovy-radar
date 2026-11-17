@@ -890,3 +890,9 @@ section#hero .container{width:100%}
 /* FOTKY – úvod (Flow Building) a obálky článků */
 .hero-photo{background-image:url('assets/photos/hero-flow.jpg');background-position:68% 55%}
 .article-image img,.art-cover{object-fit:cover;object-position:center}
+/* OBÁLKY ČLÁNKŮ – celé fotky v poměru 16:9, ne úzký pruh */
+.art-cover{height:auto;aspect-ratio:16/9}
+section#insights{height:auto}
+.article-card{height:auto}
+.article-image{height:auto;aspect-ratio:16/9}
+.sidebar-ad{height:766px}
