@@ -366,3 +366,12 @@ section#actions{height:auto;padding:6px 0 26px}
 .cat-filter a[aria-current="true"]{background:var(--navy);border-color:var(--navy);color:#fff}
 .article-card[hidden]{display:none}
 @media(max-width:1180px) and (min-width:901px){.hero h1{font-size:38px}.hero p{font-size:16px;margin:18px 0}}
+
+/* PATIČKA – právní a informační text */
+footer.site-footer,.footer-inner{height:auto}
+.footer-inner{padding-bottom:6px}
+.footer-legal{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px;padding:22px 0 20px;border-bottom:1px solid rgba(255,255,255,.16)}
+.footer-legal p{margin:0;font-size:12.5px;line-height:1.65;color:#b9cad2}
+.footer-legal strong{color:#fff;font-weight:600}
+.footer-bottom{min-height:47px}
+@media(max-width:900px){.footer-legal{grid-template-columns:1fr;gap:12px}}

@@ -1,4 +1,12 @@
 'use strict';
+// Napojení na CLARIX CRM: po doplnění klíče webu (CRM → Nastavení → Weby a měření) se načte měření
+// a formuláře posílají poptávky rovnou do CRM. Bez klíče web funguje dál jako ukázka.
+const CRM={origin:'https://crm.clarix.cz',key:''};
+if(CRM.key){const t=document.createElement('script');t.src=`${CRM.origin}/api/t.js?k=${encodeURIComponent(CRM.key)}`;t.defer=true;document.head.appendChild(t);}
+function sendToCrm(data){
+  if(!(window.clarixTrack&&typeof window.clarixTrack.lead==='function'))return null;
+  return window.clarixTrack.lead(data).then(r=>{if(r&&r.error)throw new Error(r.error);return r;});
+}
 // Offline demonstrator. Illustrative records are explicitly NOT verified issuers or real bond offerings.
 const issuerNames = [
   'Rezidence Orion — ukázka','Mosty Development — ukázka','Park Capital — ukázka','Horizon Reality — ukázka',
@@ -111,6 +119,9 @@ function submitLead(form){
   if(missing||badEmail){valid=false;if(!form.dataset.firstError)form.dataset.firstError=el.name;}
  });
  if(!valid){form.elements.namedItem(form.dataset.firstError).focus();delete form.dataset.firstError;return;}
+ const fd=new FormData(form);
+ const crm=sendToCrm({name:fd.get('jmeno'),email:fd.get('email'),consent:true,formular:{request:'Prověření emitenta',compare:'Porovnání emisí',advertise:'Reklama',contact:'Kontakt'}[form.dataset.kind]||form.dataset.kind,message:[`Předmět: ${fd.get('predmet')||''}`,fd.get('zprava')||''].filter(Boolean).join('\n')});
+ if(crm){formStatus.innerHTML='<div class="form-status">Odesílám…</div>';crm.then(()=>{formStatus.innerHTML='<div class="form-status"><strong>Děkujeme, poptávku jsme přijali.</strong><br>Ozveme se vám co nejdřív.</div>';form.reset();}).catch(e=>{formStatus.innerHTML=`<div class="form-status">Odeslání se nepodařilo: ${escapeHTML(e.message||'zkuste to prosím znovu')}</div>`;});return;}
  downloadLead(form);
  formStatus.innerHTML='<div class="form-status"><strong>Soubor s poptávkou byl připraven ke stažení.</strong><br>Údaje se nikam neposlaly. Pro skutečné odesílání je potřeba doplnit backend.</div>';
 }
@@ -194,6 +205,14 @@ document.addEventListener('keydown',e=>{
       if(el.value.trim())lines.push(`${label?label.textContent.replace(' *',''):el.name}: ${el.value.trim()}`);
     });
     const zajem=d.getAll('zajem');if(zajem.length)lines.push(`Zaměřit se na: ${zajem.join(', ')}`);
+    const crm=sendToCrm({name:d.get('jmeno'),email:d.get('email'),phone:d.get('telefon')||'',consent:true,formular:form.dataset.kind,message:lines.slice(3).join('\n')});
+    if(crm){
+      const btn=form.querySelector('[type=submit]');btn.disabled=true;status.innerHTML='<div class="form-status">Odesílám…</div>';
+      crm.then(()=>{status.innerHTML='<div class="form-status"><strong>Děkujeme, poptávku jsme přijali.</strong><br>Ozveme se vám co nejdřív.</div>';form.reset();})
+         .catch(e=>{status.innerHTML=`<div class="form-status">Odeslání se nepodařilo: ${escapeHTML(e.message||'zkuste to prosím znovu')}</div>`;})
+         .finally(()=>{btn.disabled=false;});
+      return;
+    }
     lines.push('','Ukázková verze: poptávka nebyla nikam odeslána.');
     const url=URL.createObjectURL(new Blob([lines.join('\n')],{type:'text/plain;charset=utf-8'}));
     const a=Object.assign(document.createElement('a'),{href:url,download:'dluhopisovy-radar-poptavka.txt'});
