@@ -1203,3 +1203,5 @@ section#adbanner{height:auto;padding:8px 0 20px}
 .req-block>legend+*{clear:both;margin-top:0!important}
 /* horizont rozhodnutí – 4 možnosti na jednom řádku */
 @media(min-width:701px){.check-list--4{grid-template-columns:repeat(4,auto);justify-content:space-between;column-gap:16px}.check-list--4 .check-row span{white-space:nowrap}}
+.req+.page-body{padding-top:32px}
+.req+.page-body .info-pair{margin-top:0}
