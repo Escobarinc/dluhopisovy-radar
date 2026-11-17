@@ -446,9 +446,8 @@ const COVER=slug=>PHOTO_COVERS.includes(slug)?`assets/photos/${slug}.jpg?v=2`:`a
  if(c){apply(c,null);tab.hidden=false}else{window.radarConsent=null;open(false)}
 })();
 
-/* REKLAMA V BOKU – střídání fotek (bez animace při prefers-reduced-motion) */
-(()=>{
- const box=document.querySelector('.sa-slides');if(!box)return;
+/* REKLAMY – střídání fotek (bez animace při prefers-reduced-motion) */
+document.querySelectorAll('.sa-slides,.jv-slides').forEach(box=>{
  const imgs=[...box.querySelectorAll('img')];if(imgs.length<2)return;
  if(window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches)return;
  let i=0,t=null;
@@ -456,4 +455,4 @@ const COVER=slug=>PHOTO_COVERS.includes(slug)?`assets/photos/${slug}.jpg?v=2`:`a
  const start=()=>{if(!t)t=setInterval(next,4000)},stop=()=>{clearInterval(t);t=null};
  document.addEventListener('visibilitychange',()=>document.hidden?stop():start());
  start();
-})();
+});

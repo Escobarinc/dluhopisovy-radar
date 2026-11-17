@@ -993,3 +993,25 @@ section#insights{height:auto}
 .sa-cta .ico{width:16px;height:16px}
 .sa-link:hover .sa-cta{background:var(--emerald)}
 .sa-link:focus-visible{outline:3px solid var(--emerald);outline-offset:-3px}
+/* SPODNÍ REKLAMA – Jesenická Vyhlídka (logo, text, střídání fotek) */
+section#adbanner{height:auto;padding:8px 0 20px}
+.jv-banner{position:relative;display:flex;align-items:center;gap:26px;min-height:124px;padding:18px 26px;border-radius:var(--r-card,14px);overflow:hidden;background:#1d1d1f;color:#fff;text-decoration:none;isolation:isolate}
+.jv-tag{position:absolute;top:10px;left:26px;font:700 9px/1 var(--sans);letter-spacing:2px;color:#8c8c90}
+.jv-logo{flex:none;width:118px;height:auto;margin-top:8px}
+.jv-copy{display:flex;flex-direction:column;gap:6px;padding-left:24px;border-left:1px solid #3a3a3e;margin-top:8px;max-width:380px}
+.jv-copy strong{font:600 21px/1.15 var(--serif);letter-spacing:-.3px;color:#fff}
+.jv-copy span{font-size:13px;color:#c9c3bc}
+.jv-slides{position:absolute;top:0;right:0;bottom:0;width:44%;z-index:-1;overflow:hidden}
+.jv-slides img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 1.2s ease}
+.jv-slides img.is-on{opacity:1}
+.jv-slides:before{content:'';position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,#1d1d1f 0%,rgba(29,29,31,.55) 35%,rgba(29,29,31,0) 70%)}
+.jv-cta{margin-left:auto;display:inline-flex;align-items:center;gap:9px;height:42px;padding:0 20px;border-radius:8px;background:#b38055;color:#fff;font:600 14px/1 var(--sans);white-space:nowrap;transition:background .2s}
+.jv-cta .ico{width:16px;height:16px}
+.jv-banner:hover .jv-cta{background:#c8955f}
+.jv-banner:focus-visible{outline:3px solid #b38055;outline-offset:3px}
+@media(max-width:900px){.jv-banner{gap:18px}.jv-copy strong{font-size:18px}.jv-copy{max-width:300px}}
+@media(max-width:700px){.jv-banner{flex-direction:column;align-items:flex-start;gap:12px;padding:150px 18px 18px}.jv-slides{width:100%;height:140px;bottom:auto}.jv-slides:before{background:linear-gradient(0deg,#1d1d1f 0%,rgba(29,29,31,0) 60%)}.jv-tag{top:auto;left:18px;bottom:auto;position:static;order:-1}.jv-copy{padding-left:0;border-left:0;margin-top:0}.jv-logo{margin-top:0;width:110px}.jv-cta{margin-left:0;width:100%;justify-content:center}}
+.jv-copy strong.jv-name{font:700 25px/1 var(--serif);letter-spacing:.5px;text-transform:uppercase}
+.jv-name em{font-style:normal;color:#b38055}
+.jv-copy .jv-sub{font:600 10.5px/1.2 var(--sans);letter-spacing:2.4px;text-transform:uppercase;color:#b38055}
+@media(max-width:700px){.jv-slides{left:0;right:0}.jv-copy strong.jv-name{font-size:23px}}
