@@ -1168,3 +1168,28 @@ section#adbanner{height:auto;padding:8px 0 20px}
 .g-src .sources{margin:8px 0 0}
 .g-disc{margin-top:18px}
 @media(max-width:700px){.g-panel{padding:16px 12px}.g-head--panel h2{font-size:21px}}
+/* O RADARU – grafické sjednocení */
+.about-two>div{padding:26px 28px;border:var(--line);border-radius:var(--r-card);background:#fff;box-shadow:var(--shadow-card);position:relative}
+.about-two>div:before{content:'';display:block;width:36px;height:4px;margin-bottom:14px;border-radius:4px;background:var(--emerald)}
+.about-two{gap:18px}
+.about-two .ab-h{font-size:21px;margin-bottom:10px}
+.about-two p{font-size:15px}
+.dd-note{margin:16px 0 0;padding:14px 18px;border-left:3px solid var(--emerald);border-radius:0 10px 10px 0;background:#eef8f3;font-size:15px}
+#nezavislost{margin-top:40px}
+@media(min-width:901px){
+ .method-sec .container{display:grid;grid-template-columns:minmax(0,1.55fr) minmax(0,1fr);column-gap:26px;align-items:start}
+ .method-sec .container>*{grid-column:1/-1}
+ .method-sec .method-list{grid-column:1;max-width:none}
+ .method-sec .method-limits{grid-column:2;grid-row:span 1;max-width:none;margin-top:8px;position:sticky;top:110px}
+}
+.method-sec .section-lead{max-width:70ch}
+.method-list>li{padding:20px 22px}
+#kontakt .req-links{margin-top:22px;padding-top:16px;border-top:1px solid rgba(255,255,255,.12)}
+@media(min-width:901px){.method-sec .method-list,.method-sec .method-limits{grid-row:4}}
+@media(min-width:901px){.method-sec .method-side{grid-column:2;grid-row:4;position:sticky;top:110px;align-self:start}.method-sec .method-side .method-limits{position:static;margin-top:8px}}
+.method-cta{margin-top:16px;padding:22px 24px;border:var(--line);border-radius:var(--r-card);background:#fff;box-shadow:var(--shadow-card)}
+.method-cta h3{margin:0 0 8px;font:600 18px/1.25 var(--serif)}
+.method-cta p{margin:0 0 14px;font-size:14.5px;line-height:1.55;color:#3b5463}
+.method-cta .btn{width:100%;justify-content:center;margin-bottom:12px}
+.method-cta .text-link{display:inline-flex}
+@media(max-width:900px){.method-side{margin-top:18px}}
