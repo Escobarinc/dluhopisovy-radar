@@ -445,3 +445,15 @@ const COVER=slug=>PHOTO_COVERS.includes(slug)?`assets/photos/${slug}.jpg?v=2`:`a
  const c=read();
  if(c){apply(c,null);tab.hidden=false}else{window.radarConsent=null;open(false)}
 })();
+
+/* REKLAMA V BOKU – střídání fotek (bez animace při prefers-reduced-motion) */
+(()=>{
+ const box=document.querySelector('.sa-slides');if(!box)return;
+ const imgs=[...box.querySelectorAll('img')];if(imgs.length<2)return;
+ if(window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+ let i=0,t=null;
+ const next=()=>{imgs[i].classList.remove('is-on');i=(i+1)%imgs.length;imgs[i].classList.add('is-on')};
+ const start=()=>{if(!t)t=setInterval(next,4000)},stop=()=>{clearInterval(t);t=null};
+ document.addEventListener('visibilitychange',()=>document.hidden?stop():start());
+ start();
+})();
