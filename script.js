@@ -241,7 +241,7 @@ document.addEventListener('keydown',e=>{
     if(first){first.focus();first.scrollIntoView({block:'center'});status.innerHTML='';return;}
 
     const d=new FormData(form),lines=[];
-    form.querySelectorAll('input:not([type=checkbox]):not([type=file]),textarea').forEach(el=>{
+    form.querySelectorAll('select,input:not([type=checkbox]):not([type=file]),textarea').forEach(el=>{
       const label=form.querySelector(`label[for="${el.id}"]`);
       if(el.value.trim())lines.push(`${el.dataset.label?el.dataset.label:label?label.textContent.replace(/\s*\*|\(nepovinné\)/g,'').trim():el.name}: ${el.value.trim()}`);
     });

@@ -780,3 +780,31 @@ footer.site-footer,.footer-inner{height:auto}
 .rep-foot{margin:0;padding:20px 32px;background:#f6f8f9;border-top:var(--line);font-size:13.5px;font-style:italic;color:var(--muted)}
 @media(max-width:1100px){.rep-layout{grid-template-columns:1fr}}
 @media(max-width:700px){.rep-head{flex-direction:column;padding:22px 20px}.rep-sec{padding:20px}.rep-summary{grid-template-columns:1fr}.rep-summary div{padding:12px 20px}.rep-summary div+div{border-left:0;border-top:var(--line)}.kv div{grid-template-columns:1fr;gap:4px}.rep-foot{padding:16px 20px}}
+
+/* O RADARU */
+.about-two{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:40px;margin-bottom:44px;scroll-margin-top:100px}
+.ab-h{margin:0 0 14px;font:600 24px/1.2 var(--serif);letter-spacing:-.02em}
+.about-two p,.operator p{margin:0 0 12px;font-size:16px;line-height:1.65;color:#33434f}
+.about-two a{color:var(--emerald);font-weight:600;text-decoration:underline;text-underline-offset:3px}
+.dodont{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+.dd{padding:24px 28px;border-radius:var(--r-card);border:var(--line);background:#fff;box-shadow:var(--shadow-card)}
+.dd h3{margin:0 0 14px;font:600 19px/1.2 var(--serif)}
+.dd ul{list-style:none;margin:0;padding:0;display:grid;gap:10px;font-size:15.5px}
+.dd li{position:relative;padding-left:30px;line-height:1.45}
+.dd li:before{content:'';position:absolute;left:0;top:1px;width:20px;height:20px;border-radius:50%;background:center/12px no-repeat}
+.dd--do li:before{background-color:#d6f3e8;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2300875a' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 12 4 4 8-8'/%3E%3C/svg%3E")}
+.dd--dont{background:#f6f8f9}
+.dd--dont li:before{background-color:#e6ebee;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23566672' stroke-width='3' stroke-linecap='round'%3E%3Cpath d='M7 7l10 10M17 7 7 17'/%3E%3C/svg%3E")}
+.dd-note{margin:16px 0 0;font:600 16px/1.5 var(--serif);color:var(--navy)}
+#nezavislost,#provozovatel,#co-delame,#kontakt{scroll-margin-top:90px}
+.operator{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.3fr);gap:32px;align-items:start;margin-top:44px;padding:28px;border:var(--line);border-radius:var(--r-card);background:#fff}
+.op-kv div{grid-template-columns:200px minmax(0,1fr)}
+.req-links{margin:20px 0 0;font-size:14px;line-height:1.7;color:#9fb3be}
+.req-links a{color:var(--lime);font-weight:600}
+.sel{width:100%;height:46px;padding:0 36px 0 14px;border:1px solid #c6d3da;border-radius:10px;background:#fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23031a30' stroke-width='2' stroke-linecap='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E") right 12px center/16px no-repeat;font-size:15px;appearance:none}
+.sel:focus{border-color:var(--emerald);outline:2px solid rgba(0,135,90,.25);outline-offset:0}
+#kontakt .req-intro{padding-top:8px}
+@media(max-width:900px){.about-two,.dodont,.operator{grid-template-columns:1fr}.about-two{gap:24px}}
+@media(max-width:700px){.op-kv div{grid-template-columns:1fr}.operator{padding:20px}}
+.url-field label:not(.sr-only) ~ .ico{top:39px;bottom:auto}
+.about-card .text-link{white-space:normal;flex-wrap:wrap}
