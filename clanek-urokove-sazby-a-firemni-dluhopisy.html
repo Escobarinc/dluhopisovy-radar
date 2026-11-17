@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="cs">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#f8fbfb">
+  <link rel="icon" type="image/png" href="assets/logo-emblem.png">
+  <meta name="description" content="Rozhodnutí bankovní rady ČNB o úrokových sazbách se netýká jen hypoték a spořicích účtů. Promítá se i do cen dluhopisů, které investor už drží, a do podmín">
+  <title>Jak úrokové sazby ČNB ovlivňují firemní dluhopisy – Dluhopisový Radar</title>
+  <link rel="stylesheet" href="assets/fonts.css?v=1">
+  <link rel="stylesheet" href="styles.css?v=71">
+  <script defer src="script.js?v=63"></script>
+</head>
+<body class="subpage">
+  <svg class="icon-library" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4 12h16m-7-7 7 7-7 7"/></symbol>
+    <symbol id="i-search" viewBox="0 0 24 24"><circle cx="10.7" cy="10.7" r="7.3"/><path d="m16.4 16.4 5 5"/></symbol>
+    <symbol id="i-play" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.3"/><path d="m10 8 6 4-6 4z"/></symbol>
+    <symbol id="i-laptop" viewBox="0 0 24 24"><path d="M4 16V5c0-1 .8-2 2-2h12c1.1 0 2 .9 2 2v7M2 19h13M1 21h15M16 14l7 6-3 1-1 2z"/></symbol>
+    <symbol id="i-layers" viewBox="0 0 24 24"><path d="m12 2 10 5.4-10 5.5L2 7.4 12 2zm-10 10 10 5.5L22 12M2 17l10 5 10-5"/></symbol>
+    <symbol id="i-bars" viewBox="0 0 24 24"><path d="M4 20v-5m5 5v-9m5 9V7m5 13V3"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="m3 12 6 6L21 5"/></symbol>
+    <symbol id="i-building" viewBox="0 0 24 24"><path d="M3 22V9h7v13M10 22V3h11v19M1 22h22M6 12v2m0 3v2m8-12v2m4-2v2m-4 3v2m4-2v2m-4 3v2m4-2v2"/></symbol>
+    <symbol id="i-calendar" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M7 2v6M17 2v6M3 10h18M7 14h2m3 0h2"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l4 3"/></symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path d="M5 5l14 14M19 5 5 19"/></symbol>
+  </svg>
+
+  <header class="site-header" id="top">
+    <div class="container header-inner">
+      <a class="logo" href="index.html" aria-label="Dluhopisový Radar – úvod">
+        <img class="logo-img" src="assets/logo.png" width="165" height="52" alt="Dluhopisový Radar">
+      </a>
+      <p class="header-tagline">NEZÁVISLÝ PORTÁL <br>O EMITENTECH A EMISÍCH</p>
+      <nav class="desktop-nav" aria-label="Hlavní navigace"><a href="proverit-emitenta.html">Prověřit emitenta</a><a href="porovnat-emise.html">Porovnat emise</a><div class="nav-group"><button class="nav-toggle" type="button" aria-expanded="false" aria-haspopup="true">Databáze <svg class="ico chev" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button><div class="nav-sub"><a href="emitenti.html">Emitenti</a><a href="emise.html">Emise</a></div></div><div class="nav-group"><button class="nav-toggle is-current" type="button" aria-expanded="false" aria-haspopup="true">Články a průvodce <svg class="ico chev" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button><div class="nav-sub"><a href="clanky.html">Články</a><a href="pruvodce.html">Průvodce</a></div></div><a href="jak-funguje.html">Jak funguje Radar</a><a href="o-radaru.html">O Radaru</a></nav>
+      <button class="icon-button search-trigger" id="open-search" aria-label="Otevřít vyhledávání" type="button"><svg class="ico"><use href="#i-search"/></svg></button>
+      <button class="icon-button menu-trigger" id="menu-trigger" aria-label="Otevřít menu" aria-expanded="false" aria-controls="mobile-nav" type="button"><svg class="ico"><use href="#i-menu"/></svg></button>
+    </div>
+    <nav id="mobile-nav" class="mobile-nav" aria-label="Mobilní navigace" hidden><a href="proverit-emitenta.html">Prověřit emitenta</a><a href="porovnat-emise.html">Porovnat emise</a><span class="mnav-label">Databáze</span><a href="emitenti.html" class="sub">Emitenti</a><a href="emise.html" class="sub">Emise</a><span class="mnav-label">Články a průvodce</span><a href="clanky.html" class="sub">Články</a><a href="pruvodce.html" class="sub">Průvodce</a><a href="jak-funguje.html">Jak funguje Radar</a><a href="o-radaru.html">O Radaru</a></nav>
+  </header>
+
+  <main class="subpage-main">
+    <section class="page-head page-head--article"><div class="container">
+      <p class="crumbs"><a href="index.html">Úvod</a> <span aria-hidden="true">/</span> <a href="clanky.html">Články</a> <span aria-hidden="true">/</span> Jak úrokové sazby ČNB ovlivňují firemní dluhopisy</p>
+      <p class="art-kicker"><span class="art-chip">Komentář</span>Komentář redakce / Dluhopisy</p>
+      <h1>Jak úrokové sazby ČNB ovlivňují firemní dluhopisy</h1>
+      <p class="page-lead art-lead">Rozhodnutí bankovní rady ČNB o úrokových sazbách se netýká jen hypoték a spořicích účtů. Promítá se i do cen dluhopisů, které investor už drží, a do podmínek, za jakých si firmy půjčují nové peníze. Vysvětlujeme mechanismus bez konkrétních čísel, aby platil i za rok.</p>
+      <p class="art-meta art-meta--head">Redakce Dluhopisového Radaru · listopad 2026 · 5 min čtení</p>
+    </div></section>
+    <section class="page-body"><div class="container art-layout">
+      <article class="prose">
+<h2 id="od-sazby-cnb-k-sazbam-na-trhu">Od sazby ČNB k sazbám na trhu</h2>
+<p>Hlavní úrokovou sazbou České národní banky je dvoutýdenní repo sazba, zkráceně 2T repo. Na ni jsou navázány i další dvě sazby centrální banky, lombardní a diskontní. Změna 2T repo sazby se podle ČNB téměř okamžitě projeví v krátkodobých sazbách mezibankovního trhu.</p><p>Dlouhodobé sazby se sazbami ČNB nepohybují jedna k jedné. Kromě aktuální měnové politiky v nich hrají roli očekávání budoucího vývoje krátkodobých sazeb, úrokové sazby v zahraničí i rizikové prémie. Obvykle se však posouvají stejným směrem. Trh navíc často reaguje dřív, než ke změně dojde, protože kroky centrální banky do určité míry předvídá.</p><p>Pro firemní dluhopisy je důležité právě toto širší prostředí. Výnos, který investoři po firmě požadují, se odvíjí od obecné úrovně sazeb na trhu, k níž si připočítávají přirážku za riziko konkrétního emitenta.</p>
+<h2 id="houpacka-sazby-nahoru-ceny-dolu">Houpačka: sazby nahoru, ceny dolů</h2>
+<p>Základní vztah mezi tržními sazbami a cenou dluhopisu s pevným kupónem připomíná houpačku. Když sazby rostou, ceny již vydaných dluhopisů klesají. Když sazby klesají, ceny rostou. Toto obrazné přirovnání používá i americká Komise pro cenné papíry (SEC) ve svých materiálech pro investory.</p><p>Důvod je jednoduchý. Dluhopis s pevným kupónem vyplácí stále stejný úrok. Pokud se na trhu objeví nové dluhopisy s vyšším kupónem, ten starší je méně atraktivní a kupující za něj zaplatí méně. Naopak při poklesu sazeb je starší dluhopis s vyšším kupónem cennější.</p><p>Cena dluhopisu se přitom přizpůsobí tak, aby výnos do splatnosti pro nového kupce odpovídal tržním podmínkám. SEC to ilustruje na desetiletém dluhopisu s kupónem 3 %: kdyby tržní sazby o rok později klesly na 2 %, cena dluhopisu by vzrostla, kdyby vystoupaly na 4 %, cena by klesla pod jmenovitou hodnotu.</p><p>ČNB tento mechanismus popisuje jako jeden z kanálů, jimiž měnová politika působí na ekonomiku. Vyšší sazby obecně snižují ceny dluhopisů, akcií i nemovitostí, protože jejich očekávané výnosy jsou ve srovnání s úročenými vklady méně zajímavé.</p>
+<h2 id="durace-jednoduse">Durace jednoduše</h2>
+<p>Ne všechny dluhopisy reagují na změnu sazeb stejně silně. Citlivost ceny na pohyb sazeb vyjadřuje ukazatel zvaný <strong>durace</strong>. Zjednodušeně ji lze chápat jako vážený průměr doby, za kterou investor dostane zpět své peníze, tedy kupóny a jistinu.</p><p>Praktické pravidlo zní: čím vyšší durace, tím víc se cena dluhopisu pohne při změně sazeb. Při malých změnách platí přibližně, že dluhopis s durací kolem pěti let ztratí na ceně zhruba pět procent, pokud tržní sazby vzrostou o jeden procentní bod. Jde o hrubý odhad, ne o přesný výpočet.</p><p>Na duraci mají vliv především dvě vlastnosti dluhopisu, které zmiňuje i SEC:</p><ul><li><strong>Doba do splatnosti.</strong> Delší splatnost znamená vyšší citlivost na sazby. Proto dlouhodobé dluhopisy obvykle nabízejí vyšší kupón než krátkodobé dluhopisy stejné úvěrové kvality.</li><li><strong>Výše kupónu.</strong> Při jinak stejných parametrech reaguje dluhopis s nižším kupónem na růst sazeb silnějším poklesem ceny než dluhopis s vyšším kupónem.</li></ul>
+<h2 id="kdyz-dluhopis-drzim-do-splatnosti">Když dluhopis držím do splatnosti</h2>
+<p>Kolísání ceny je podstatné hlavně pro toho, kdo chce dluhopis prodat před splatností. Investor, který dluhopis drží až do konce, dostane sjednané kupóny a jmenovitou hodnotu bez ohledu na to, jak se cena mezitím pohybovala. Tedy za předpokladu, že emitent své závazky splní.</p><p>U korporátních dluhopisů v Česku je ale prodej před splatností často obtížný sám o sobě. Většina z nich se neobchoduje na burze a emitent zpravidla nemá povinnost je odkoupit dříve. Kdo potřebuje peníze dřív, může tak narazit na dvojí problém: nízkou cenu kvůli růstu sazeb a malý zájem kupců.</p><p>Růst sazeb má i druhou stranu. Investor, který dostává kupóny nebo jistinu, je může znovu investovat za vyšší úrok. Pokles sazeb naopak znamená, že se peníze budou reinvestovat hůř.</p>
+<h2 id="refinancovani-sazby-z-pohledu-emitenta">Refinancování: sazby z pohledu emitenta</h2>
+<p>Úrokové sazby ovlivňují i samotné firmy, které dluhopisy vydávají. ČNB popisuje, že při vyšších sazbách se firmám prodražuje financování a banky zpřísňují posuzování úvěrů a požadují vyšší rizikové přirážky. Firmy pak obvykle omezují investice.</p><p>Pro držitele dluhopisů je to důležité ve chvíli, kdy emitent potřebuje splatit starý dluh novým. Firma, která si kdysi půjčila levně, může při splatnosti zjistit, že nová emise nebo bankovní úvěr bude znatelně dražší. Vyšší úrokové náklady snižují zisk a zhoršují schopnost dluh obsluhovat. U zadluženějších emitentů to může vést až k problémům se splacením.</p><p>Opačná situace nastává při poklesu sazeb. Pokud to emisní podmínky umožňují, může emitent dluhopisy splatit předčasně a nahradit je levnějším financováním. Investor pak dostane peníze zpět dříve, než čekal, a musí je investovat za nižší úrok.</p><p>Účinky měnové politiky se v ekonomice navíc projevují se zpožděním. Podle ČNB trvá působení přes úrokové sazby přibližně jeden až dva roky.</p>
+<h2 id="pevny-nebo-pohyblivy-kupon">Pevný, nebo pohyblivý kupón</h2>
+<p>Zákon o dluhopisech umožňuje určit výnos dluhopisu různými způsoby, mimo jiné pevnou úrokovou sazbou, nebo pohyblivou sazbou odvozenou například od jiných úrokových sazeb. Oba typy reagují na změnu sazeb odlišně:</p><ul><li><strong>Pevný kupón</strong> dává jistotu, kolik bude investor dostávat, ale cena dluhopisu kolísá podle tržních sazeb, jak popisuje houpačka výše.</li><li><strong>Pohyblivý kupón</strong> se v pravidelných intervalech přizpůsobuje referenční sazbě. Cena takového dluhopisu je proto vůči změnám sazeb obvykle méně citlivá, investor ale předem neví, jaký úrok bude dostávat.</li></ul><p>Pohyblivý kupón přenáší úrokové riziko z investora na emitenta. Když sazby rostou, rostou firmě úrokové náklady, což u slabších emitentů zvyšuje riziko, že závazky nezvládnou. Pohyblivý kupón tedy chrání před jedním druhem rizika, ale může posílit jiný.</p><p>Tento text má vzdělávací povahu a není investičním doporučením.</p>
+
+<h2 id="odkazy-a-odborne-zdroje">Odkazy a odborné zdroje</h2>
+<ol class="sources">
+<li>Česká národní banka — Jak úrokové sazby ČNB ovlivňují českou ekonomiku <a href="https://www.cnb.cz/cs/menova-politika/vzdelavani/4.-jak-urokove-sazby-cnb-ovlivnuji-ceskou-ekonomiku/" rel="noopener" target="_blank">https://www.cnb.cz/cs/menova-politika/vzdelavani/4.-jak-urokove-sazby-cnb-ovlivnuji-ceskou-ekonomiku/</a></li><li>U.S. SEC (Investor.gov) — Investor Bulletin: Interest Rate Risk — When Interest Rates Go Up, Prices of Fixed-Rate Bonds Fall <a href="https://www.sec.gov/files/ib_interestraterisk.pdf" rel="noopener" target="_blank">https://www.sec.gov/files/ib_interestraterisk.pdf</a></li><li>Zákon č. 190/2004 Sb., o dluhopisech (Zákony pro lidi) <a href="https://www.zakonyprolidi.cz/cs/2004-190" rel="noopener" target="_blank">https://www.zakonyprolidi.cz/cs/2004-190</a></li><li>Česká národní banka — Desatero pro drobné investory do korporátních dluhopisů <a href="https://www.cnb.cz/cs/dohled-financni-trh/ochrana-spotrebitele/desatero_investor_korporat_dluhopisy/" rel="noopener" target="_blank">https://www.cnb.cz/cs/dohled-financni-trh/ochrana-spotrebitele/desatero_investor_korporat_dluhopisy/</a></li>
+</ol>
+<p class="editor-note">Text je původním redakčním zpracováním pro vzdělávací účely. Nepředstavuje investiční doporučení ani nabídku finančního produktu. Foto: Markus Winkler / Unsplash (Unsplash License).</p>
+
+        <p class="art-disclaimer">Článek má informační a vzdělávací charakter. Není investičním doporučením, nabídkou ani výzvou k nákupu či prodeji dluhopisů.</p>
+      </article>
+      <aside class="art-aside">
+        <nav class="aside-card art-toc" aria-label="Obsah článku"><h2>Obsah článku</h2><ol><li><a href="#od-sazby-cnb-k-sazbam-na-trhu">Od sazby ČNB k sazbám na trhu</a></li><li><a href="#houpacka-sazby-nahoru-ceny-dolu">Houpačka: sazby nahoru, ceny dolů</a></li><li><a href="#durace-jednoduse">Durace jednoduše</a></li><li><a href="#kdyz-dluhopis-drzim-do-splatnosti">Když dluhopis držím do splatnosti</a></li><li><a href="#refinancovani-sazby-z-pohledu-emitenta">Refinancování: sazby z pohledu emitenta</a></li><li><a href="#pevny-nebo-pohyblivy-kupon">Pevný, nebo pohyblivý kupón</a></li><li><a href="#odkazy-a-odborne-zdroje">Odkazy a odborné zdroje</a></li></ol></nav>
+        <div class="aside-card art-cta"><h2>Zvažujete konkrétní emisi?</h2><p>Zjistěte, kdo za ní stojí a jak hospodaří.</p><a class="btn btn-primary" href="proverit-emitenta.html">Prověřit emitenta</a><a class="text-link" href="porovnat-emise.html">Porovnat více emisí <svg class="ico"><use href="#i-arrow"/></svg></a></div>
+      </aside>
+    </div>
+    <div class="container art-more"><div class="section-title-line"><h2><span class="green-rule"></span>Další články</h2></div><div class="art-grid"><a class="art-card" href="clanek-statni-a-firemni-dluhopisy.html" data-cat="komentare"><img class="art-cover" src="assets/photos/statni-a-firemni-dluhopisy.jpg" width="1200" height="800" alt="" loading="lazy"><span class="art-chip">Komentář</span><strong>Státní a firemní dluhopisy: v čem se skutečně liší?</strong><span class="art-perex">Dluhopis je vždy závazek někoho jiného. Někdy si prostřednictvím dluhopisů půjčuje stát, jindy podnik, který chce financovat své aktivity. Formálně jde o podobný nástroj, ekonomicky však o dvě odlišné situace. Rozhodující není samotný název cenného papíru, ale povaha dlužníka a zdroje, z nichž bude svůj dluh splácet.</span><span class="art-meta">listopad 2026 · 7 min čtení</span></a><a class="art-card" href="clanek-vysoky-kupon-neni-zaruka.html" data-cat="komentare"><img class="art-cover" src="assets/photos/vysoky-kupon-neni-zaruka.jpg" width="1200" height="675" alt="" loading="lazy"><span class="art-chip">Komentář</span><strong>Vysoký kupón není zárukou výnosu</strong><span class="art-perex">Nabídka s vysokým kupónem na první pohled láká, ale číslo v reklamě ještě neříká, kolik investor skutečně dostane zpět. Kupón je především cenou, kterou si trh řekl za podstoupené riziko. Vysvětlujeme, jak nadprůměrný kupón číst a na co se dívat místo něj.</span><span class="art-meta">listopad 2026 · 5 min čtení</span></a><a class="art-card" href="clanek-emitent-7-ukazatelu.html" data-cat="analyzy"><img class="art-cover" src="assets/photos/emitent-7-ukazatelu.jpg" width="1200" height="675" alt="" loading="lazy"><span class="art-chip">Analýza</span><strong>Jak poznat kvalitního emitenta dluhopisů? Sedm klíčových ukazatelů</strong><span class="art-perex">Výše úroku je jen jedna část příběhu. Rozhodující je finanční síla skutečného dlužníka – a u projektových společností také to, zda za jejich závazky právně odpovídá silnější společnost skupiny.</span><span class="art-meta">listopad 2026 · 7 min čtení</span></a></div></div>
+    </section>
+  </main>
+
+  <footer class="site-footer ft2"><div class="container">
+  <div class="ft2-top">
+    <div class="ft2-brand">
+      <a class="logo footer-logo" href="index.html"><img class="logo-img" src="assets/logo-light.png" width="139" height="44" alt="Dluhopisový Radar"></a>
+      <p>Veřejná data o emitentech a dluhopisových emisích na jednom místě.</p>
+    </div>
+    <nav class="ft2-col" aria-label="Služby"><h3>Služby</h3><a href="proverit-emitenta.html">Prověřit emitenta</a><a href="porovnat-emise.html">Porovnat emise</a><a href="ukazkova-proverka.html">Ukázková prověrka</a></nav>
+    <nav class="ft2-col" aria-label="Databáze"><h3>Databáze</h3><a href="emitenti.html">Emitenti</a><a href="emise.html">Emise</a></nav>
+    <nav class="ft2-col" aria-label="Obsah"><h3>Obsah</h3><a href="clanky.html">Články</a><a href="pruvodce.html">Průvodce</a><a href="jak-funguje.html">Jak funguje Radar</a><a href="o-radaru.html">O Radaru</a></nav>
+    <nav class="ft2-col" aria-label="Kontakt"><h3>Kontakt</h3><a href="o-radaru.html#kontakt">Napište nám</a><a href="o-radaru.html#kontakt">Inzerce a spolupráce</a></nav>
+  </div>
+  <div class="footer-legal">
+      <p><strong>Dluhopisový Radar</strong> je nezávislý informační a analytický portál zaměřený na korporátní dluhopisy a jejich emitenty. Při zpracování informací vycházíme z veřejně dostupných zdrojů. U zveřejňovaných údajů uvádíme jejich zdroje. Dluhopisy neprodáváme ani nezprostředkováváme jejich nákup. Neposkytujeme investiční poradenství, individuální doporučení ani závazné hodnocení bonity emitentů. Veškeré analýzy, srovnání a publikované informace slouží výhradně k informačním a vzdělávacím účelům.</p>
+    </div>
+  <div class="ft2-bottom">
+    <p>© 2026 Dluhopisový Radar · Provozovatel 9394 Group s.r.o., Československé armády 1328/9, 742 21 Kopřivnice · IČO 299 89 019</p>
+    <nav aria-label="Právní informace"><a href="zasady-ochrany-osobnich-udaju.html">Ochrana osobních údajů</a><a href="zasady-cookies.html">Zásady cookies</a><button type="button" data-open="terms">Podmínky používání</button><button type="button" data-open-cookies>Nastavení cookies</button><a href="o-radaru.html#kontakt">Kontakt</a></nav>
+  </div>
+</div></footer>
+
+  <div class="dialog-backdrop" id="dialog-backdrop" hidden>
+    <div class="dialog" role="dialog" aria-modal="true" aria-labelledby="dialog-title" tabindex="-1">
+      <div class="dialog-header"><div><span id="dialog-kicker" class="dialog-kicker">DLUHOPISOVÝ RADAR</span><h2 id="dialog-title">Informace</h2></div><button class="icon-button dialog-close" type="button" id="close-dialog" aria-label="Zavřít okno"><svg class="ico"><use href="#i-close"/></svg></button></div>
+      <div class="dialog-content" id="dialog-content"></div>
+    </div>
+  </div>
+  <noscript><p class="noscript-notice">Pro vyhledávání a formuláře je nutný zapnutý JavaScript. Ostatní obsah zůstává přístupný.</p></noscript>
+</body>
+</html>

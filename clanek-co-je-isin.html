@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="cs">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#f8fbfb">
+  <link rel="icon" type="image/png" href="assets/logo-emblem.png">
+  <meta name="description" content="Každá emise dluhopisů vydaná v Česku má dvanáctimístný kód ISIN. Vysvětlujeme, z čeho se skládá, kdo ho přiděluje a jak podle něj dohledat emisi ve veřejný">
+  <title>Co je ISIN a jak podle něj dluhopis ověřit – Dluhopisový Radar</title>
+  <link rel="stylesheet" href="assets/fonts.css?v=1">
+  <link rel="stylesheet" href="styles.css?v=71">
+  <script defer src="script.js?v=63"></script>
+</head>
+<body class="subpage">
+  <svg class="icon-library" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4 12h16m-7-7 7 7-7 7"/></symbol>
+    <symbol id="i-search" viewBox="0 0 24 24"><circle cx="10.7" cy="10.7" r="7.3"/><path d="m16.4 16.4 5 5"/></symbol>
+    <symbol id="i-play" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.3"/><path d="m10 8 6 4-6 4z"/></symbol>
+    <symbol id="i-laptop" viewBox="0 0 24 24"><path d="M4 16V5c0-1 .8-2 2-2h12c1.1 0 2 .9 2 2v7M2 19h13M1 21h15M16 14l7 6-3 1-1 2z"/></symbol>
+    <symbol id="i-layers" viewBox="0 0 24 24"><path d="m12 2 10 5.4-10 5.5L2 7.4 12 2zm-10 10 10 5.5L22 12M2 17l10 5 10-5"/></symbol>
+    <symbol id="i-bars" viewBox="0 0 24 24"><path d="M4 20v-5m5 5v-9m5 9V7m5 13V3"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="m3 12 6 6L21 5"/></symbol>
+    <symbol id="i-building" viewBox="0 0 24 24"><path d="M3 22V9h7v13M10 22V3h11v19M1 22h22M6 12v2m0 3v2m8-12v2m4-2v2m-4 3v2m4-2v2m-4 3v2m4-2v2"/></symbol>
+    <symbol id="i-calendar" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M7 2v6M17 2v6M3 10h18M7 14h2m3 0h2"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l4 3"/></symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path d="M5 5l14 14M19 5 5 19"/></symbol>
+  </svg>
+
+  <header class="site-header" id="top">
+    <div class="container header-inner">
+      <a class="logo" href="index.html" aria-label="Dluhopisový Radar – úvod">
+        <img class="logo-img" src="assets/logo.png" width="165" height="52" alt="Dluhopisový Radar">
+      </a>
+      <p class="header-tagline">NEZÁVISLÝ PORTÁL <br>O EMITENTECH A EMISÍCH</p>
+      <nav class="desktop-nav" aria-label="Hlavní navigace"><a href="proverit-emitenta.html">Prověřit emitenta</a><a href="porovnat-emise.html">Porovnat emise</a><div class="nav-group"><button class="nav-toggle" type="button" aria-expanded="false" aria-haspopup="true">Databáze <svg class="ico chev" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button><div class="nav-sub"><a href="emitenti.html">Emitenti</a><a href="emise.html">Emise</a></div></div><div class="nav-group"><button class="nav-toggle is-current" type="button" aria-expanded="false" aria-haspopup="true">Články a průvodce <svg class="ico chev" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button><div class="nav-sub"><a href="clanky.html">Články</a><a href="pruvodce.html">Průvodce</a></div></div><a href="jak-funguje.html">Jak funguje Radar</a><a href="o-radaru.html">O Radaru</a></nav>
+      <button class="icon-button search-trigger" id="open-search" aria-label="Otevřít vyhledávání" type="button"><svg class="ico"><use href="#i-search"/></svg></button>
+      <button class="icon-button menu-trigger" id="menu-trigger" aria-label="Otevřít menu" aria-expanded="false" aria-controls="mobile-nav" type="button"><svg class="ico"><use href="#i-menu"/></svg></button>
+    </div>
+    <nav id="mobile-nav" class="mobile-nav" aria-label="Mobilní navigace" hidden><a href="proverit-emitenta.html">Prověřit emitenta</a><a href="porovnat-emise.html">Porovnat emise</a><span class="mnav-label">Databáze</span><a href="emitenti.html" class="sub">Emitenti</a><a href="emise.html" class="sub">Emise</a><span class="mnav-label">Články a průvodce</span><a href="clanky.html" class="sub">Články</a><a href="pruvodce.html" class="sub">Průvodce</a><a href="jak-funguje.html">Jak funguje Radar</a><a href="o-radaru.html">O Radaru</a></nav>
+  </header>
+
+  <main class="subpage-main">
+    <section class="page-head page-head--article"><div class="container">
+      <p class="crumbs"><a href="index.html">Úvod</a> <span aria-hidden="true">/</span> <a href="pruvodce.html">Průvodce</a> <span aria-hidden="true">/</span> Co je ISIN a jak podle něj dluhopis ověřit</p>
+      <p class="art-kicker"><span class="art-chip">Průvodce</span>Nezávislý vzdělávací obsah / Dluhopisy</p>
+      <h1>Co je ISIN a jak podle něj dluhopis ověřit</h1>
+      <p class="page-lead art-lead">Každá emise dluhopisů vydaná v Česku má dvanáctimístný kód ISIN. Vysvětlujeme, z čeho se skládá, kdo ho přiděluje a jak podle něj dohledat emisi ve veřejných evidencích. A také proč samotný ISIN o kvalitě dluhopisu nic neříká.</p>
+      <p class="art-meta art-meta--head">Redakce Dluhopisového Radaru · listopad 2026 · 5 min čtení</p>
+    </div></section>
+    <section class="page-body"><div class="container art-layout">
+      <article class="prose">
+<h2 id="co-je-isin-a-k-cemu-slouzi">Co je ISIN a k čemu slouží</h2>
+<p>ISIN (International Securities Identification Number) je mezinárodní identifikační kód cenného papíru. Jeho podobu stanoví mezinárodní norma ISO 6166, takže kód funguje stejně v Česku, v Německu i ve Španělsku.</p><p>Pro investora je ISIN něco jako rodné číslo emise. Názvy dluhopisů bývají podobné a jeden emitent často vydá několik emisí s různým kupónem a splatností. Kód naproti tomu jednoznačně určuje, o kterou emisi jde. Hodí se při zadávání pokynu u obchodníka s cennými papíry, při kontrole výpisu z majetkového účtu i při dohledávání dokumentů.</p><p>Zákon o dluhopisech stanoví, že dluhopisy téže emise, se kterými jsou spojena stejná práva, dostanou stejný ISIN. Jestliže je od dluhopisu oddělen kupón, přiděluje se samostatný kód dluhopisu s kupóny, oddělené jistině i každému kupónu.</p><p>V praxi se s ISIN setkáte na více místech: v emisních podmínkách a prospektu, v potvrzení o nákupu, na výpisu z majetkového účtu nebo v oznámeních emitenta. Zákon o dluhopisech například vyžaduje, aby oznámení o konání schůze vlastníků dluhopisů obsahovalo ISIN, pokud byl emisi přidělen. Díky tomu poznáte, které emise se schůze týká, i když jich emitent vydal více.</p>
+<h2 id="jak-je-kod-slozen">Jak je kód složen</h2>
+<p>ISIN má vždy 12 znaků, kombinaci písmen a číslic. Skládá se ze tří částí:</p><ol><li><strong>Dvoupísmenný kód země</strong> podle normy ISO 3166. Podle typu cenného papíru označuje zemi emitenta nebo národní agenturu, která kód přidělila. U emisí přidělených v Česku je to CZ.</li><li><strong>Devět znaků národní části</strong>, jejichž strukturu určuje národní číslovací agentura dané země.</li><li><strong>Jeden kontrolní znak</strong> na konci, který se dopočítává z předchozích znaků. Díky němu lze odhalit řadu překlepů při opisování kódu.</li></ol><p>Když vám někdo nabízí dluhopis a ISIN uvede, ověřte si nejdřív základní věc: zda má kód přesně 12 znaků a začíná kódem země. Nesmyslný formát je důvod zpozornět, správný formát ale ještě nic nedokazuje.</p>
+<h2 id="kdo-isin-v-cesku-prideluje">Kdo ISIN v Česku přiděluje</h2>
+<p>Od 7. 7. 2010 přiděluje kódy ISIN pro české cenné papíry Centrální depozitář cenných papírů, a.s. (CDCP). Česká národní banka tuto činnost ke stejnému datu ukončila. Právním základem je zákon o podnikání na kapitálovém trhu.</p><p>Podle informací CDCP emitent k přidělení ISIN dokládá mimo jiné identifikátor LEI, údaje z obchodního rejstříku a u dluhopisů emisní podmínky v plném znění. Za přidělení se platí jednorázový poplatek.</p><p>CDCP je zároveň centrálním depozitářem, který vede evidenci zaknihovaných cenných papírů. Emitent, který chce mít emisi zaknihovanou v jeho evidenci, s ním uzavírá smlouvu o vedení evidence emise. Na webu CDCP najdete také seznam emisí. Přidělení ISIN a zaknihování jsou ovšem dva různé kroky: kód může mít i dluhopis, který zaknihovaný není.</p><p>Pokud emise nemá zveřejněný prospekt, musí podle zákona o dluhopisech ISIN obsahovat přímo emisní podmínky. Kód byste tedy měli najít v dokumentaci, kterou vám emitent nebo prodejce poskytne.</p>
+<h2 id="jak-si-emisi-dohledat">Jak si emisi dohledat</h2>
+<p>ISIN je dobrým výchozím bodem pro vlastní ověřování. Postupovat můžete například takto:</p><ol><li><strong>Porovnejte kód v dokumentech.</strong> ISIN v nabídce, v emisních podmínkách a na výpisu z účtu by měl být všude stejný. Rozdíl znamená, že nejde o tutéž emisi, nebo že je v podkladech chyba.</li><li><strong>Zkuste seznam prospektů ČNB.</strong> Česká národní banka vede v sekci Seznamy a evidence Seznam schválených a notifikovaných prospektů. Vyhledávat v něm lze mimo jiné podle názvu emitenta, IČO, LEI a právě podle ISIN. Samostatně ČNB zveřejňuje i seznam konečných podmínek k základním prospektům.</li><li><strong>Prověřte prodejce.</strong> V seznamech JERRS na webu ČNB si ověříte, zda firma, která vám dluhopis nabízí, má povolení nebo registraci k činnosti na finančním trhu.</li><li><strong>Podívejte se na emitenta.</strong> Podle IČO emitenta si v obchodním rejstříku dohledáte sbírku listin s účetními závěrkami a v insolvenčním rejstříku zjistíte, zda proti němu neběží insolvenční řízení.</li></ol><p>Pozor na jednu věc: ne každá emise musí mít prospekt. Zákon zná například podlimitní veřejnou nabídku, kdy se prospekt nevydává. Když emisi v seznamu prospektů nenajdete, nemusí to automaticky znamenat problém. Emitent je ale v každém případě povinen zpřístupnit investorům emisní podmínky a ty byste si měli přečíst celé.</p>
+<h2 id="isin-neni-znamka-kvality">ISIN není známka kvality</h2>
+<p>Častý omyl zní: „Dluhopis má ISIN, takže je prověřený.“ Tak to není. Přidělení kódu je administrativní krok, při kterém emitent předkládá doklady a platí poplatek. Nejde o posouzení jeho hospodaření ani schopnosti dluh splatit.</p><p>Podobně je to se schválením prospektu. ČNB u něj výslovně upozorňuje, že prospekt posuzuje z hlediska úplnosti, srozumitelnosti a soudržnosti informací. Neposuzuje hospodářské výsledky ani finanční situaci emitenta a schválením nezaručuje, že emitent dluhopis splatí. Totéž upozornění musí podle zákona obsahovat i emisní podmínky.</p><p>ISIN, prospekt ani zápis v evidencích tedy nenahradí vlastní posouzení rizika. Sledujte, kdo za emitentem stojí, jak hospodaří, jak je dluhopis zajištěn a jaké má emitent další dluhy.</p><p>Na co si dát v praxi pozor:</p><ul><li>Argument „má to ISIN, takže je to bezpečné“ v prodejní komunikaci berte jako varovný signál, ne jako záruku.</li><li>Pokud vám prodejce ISIN odmítne sdělit nebo ho nemá, jde o zásadní nedostatek. Bez něj si emisi nemáte jak nezávisle ověřit.</li><li>Jeden emitent může mít více emisí s odlišnými podmínkami. Vždy si zkontrolujte, že čtete dokumenty ke stejnému ISIN, který kupujete.</li></ul>
+<h2 id="kratke-shrnuti">Krátké shrnutí</h2>
+<ul><li>ISIN je dvanáctimístný mezinárodní kód, který jednoznačně určuje konkrétní emisi.</li><li>V Česku ho od roku 2010 přiděluje Centrální depozitář cenných papírů.</li><li>Podle ISIN můžete emisi hledat v seznamu prospektů ČNB a porovnávat ji napříč dokumenty.</li><li>Kód sám o sobě nevypovídá o bonitě emitenta ani o bezpečnosti investice.</li></ul><p>Text má vzdělávací charakter a není investičním doporučením.</p>
+
+<h2 id="odkazy-a-odborne-zdroje">Odkazy a odborné zdroje</h2>
+<ol class="sources">
+<li>Česká národní banka — Upozornění pro žadatele: přidělování kódů ISIN <a href="https://www.cnb.cz/cs/dohled-financni-trh/vykon-dohledu/povolovaci-a-schvalovaci-rizeni/povolovaci-a-schvalovaci-rizeni-emitenti/upozorneni-pro-zadatele-pridelovani-kodu-isin/" rel="noopener" target="_blank">https://www.cnb.cz/cs/dohled-financni-trh/vykon-dohledu/povolovaci-a-schvalovaci-rizeni/povolovaci-a-schvalovaci-rizeni-emitenti/upozorneni-pro-zadatele-pridelovani-kodu-isin/</a></li><li>Česká národní banka — Seznamy a evidence <a href="https://www.cnb.cz/cs/dohled-financni-trh/seznamy/" rel="noopener" target="_blank">https://www.cnb.cz/cs/dohled-financni-trh/seznamy/</a></li><li>Centrální depozitář cenných papírů — Obecné informace o zaknihování <a href="https://www.cdcp.cz/emitenti-a-administratori/obecne-informace-o-zaknihovani/" rel="noopener" target="_blank">https://www.cdcp.cz/emitenti-a-administratori/obecne-informace-o-zaknihovani/</a></li><li>Zákony pro lidi — Zákon č. 190/2004 Sb., o dluhopisech <a href="https://www.zakonyprolidi.cz/cs/2004-190" rel="noopener" target="_blank">https://www.zakonyprolidi.cz/cs/2004-190</a></li>
+</ol>
+<p class="editor-note">Text je původním redakčním zpracováním pro vzdělávací účely. Nepředstavuje investiční doporučení ani nabídku finančního produktu. Foto: Markus Winkler / Unsplash (Unsplash License).</p>
+
+        <p class="art-disclaimer">Článek má informační a vzdělávací charakter. Není investičním doporučením, nabídkou ani výzvou k nákupu či prodeji dluhopisů.</p>
+      </article>
+      <aside class="art-aside">
+        <nav class="aside-card art-toc" aria-label="Obsah článku"><h2>Obsah článku</h2><ol><li><a href="#co-je-isin-a-k-cemu-slouzi">Co je ISIN a k čemu slouží</a></li><li><a href="#jak-je-kod-slozen">Jak je kód složen</a></li><li><a href="#kdo-isin-v-cesku-prideluje">Kdo ISIN v Česku přiděluje</a></li><li><a href="#jak-si-emisi-dohledat">Jak si emisi dohledat</a></li><li><a href="#isin-neni-znamka-kvality">ISIN není známka kvality</a></li><li><a href="#kratke-shrnuti">Krátké shrnutí</a></li><li><a href="#odkazy-a-odborne-zdroje">Odkazy a odborné zdroje</a></li></ol></nav>
+        <div class="aside-card art-cta"><h2>Zvažujete konkrétní emisi?</h2><p>Zjistěte, kdo za ní stojí a jak hospodaří.</p><a class="btn btn-primary" href="proverit-emitenta.html">Prověřit emitenta</a><a class="text-link" href="porovnat-emise.html">Porovnat více emisí <svg class="ico"><use href="#i-arrow"/></svg></a></div>
+      </aside>
+    </div>
+    <div class="container art-more"><div class="section-title-line"><h2><span class="green-rule"></span>Další články</h2></div><div class="art-grid"><a class="art-card" href="clanek-dluhopisy-od-a-do-z.html" data-cat="pruvodce"><img class="art-cover" src="assets/photos/dluhopisy-od-a-do-z.jpg?v=2" width="1200" height="675" alt="" loading="lazy"><span class="art-chip">Průvodce</span><strong>Dluhopisy od A do Z: Jak fungují a proč do nich lidé investují</strong><span class="art-perex">Dluhopisy patří mezi nejstarší a nejrozšířenější finanční nástroje na světě. Prostřednictvím dluhopisů získávají financování státy, města i soukromé společnosti. Pro investory představují možnost pravidelného úrokového příjmu a mohou tvořit důležitou součást investičního portfolia. Jak ale dluhopisy skutečně fungují, odkud se bere jejich výnos a jaká rizika jsou s nimi spojena?</span><span class="art-meta">listopad 2026 · 10 min čtení</span></a><a class="art-card" href="clanek-desatero-cnb.html" data-cat="pruvodce"><img class="art-cover" src="assets/photos/desatero-cnb.jpg" width="1200" height="675" alt="" loading="lazy"><span class="art-chip">Průvodce</span><strong>Desatero ČNB k podnikovým dluhopisům: Deset zásad, kterým je dobré rozumět</strong><span class="art-perex">Podnikové dluhopisy umožňují společnostem získávat kapitál přímo od investorů. Jejich držitelé se tím nestávají spoluvlastníky firmy, ale jejími věřiteli. Právě tato jednoduchá skutečnost je klíčem k porozumění výnosům, emisním podmínkám i rizikům, která s sebou firemní dluhopisy nesou.</span><span class="art-meta">listopad 2026 · 6 min čtení</span></a><a class="art-card" href="clanek-agent-pro-zajisteni.html" data-cat="pruvodce"><img class="art-cover" src="assets/photos/agent-pro-zajisteni.jpg" width="1200" height="675" alt="" loading="lazy"><span class="art-chip">Průvodce</span><strong>Agent pro zajištění: kdo hlídá zástavu za vlastníky dluhopisů</strong><span class="art-perex">U zajištěných dluhopisů se v emisních podmínkách objevuje pojem agent pro zajištění. Jde o osobu, která za všechny vlastníky drží a v případě potíží vykonává zástavní právo nebo jiné zajištění. Vysvětlujeme, proč tato role existuje, co agentovi ukládá zákon o dluhopisech a na co se v dokumentech zaměřit.</span><span class="art-meta">listopad 2026 · 5 min čtení</span></a></div></div>
+    </section>
+  </main>
+
+  <footer class="site-footer ft2"><div class="container">
+  <div class="ft2-top">
+    <div class="ft2-brand">
+      <a class="logo footer-logo" href="index.html"><img class="logo-img" src="assets/logo-light.png" width="139" height="44" alt="Dluhopisový Radar"></a>
+      <p>Veřejná data o emitentech a dluhopisových emisích na jednom místě.</p>
+    </div>
+    <nav class="ft2-col" aria-label="Služby"><h3>Služby</h3><a href="proverit-emitenta.html">Prověřit emitenta</a><a href="porovnat-emise.html">Porovnat emise</a><a href="ukazkova-proverka.html">Ukázková prověrka</a></nav>
+    <nav class="ft2-col" aria-label="Databáze"><h3>Databáze</h3><a href="emitenti.html">Emitenti</a><a href="emise.html">Emise</a></nav>
+    <nav class="ft2-col" aria-label="Obsah"><h3>Obsah</h3><a href="clanky.html">Články</a><a href="pruvodce.html">Průvodce</a><a href="jak-funguje.html">Jak funguje Radar</a><a href="o-radaru.html">O Radaru</a></nav>
+    <nav class="ft2-col" aria-label="Kontakt"><h3>Kontakt</h3><a href="o-radaru.html#kontakt">Napište nám</a><a href="o-radaru.html#kontakt">Inzerce a spolupráce</a></nav>
+  </div>
+  <div class="footer-legal">
+      <p><strong>Dluhopisový Radar</strong> je nezávislý informační a analytický portál zaměřený na korporátní dluhopisy a jejich emitenty. Při zpracování informací vycházíme z veřejně dostupných zdrojů. U zveřejňovaných údajů uvádíme jejich zdroje. Dluhopisy neprodáváme ani nezprostředkováváme jejich nákup. Neposkytujeme investiční poradenství, individuální doporučení ani závazné hodnocení bonity emitentů. Veškeré analýzy, srovnání a publikované informace slouží výhradně k informačním a vzdělávacím účelům.</p>
+    </div>
+  <div class="ft2-bottom">
+    <p>© 2026 Dluhopisový Radar · Provozovatel 9394 Group s.r.o., Československé armády 1328/9, 742 21 Kopřivnice · IČO 299 89 019</p>
+    <nav aria-label="Právní informace"><a href="zasady-ochrany-osobnich-udaju.html">Ochrana osobních údajů</a><a href="zasady-cookies.html">Zásady cookies</a><button type="button" data-open="terms">Podmínky používání</button><button type="button" data-open-cookies>Nastavení cookies</button><a href="o-radaru.html#kontakt">Kontakt</a></nav>
+  </div>
+</div></footer>
+
+  <div class="dialog-backdrop" id="dialog-backdrop" hidden>
+    <div class="dialog" role="dialog" aria-modal="true" aria-labelledby="dialog-title" tabindex="-1">
+      <div class="dialog-header"><div><span id="dialog-kicker" class="dialog-kicker">DLUHOPISOVÝ RADAR</span><h2 id="dialog-title">Informace</h2></div><button class="icon-button dialog-close" type="button" id="close-dialog" aria-label="Zavřít okno"><svg class="ico"><use href="#i-close"/></svg></button></div>
+      <div class="dialog-content" id="dialog-content"></div>
+    </div>
+  </div>
+  <noscript><p class="noscript-notice">Pro vyhledávání a formuláře je nutný zapnutý JavaScript. Ostatní obsah zůstává přístupný.</p></noscript>
+</body>
+</html>

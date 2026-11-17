@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="cs">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#f8fbfb">
+  <link rel="icon" type="image/png" href="assets/logo-emblem.png">
+  <meta name="description" content="Mnoho dluhopisů na českém trhu nevydává samotná známá skupina, ale její malá dceřiná společnost založená pro jeden projekt. Vysvětlujeme, proč na tom zálež">
+  <title>Projektová společnost (SPV) a mateřská skupina: kdo za dluhopis skutečně odpovídá – Dluhopisový Radar</title>
+  <link rel="stylesheet" href="assets/fonts.css?v=1">
+  <link rel="stylesheet" href="styles.css?v=71">
+  <script defer src="script.js?v=63"></script>
+</head>
+<body class="subpage">
+  <svg class="icon-library" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4 12h16m-7-7 7 7-7 7"/></symbol>
+    <symbol id="i-search" viewBox="0 0 24 24"><circle cx="10.7" cy="10.7" r="7.3"/><path d="m16.4 16.4 5 5"/></symbol>
+    <symbol id="i-play" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.3"/><path d="m10 8 6 4-6 4z"/></symbol>
+    <symbol id="i-laptop" viewBox="0 0 24 24"><path d="M4 16V5c0-1 .8-2 2-2h12c1.1 0 2 .9 2 2v7M2 19h13M1 21h15M16 14l7 6-3 1-1 2z"/></symbol>
+    <symbol id="i-layers" viewBox="0 0 24 24"><path d="m12 2 10 5.4-10 5.5L2 7.4 12 2zm-10 10 10 5.5L22 12M2 17l10 5 10-5"/></symbol>
+    <symbol id="i-bars" viewBox="0 0 24 24"><path d="M4 20v-5m5 5v-9m5 9V7m5 13V3"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="m3 12 6 6L21 5"/></symbol>
+    <symbol id="i-building" viewBox="0 0 24 24"><path d="M3 22V9h7v13M10 22V3h11v19M1 22h22M6 12v2m0 3v2m8-12v2m4-2v2m-4 3v2m4-2v2m-4 3v2m4-2v2"/></symbol>
+    <symbol id="i-calendar" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M7 2v6M17 2v6M3 10h18M7 14h2m3 0h2"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l4 3"/></symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path d="M5 5l14 14M19 5 5 19"/></symbol>
+  </svg>
+
+  <header class="site-header" id="top">
+    <div class="container header-inner">
+      <a class="logo" href="index.html" aria-label="Dluhopisový Radar – úvod">
+        <img class="logo-img" src="assets/logo.png" width="165" height="52" alt="Dluhopisový Radar">
+      </a>
+      <p class="header-tagline">NEZÁVISLÝ PORTÁL <br>O EMITENTECH A EMISÍCH</p>
+      <nav class="desktop-nav" aria-label="Hlavní navigace"><a href="proverit-emitenta.html">Prověřit emitenta</a><a href="porovnat-emise.html">Porovnat emise</a><div class="nav-group"><button class="nav-toggle" type="button" aria-expanded="false" aria-haspopup="true">Databáze <svg class="ico chev" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button><div class="nav-sub"><a href="emitenti.html">Emitenti</a><a href="emise.html">Emise</a></div></div><div class="nav-group"><button class="nav-toggle is-current" type="button" aria-expanded="false" aria-haspopup="true">Články a průvodce <svg class="ico chev" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button><div class="nav-sub"><a href="clanky.html">Články</a><a href="pruvodce.html">Průvodce</a></div></div><a href="jak-funguje.html">Jak funguje Radar</a><a href="o-radaru.html">O Radaru</a></nav>
+      <button class="icon-button search-trigger" id="open-search" aria-label="Otevřít vyhledávání" type="button"><svg class="ico"><use href="#i-search"/></svg></button>
+      <button class="icon-button menu-trigger" id="menu-trigger" aria-label="Otevřít menu" aria-expanded="false" aria-controls="mobile-nav" type="button"><svg class="ico"><use href="#i-menu"/></svg></button>
+    </div>
+    <nav id="mobile-nav" class="mobile-nav" aria-label="Mobilní navigace" hidden><a href="proverit-emitenta.html">Prověřit emitenta</a><a href="porovnat-emise.html">Porovnat emise</a><span class="mnav-label">Databáze</span><a href="emitenti.html" class="sub">Emitenti</a><a href="emise.html" class="sub">Emise</a><span class="mnav-label">Články a průvodce</span><a href="clanky.html" class="sub">Články</a><a href="pruvodce.html" class="sub">Průvodce</a><a href="jak-funguje.html">Jak funguje Radar</a><a href="o-radaru.html">O Radaru</a></nav>
+  </header>
+
+  <main class="subpage-main">
+    <section class="page-head page-head--article"><div class="container">
+      <p class="crumbs"><a href="index.html">Úvod</a> <span aria-hidden="true">/</span> <a href="clanky.html">Články</a> <span aria-hidden="true">/</span> Projektová společnost (SPV) a mateřská skupina</p>
+      <p class="art-kicker"><span class="art-chip">Analýza</span>Analytický článek / Dluhopisy</p>
+      <h1>Projektová společnost (SPV) a mateřská skupina: kdo za dluhopis skutečně odpovídá</h1>
+      <p class="page-lead art-lead">Mnoho dluhopisů na českém trhu nevydává samotná známá skupina, ale její malá dceřiná společnost založená pro jeden projekt. Vysvětlujeme, proč na tom záleží, jaký je rozdíl mezi „patříme do skupiny“ a právně závazným ručením a co hledat v emisních podmínkách.</p>
+      <p class="art-meta art-meta--head">Redakce Dluhopisového Radaru · listopad 2026 · 5 min čtení</p>
+    </div></section>
+    <section class="page-body"><div class="container art-layout">
+      <article class="prose">
+<h2 id="co-je-projektova-spolecnost-a-proc-vznika">Co je projektová společnost a proč vzniká</h2>
+<p>Projektová společnost, často označovaná anglickou zkratkou <strong>SPV</strong> (special purpose vehicle), je samostatná firma založená za jedním konkrétním účelem: postavit bytový dům, koupit a pronajímat budovu, provozovat elektrárnu nebo jen vydat dluhopisy a peníze poslat dál do skupiny.</p><p>Pro skupinu má takové uspořádání praktické důvody. Jednotlivé projekty jsou od sebe účetně i právně oddělené, lze je samostatně financovat i prodat a problém jednoho projektu se automaticky nepřelije do ostatních.</p><p>A právě tady je háček pro investora. <strong>To, co chrání skupinu, může oslabovat věřitele.</strong> Dlužníkem z dluhopisu je ten, kdo ho vydal, tedy emitent. Pokud je emitentem SPV s minimálním majetkem, je pro vás rozhodující, co stojí za ní, a ne jak silná je skupina na první pohled.</p><p>Projektovou společnost často poznáte už z veřejného rejstříku: bývá založena krátce před emisí, má symbolický základní kapitál, žádné zaměstnance a za sebou žádné uzavřené účetní období. Nic z toho není protiprávní ani automaticky špatně. Znamená to jen, že posuzovat musíte hlavně to, odkud budou peníze na splacení, a ne historii samotného emitenta, která prakticky neexistuje.</p>
+<h2 id="jsme-soucasti-silne-skupiny-neni-ruceni">„Jsme součástí silné skupiny“ není ručení</h2>
+<p>Marketingové materiály často zdůrazňují tradici skupiny, počet dokončených projektů nebo majetek mateřské firmy. To vše může být pravda, a přesto pro vás nemusí znamenat žádný nárok.</p><p>Mateřská společnost je v pozici vlastníka, nikoli dlužníka. Pokud se k dluhu emitenta výslovně a závazně nezavázala, nemá vůči držitelům dluhopisů povinnost platit. Může se rozhodnout dceřinou společnost podpořit, ale také nemusí, zvlášť když se dostane do potíží sama.</p><p>Rozlišujte proto dvě kategorie tvrzení:</p><ul><li><strong>Popisná:</strong> „emitent je členem skupiny“, „za projektem stojí zkušený developer“, „skupina spravuje majetek v hodnotě…“. Ta vám žádné právo nedávají.</li><li><strong>Právně závazná:</strong> ručitelské prohlášení, finanční záruka nebo zástavní právo, jasně popsané v emisních podmínkách a doložené listinou. Jen ta se dají vymáhat.</li></ul>
+<h2 id="ruceni-a-financni-zaruka-dva-ruzne-nastroje">Ručení a finanční záruka: dva různé nástroje</h2>
+<p>Občanský zákoník (zákon č. 89/2012 Sb.) zná mezi způsoby zajištění dluhu mimo jiné ručení a finanční záruku. Pro investora je dobré chápat základní rozdíl.</p><p><strong>Ručení</strong> vzniká tím, že někdo věřiteli prohlásí, že ho uspokojí, pokud dlužník svůj dluh nesplní. Ručitel je tedy „záložní“ dlužník. Zákon zároveň stanoví, že věřitel se na ručitele může obrátit zpravidla až poté, co dlužník nesplnil ani v přiměřené lhůtě po písemné výzvě. Ručitel navíc může proti věřiteli uplatnit námitky, které by měl sám dlužník.</p><p><strong>Finanční záruka</strong> vzniká prohlášením výstavce v záruční listině, že věřitele uspokojí do určité výše, pokud dlužník nesplní nebo pokud nastanou jiné podmínky uvedené v listině. Výstavce může uplatnit jen ty námitky, které záruční listina připouští, a proto se finanční záruka obecně považuje pro věřitele za silnější nástroj.</p><p>V obou případech ale platí: <strong>záruka je jen tak dobrá jako ten, kdo ji dává.</strong> Ručení od mateřské společnosti, která sama nemá volné prostředky nebo je zadlužená, investora příliš neochrání. Proto má smysl číst i finanční výkazy ručitele, nejen emitenta.</p>
+<h2 id="co-o-zajisteni-rika-zakon-o-dluhopisech">Co o zajištění říká zákon o dluhopisech</h2>
+<p>Zákon č. 190/2004 Sb., o dluhopisech, s ručením a zajištěním počítá a stanoví, co musí emisní podmínky obsahovat. Několik bodů, které stojí za pozornost:</p><ul><li>Pokud je splacení dluhopisu nebo výplata výnosu zajištěna, musí emisní podmínky obsahovat údaje o zástavním právu nebo jiném zajištění.</li><li>U veřejné nabídky malého rozsahu bez prospektu musí emisní podmínky uvést, čím je splacení dlužné částky zajištěno, <strong>nebo výslovně uvést, že zajištěno není</strong>.</li><li>Pokud za dluhy emitenta z dluhopisů ručí právnická osoba, zákon u stejného typu emisí vyžaduje v emisních podmínkách informace i o ručiteli včetně jeho účetní závěrky.</li><li>U zajištěných emisí může být ustanoven <strong>agent pro zajištění</strong>, který zajištění spravuje ve prospěch držitelů. K jedné emisi může být jen jeden a emisní podmínky ho musí identifikovat.</li></ul><p>Prakticky to znamená: odpověď na otázku „kdo za dluhopis odpovídá“ najdete v emisních podmínkách, ne v prezentaci. Pokud podmínky o ručení mlčí, počítejte s tím, že žádné neexistuje.</p>
+<h2 id="vnitroskupinove-uvery-kam-penize-z-emise-tecou">Vnitroskupinové úvěry: kam peníze z emise tečou</h2>
+<p>Častý model vypadá takto: SPV vydá dluhopisy, získané peníze půjčí mateřské nebo sesterské společnosti a úroky z této půjčky pak používá na výplatu kupónů. V rozvaze emitenta se to projeví jako velká pohledávka za spřízněnou osobou.</p><p>Pro investora z toho plyne několik otázek:</p><ul><li><strong>Kdo je skutečný konečný dlužník?</strong> Schopnost emitenta platit závisí na tom, zda mu skupina vnitroskupinový úvěr splatí. Riziko tedy fakticky nesete vůči celé skupině, ale bez přímého nároku vůči ní.</li><li><strong>Jaké jsou podmínky vnitroskupinové půjčky?</strong> Splatnost, úrok a případné zajištění by měly odpovídat dluhopisu. Pokud skupina může peníze vrátit až po splatnosti dluhopisů, vzniká mezera.</li><li><strong>Je vnitroskupinová pohledávka zastavena ve prospěch držitelů?</strong> Některé emise to řeší, mnohé ne.</li><li><strong>Existuje konsolidovaná závěrka?</strong> Ukáže hospodaření skupiny jako celku. Samotná závěrka SPV toho o zdroji splátek obvykle prozradí málo.</li></ul>
+<h2 id="kontrolni-seznam-pred-nakupem">Kontrolní seznam před nákupem</h2>
+<ol><li>Zjistěte, kdo přesně je emitent, jeho IČO, datum vzniku a velikost vlastního kapitálu.</li><li>V emisních podmínkách najděte část o zajištění. Je tam ručení, finanční záruka nebo zástava? Nebo věta, že dluhopisy zajištěny nejsou?</li><li>Pokud ručení existuje, ověřte, kdo je ručitel, a přečtěte si jeho účetní závěrku stejně pečlivě jako závěrku emitenta.</li><li>Zjistěte, kam peníze z emise putují a za jakých podmínek se mají vrátit.</li><li>Ověřte, zda je ustanoven agent pro zajištění a jaká má práva.</li></ol><p>Česká národní banka v desateru pro investory připomíná, že korporátní dluhopisy nejsou pojištěné a že ČNB nezaručuje jejich splacení. Pochopit, kdo za dluh skutečně odpovídá, je proto jedna z nejdůležitějších věcí, které může investor udělat sám.</p><p><em>Článek má vzdělávací charakter, nepředstavuje investiční ani právní poradenství.</em></p>
+
+<h2 id="odkazy-a-odborne-zdroje">Odkazy a odborné zdroje</h2>
+<ol class="sources">
+<li>Zákon č. 190/2004 Sb., o dluhopisech (Zákony pro lidi) <a href="https://www.zakonyprolidi.cz/cs/2004-190" rel="noopener" target="_blank">https://www.zakonyprolidi.cz/cs/2004-190</a></li><li>Zákon č. 89/2012 Sb., občanský zákoník — Zajištění dluhu (Podnikatel.cz) <a href="https://www.podnikatel.cz/zakony/novy-obcansky-zakonik/f4585373/" rel="noopener" target="_blank">https://www.podnikatel.cz/zakony/novy-obcansky-zakonik/f4585373/</a></li><li>ČNB — Desatero pro drobné investory do korporátních dluhopisů <a href="https://www.cnb.cz/cs/dohled-financni-trh/ochrana-spotrebitele/desatero_investor_korporat_dluhopisy/index.html" rel="noopener" target="_blank">https://www.cnb.cz/cs/dohled-financni-trh/ochrana-spotrebitele/desatero_investor_korporat_dluhopisy/index.html</a></li>
+</ol>
+<p class="editor-note">Text je původním redakčním zpracováním pro vzdělávací účely. Nepředstavuje investiční doporučení ani nabídku finančního produktu. Foto: Taro Ohtani / Unsplash (Unsplash License).</p>
+
+        <p class="art-disclaimer">Článek má informační a vzdělávací charakter. Není investičním doporučením, nabídkou ani výzvou k nákupu či prodeji dluhopisů.</p>
+      </article>
+      <aside class="art-aside">
+        <nav class="aside-card art-toc" aria-label="Obsah článku"><h2>Obsah článku</h2><ol><li><a href="#co-je-projektova-spolecnost-a-proc-vznika">Co je projektová společnost a proč vzniká</a></li><li><a href="#jsme-soucasti-silne-skupiny-neni-ruceni">„Jsme součástí silné skupiny“ není ručení</a></li><li><a href="#ruceni-a-financni-zaruka-dva-ruzne-nastroje">Ručení a finanční záruka: dva různé nástroje</a></li><li><a href="#co-o-zajisteni-rika-zakon-o-dluhopisech">Co o zajištění říká zákon o dluhopisech</a></li><li><a href="#vnitroskupinove-uvery-kam-penize-z-emise-tecou">Vnitroskupinové úvěry: kam peníze z emise tečou</a></li><li><a href="#kontrolni-seznam-pred-nakupem">Kontrolní seznam před nákupem</a></li><li><a href="#odkazy-a-odborne-zdroje">Odkazy a odborné zdroje</a></li></ol></nav>
+        <div class="aside-card art-cta"><h2>Zvažujete konkrétní emisi?</h2><p>Zjistěte, kdo za ní stojí a jak hospodaří.</p><a class="btn btn-primary" href="proverit-emitenta.html">Prověřit emitenta</a><a class="text-link" href="porovnat-emise.html">Porovnat více emisí <svg class="ico"><use href="#i-arrow"/></svg></a></div>
+      </aside>
+    </div>
+    <div class="container art-more"><div class="section-title-line"><h2><span class="green-rule"></span>Další články</h2></div><div class="art-grid"><a class="art-card" href="clanek-emitent-7-ukazatelu.html" data-cat="analyzy"><img class="art-cover" src="assets/photos/emitent-7-ukazatelu.jpg" width="1200" height="675" alt="" loading="lazy"><span class="art-chip">Analýza</span><strong>Jak poznat kvalitního emitenta dluhopisů? Sedm klíčových ukazatelů</strong><span class="art-perex">Výše úroku je jen jedna část příběhu. Rozhodující je finanční síla skutečného dlužníka – a u projektových společností také to, zda za jejich závazky právně odpovídá silnější společnost skupiny.</span><span class="art-meta">listopad 2026 · 7 min čtení</span></a><a class="art-card" href="clanek-zajisteni-firemnich-dluhopisu.html" data-cat="analyzy"><img class="art-cover" src="assets/photos/zajisteni-firemnich-dluhopisu.jpg" width="1200" height="675" alt="" loading="lazy"><span class="art-chip">Analýza</span><strong>Zajištění firemních dluhopisů: jaké existují možnosti a co znamenají pro investora?</strong><span class="art-perex">Zajištění patří k důležitým vlastnostem dluhopisové emise. Neříká však samo o sobě, zda emitent dokáže včas platit úroky a splatit jistinu. Jeho význam se nejlépe ukáže tehdy, když běžné splácení přestane fungovat.</span><span class="art-meta">listopad 2026 · 7 min čtení</span></a><a class="art-card" href="clanek-jak-cist-ucetni-zaverku-emitenta.html" data-cat="analyzy"><img class="art-cover" src="assets/photos/jak-cist-ucetni-zaverku-emitenta.jpg" width="1200" height="675" alt="" loading="lazy"><span class="art-chip">Analýza</span><strong>Jak číst účetní závěrku emitenta: rozvaha, výsledovka a peněžní toky</strong><span class="art-perex">Účetní závěrka je nejdostupnější nezávislý zdroj informací o firmě, která vám nabízí dluhopis. Vysvětlujeme, z čeho se skládá, na co se v ní jako budoucí věřitel dívat, kde ji najdete a co si myslet o tom, když chybí.</span><span class="art-meta">listopad 2026 · 5 min čtení</span></a></div></div>
+    </section>
+  </main>
+
+  <footer class="site-footer ft2"><div class="container">
+  <div class="ft2-top">
+    <div class="ft2-brand">
+      <a class="logo footer-logo" href="index.html"><img class="logo-img" src="assets/logo-light.png" width="139" height="44" alt="Dluhopisový Radar"></a>
+      <p>Veřejná data o emitentech a dluhopisových emisích na jednom místě.</p>
+    </div>
+    <nav class="ft2-col" aria-label="Služby"><h3>Služby</h3><a href="proverit-emitenta.html">Prověřit emitenta</a><a href="porovnat-emise.html">Porovnat emise</a><a href="ukazkova-proverka.html">Ukázková prověrka</a></nav>
+    <nav class="ft2-col" aria-label="Databáze"><h3>Databáze</h3><a href="emitenti.html">Emitenti</a><a href="emise.html">Emise</a></nav>
+    <nav class="ft2-col" aria-label="Obsah"><h3>Obsah</h3><a href="clanky.html">Články</a><a href="pruvodce.html">Průvodce</a><a href="jak-funguje.html">Jak funguje Radar</a><a href="o-radaru.html">O Radaru</a></nav>
+    <nav class="ft2-col" aria-label="Kontakt"><h3>Kontakt</h3><a href="o-radaru.html#kontakt">Napište nám</a><a href="o-radaru.html#kontakt">Inzerce a spolupráce</a></nav>
+  </div>
+  <div class="footer-legal">
+      <p><strong>Dluhopisový Radar</strong> je nezávislý informační a analytický portál zaměřený na korporátní dluhopisy a jejich emitenty. Při zpracování informací vycházíme z veřejně dostupných zdrojů. U zveřejňovaných údajů uvádíme jejich zdroje. Dluhopisy neprodáváme ani nezprostředkováváme jejich nákup. Neposkytujeme investiční poradenství, individuální doporučení ani závazné hodnocení bonity emitentů. Veškeré analýzy, srovnání a publikované informace slouží výhradně k informačním a vzdělávacím účelům.</p>
+    </div>
+  <div class="ft2-bottom">
+    <p>© 2026 Dluhopisový Radar · Provozovatel 9394 Group s.r.o., Československé armády 1328/9, 742 21 Kopřivnice · IČO 299 89 019</p>
+    <nav aria-label="Právní informace"><a href="zasady-ochrany-osobnich-udaju.html">Ochrana osobních údajů</a><a href="zasady-cookies.html">Zásady cookies</a><button type="button" data-open="terms">Podmínky používání</button><button type="button" data-open-cookies>Nastavení cookies</button><a href="o-radaru.html#kontakt">Kontakt</a></nav>
+  </div>
+</div></footer>
+
+  <div class="dialog-backdrop" id="dialog-backdrop" hidden>
+    <div class="dialog" role="dialog" aria-modal="true" aria-labelledby="dialog-title" tabindex="-1">
+      <div class="dialog-header"><div><span id="dialog-kicker" class="dialog-kicker">DLUHOPISOVÝ RADAR</span><h2 id="dialog-title">Informace</h2></div><button class="icon-button dialog-close" type="button" id="close-dialog" aria-label="Zavřít okno"><svg class="ico"><use href="#i-close"/></svg></button></div>
+      <div class="dialog-content" id="dialog-content"></div>
+    </div>
+  </div>
+  <noscript><p class="noscript-notice">Pro vyhledávání a formuláře je nutný zapnutý JavaScript. Ostatní obsah zůstává přístupný.</p></noscript>
+</body>
+</html>

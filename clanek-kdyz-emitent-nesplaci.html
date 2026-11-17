@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="cs">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#f8fbfb">
+  <link rel="icon" type="image/png" href="assets/logo-emblem.png">
+  <meta name="description" content="Kupón nedorazil, emitent nekomunikuje a na internetu se objevují zprávy o potížích. V takové chvíli rozhoduje klid, přesné informace a dodržení lhůt. Přiná">
+  <title>Co dělat, když emitent nesplácí – Dluhopisový Radar</title>
+  <link rel="stylesheet" href="assets/fonts.css?v=1">
+  <link rel="stylesheet" href="styles.css?v=71">
+  <script defer src="script.js?v=63"></script>
+</head>
+<body class="subpage">
+  <svg class="icon-library" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4 12h16m-7-7 7 7-7 7"/></symbol>
+    <symbol id="i-search" viewBox="0 0 24 24"><circle cx="10.7" cy="10.7" r="7.3"/><path d="m16.4 16.4 5 5"/></symbol>
+    <symbol id="i-play" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.3"/><path d="m10 8 6 4-6 4z"/></symbol>
+    <symbol id="i-laptop" viewBox="0 0 24 24"><path d="M4 16V5c0-1 .8-2 2-2h12c1.1 0 2 .9 2 2v7M2 19h13M1 21h15M16 14l7 6-3 1-1 2z"/></symbol>
+    <symbol id="i-layers" viewBox="0 0 24 24"><path d="m12 2 10 5.4-10 5.5L2 7.4 12 2zm-10 10 10 5.5L22 12M2 17l10 5 10-5"/></symbol>
+    <symbol id="i-bars" viewBox="0 0 24 24"><path d="M4 20v-5m5 5v-9m5 9V7m5 13V3"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="m3 12 6 6L21 5"/></symbol>
+    <symbol id="i-building" viewBox="0 0 24 24"><path d="M3 22V9h7v13M10 22V3h11v19M1 22h22M6 12v2m0 3v2m8-12v2m4-2v2m-4 3v2m4-2v2m-4 3v2m4-2v2"/></symbol>
+    <symbol id="i-calendar" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M7 2v6M17 2v6M3 10h18M7 14h2m3 0h2"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l4 3"/></symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path d="M5 5l14 14M19 5 5 19"/></symbol>
+  </svg>
+
+  <header class="site-header" id="top">
+    <div class="container header-inner">
+      <a class="logo" href="index.html" aria-label="Dluhopisový Radar – úvod">
+        <img class="logo-img" src="assets/logo.png" width="165" height="52" alt="Dluhopisový Radar">
+      </a>
+      <p class="header-tagline">NEZÁVISLÝ PORTÁL <br>O EMITENTECH A EMISÍCH</p>
+      <nav class="desktop-nav" aria-label="Hlavní navigace"><a href="proverit-emitenta.html">Prověřit emitenta</a><a href="porovnat-emise.html">Porovnat emise</a><div class="nav-group"><button class="nav-toggle" type="button" aria-expanded="false" aria-haspopup="true">Databáze <svg class="ico chev" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button><div class="nav-sub"><a href="emitenti.html">Emitenti</a><a href="emise.html">Emise</a></div></div><div class="nav-group"><button class="nav-toggle is-current" type="button" aria-expanded="false" aria-haspopup="true">Články a průvodce <svg class="ico chev" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button><div class="nav-sub"><a href="clanky.html">Články</a><a href="pruvodce.html">Průvodce</a></div></div><a href="jak-funguje.html">Jak funguje Radar</a><a href="o-radaru.html">O Radaru</a></nav>
+      <button class="icon-button search-trigger" id="open-search" aria-label="Otevřít vyhledávání" type="button"><svg class="ico"><use href="#i-search"/></svg></button>
+      <button class="icon-button menu-trigger" id="menu-trigger" aria-label="Otevřít menu" aria-expanded="false" aria-controls="mobile-nav" type="button"><svg class="ico"><use href="#i-menu"/></svg></button>
+    </div>
+    <nav id="mobile-nav" class="mobile-nav" aria-label="Mobilní navigace" hidden><a href="proverit-emitenta.html">Prověřit emitenta</a><a href="porovnat-emise.html">Porovnat emise</a><span class="mnav-label">Databáze</span><a href="emitenti.html" class="sub">Emitenti</a><a href="emise.html" class="sub">Emise</a><span class="mnav-label">Články a průvodce</span><a href="clanky.html" class="sub">Články</a><a href="pruvodce.html" class="sub">Průvodce</a><a href="jak-funguje.html">Jak funguje Radar</a><a href="o-radaru.html">O Radaru</a></nav>
+  </header>
+
+  <main class="subpage-main">
+    <section class="page-head page-head--article"><div class="container">
+      <p class="crumbs"><a href="index.html">Úvod</a> <span aria-hidden="true">/</span> <a href="pruvodce.html">Průvodce</a> <span aria-hidden="true">/</span> Co dělat, když emitent nesplácí</p>
+      <p class="art-kicker"><span class="art-chip">Průvodce</span>Nezávislý vzdělávací obsah / Dluhopisy</p>
+      <h1>Co dělat, když emitent nesplácí</h1>
+      <p class="page-lead art-lead">Kupón nedorazil, emitent nekomunikuje a na internetu se objevují zprávy o potížích. V takové chvíli rozhoduje klid, přesné informace a dodržení lhůt. Přinášíme věcný přehled nástrojů, které investorům dává zákon o dluhopisech a insolvenční zákon.</p>
+      <p class="art-meta art-meta--head">Redakce Dluhopisového Radaru · listopad 2026 · 5 min čtení</p>
+    </div></section>
+    <section class="page-body"><div class="container art-layout">
+      <article class="prose">
+<h2 id="nejdriv-si-overte-co-se-skutecne-stalo">Nejdřív si ověřte, co se skutečně stalo</h2>
+<p>Ne každá zpožděná platba znamená krach. Než začnete jednat, ujasněte si fakta:</p><ol><li><strong>Zkontrolujte emisní podmínky.</strong> Najděte datum výplaty kupónu, rozhodný den pro výplatu a způsob platby. Výnos může emitent vyplácet sám nebo přes banku či obchodníka s cennými papíry, takže platba může přijít jinou cestou, než čekáte.</li><li><strong>Ověřte, že máte správně údaje.</strong> Pokud se změnil váš bankovní účet a emitent nebo administrátor o tom neví, chyba nemusí být na straně emitenta.</li><li><strong>Sledujte oznámení emitenta.</strong> Informace pro vlastníky se zveřejňují způsobem stanoveným v emisních podmínkách, obvykle na webu emitenta.</li><li><strong>Podívejte se do insolvenčního rejstříku.</strong> Je veřejně přístupný a hledat v něm lze podle názvu nebo IČ emitenta.</li></ol><p>Pokud se potvrdí, že emitent je v prodlení, prostudujte si v emisních podmínkách pasáže o porušení povinností emitenta. Mnoho emisních podmínek dává vlastníkům v takovém případě právo žádat předčasné splacení. Zákon o dluhopisech to umožňuje, pokud to emisní podmínky připouštějí. Postup, lhůty a forma žádosti se ale liší emise od emise.</p>
+<h2 id="schuze-vlastniku-dluhopisu">Schůze vlastníků dluhopisů</h2>
+<p>Schůze vlastníků je místo, kde investoři rozhodují společně. Emitent ji musí bez zbytečného odkladu svolat mimo jiné tehdy, když navrhuje změnu emisních podmínek, ke které je potřeba souhlas vlastníků, a dále v situacích, které vymezují samotné emisní podmínky. Pokud emitent tuto povinnost poruší, může schůzi svolat i sám vlastník dluhopisu. Náklady na její uspořádání pak jdou k tíži emitenta.</p><p>Několik pravidel, která stanoví přímo zákon:</p><ul><li>konání schůze se oznamuje nejméně 15 dnů předem, stejným způsobem, jakým byly zpřístupněny emisní podmínky, nebo jinak podle emisních podmínek,</li><li>schůze je usnášeníschopná, pokud se jí účastní vlastníci s více než 30 % jmenovité hodnoty nesplacené části emise,</li><li>rozhoduje se prostou většinou hlasů přítomných, ke změně emisních podmínek nebo k ustavení či odvolání společného zástupce je potřeba souhlas tří čtvrtin hlasů přítomných,</li><li>emitent se musí schůze zúčastnit a poskytnout informace potřebné k rozhodnutí.</li></ul><p>V krizi emitenti často navrhují odklad splatnosti nebo snížení kupónu. Než budete hlasovat, zvažte, co návrh znamená pro vaši pozici. Pokud schůze změnu zásadní povahy schválí, může vlastník, který hlasoval proti nebo se schůze nezúčastnil, do 30 dnů od zpřístupnění usnesení požádat o předčasné splacení. Praktický užitek tohoto práva však závisí na tom, zda má emitent z čeho platit.</p>
+<h2 id="spolecny-zastupce-a-agent-pro-zajisteni">Společný zástupce a agent pro zajištění</h2>
+<p>U řady emisí nemusí investoři jednat každý sám za sebe. Zákon zná dvě role, které hájí zájmy vlastníků:</p><p><strong>Společný zástupce vlastníků dluhopisů</strong> může být ustanoven smlouvou s emitentem nejpozději k datu emise, nebo kdykoli později rozhodnutím schůze. Pokud emisní podmínky nebo smlouva nestanoví jinak, uplatňuje ve prospěch vlastníků práva spojená s dluhopisy a kontroluje, zda emitent plní emisní podmínky. Práva věřitele vykonává vlastním jménem, a to i v insolvenčním řízení. Je vázán rozhodnutím schůze. V rozsahu, v jakém práva uplatňuje společný zástupce, je vlastníci nemohou uplatňovat samostatně.</p><p><strong>Agent pro zajištění</strong> se uplatní u zajištěných dluhopisů, například když je splacení kryto zástavním právem k nemovitosti. Zajištění se zřizuje v jeho prospěch a agent vykonává práva ze zajištění vlastním jménem ve prospěch vlastníků, a to i v insolvenčním řízení. Insolvenční zákon ho výslovně řadí mezi zajištěné věřitele. Práva ze zajištění, která agent uplatňuje, nemohou vlastníci uplatňovat samostatně. Ke každé emisi lze ustanovit jen jednoho agenta.</p><p>Pokud emise má společného zástupce nebo agenta, kontaktujte ho jako jednoho z prvních. Zjistěte, jaké kroky podniká a jak bude postupovat v případném insolvenčním řízení.</p>
+<h2 id="insolvencni-rizeni-a-prihlaska-pohledavky">Insolvenční řízení a přihláška pohledávky</h2>
+<p>Insolvenční řízení se zahajuje jen na návrh, který může podat dlužník i věřitel. Věřitel musí v návrhu doložit, že má proti dlužníkovi splatnou pohledávku, a připojit její přihlášku. Zákon klade na formu a doložení návrhu další přísné požadavky, proto se bez advokáta neobejdete.</p><p>Častější je situace, kdy řízení zahájí někdo jiný a vy se do něj přihlašujete jako věřitel. Klíčové body:</p><ol><li><strong>Hlídejte insolvenční rejstřík.</strong> Rejstřík vede Ministerstvo spravedlnosti, každý do něj může nahlížet a soud v něm zveřejňuje svá rozhodnutí i podání účastníků.</li><li><strong>Dodržte lhůtu.</strong> Přihlášku lze podat od zahájení řízení. Rozhodnutí o úpadku vyzve věřitele, aby pohledávky přihlásili ve lhůtě 2 měsíců. Podle Ministerstva spravedlnosti lhůta začíná běžet zveřejněním rozhodnutí o úpadku v insolvenčním rejstříku a soud nemůže její zmeškání prominout. K opožděným přihláškám se nepřihlíží a takové pohledávky se v řízení neuspokojují.</li><li><strong>Použijte předepsaný formulář.</strong> Přihlášku lze podat pouze na formuláři. Ministerstvo spravedlnosti k němu zveřejňuje elektronický formulář a pokyny k vyplnění.</li><li><strong>Uveďte důvod a výši pohledávky.</strong> Přihláška musí obsahovat skutečnosti, na kterých pohledávka stojí, a její výši. Připojte listiny, na které se odvoláváte, například emisní podmínky a výpis z majetkového účtu nebo jiný doklad o vlastnictví dluhopisů.</li><li><strong>Zjistěte, kdo co přihlašuje.</strong> Pokud má emise společného zástupce nebo agenta pro zajištění, ověřte si, jaké pohledávky a práva uplatní on a co musíte přihlásit sami. Spoléhat na předpoklad je riskantní.</li></ol><p>Přihlásit lze i pohledávku, která ještě není splatná. Za správnost údajů v přihlášce odpovídá věřitel.</p>
+<h2 id="realisticka-ocekavani">Realistická očekávání</h2>
+<p>Insolvenční řízení obvykle trvá dlouho a výsledek je nejistý. Nezajištění věřitelé se uspokojují z toho, co v majetku dlužníka zbude po uspokojení přednostních nároků. U zajištěných emisí rozhoduje hodnota zastaveného majetku a pořadí zástavních práv. Zákon nijak nezaručuje, že investor dostane zpět celou investici nebo vůbec nějakou částku.</p><p>Zbytečně neplaťte za služby, které slibují rychlé a jisté vymožení peněz. Nejprve si ověřte, co dělá společný zástupce, agent pro zajištění a insolvenční správce. Insolvenční správce je ustanoven soudem a podle ministerstva nezastupuje dlužníka ani věřitele.</p>
+<h2 id="shrnuti-a-kdy-se-obratit-na-advokata">Shrnutí a kdy se obrátit na advokáta</h2>
+<ul><li>Ověřte fakta: emisní podmínky, oznámení emitenta, insolvenční rejstřík.</li><li>Zjistěte, zda emise má společného zástupce nebo agenta pro zajištění, a spojte se s ním.</li><li>Účastněte se schůze vlastníků a hlasujte uvážlivě, sledujte třicetidenní lhůty pro předčasné splacení.</li><li>V insolvenci přihlaste pohledávku včas a na předepsaném formuláři.</li></ul><p>Každá emise má jiné emisní podmínky a každá insolvence má svá specifika. Pro posouzení vaší konkrétní situace se obraťte na advokáta, ideálně se zkušeností s insolvenčním právem nebo kapitálovým trhem. Tento článek má vzdělávací charakter a není právní ani investiční radou.</p>
+
+<h2 id="odkazy-a-odborne-zdroje">Odkazy a odborné zdroje</h2>
+<ol class="sources">
+<li>Zákony pro lidi — Zákon č. 190/2004 Sb., o dluhopisech <a href="https://www.zakonyprolidi.cz/cs/2004-190" rel="noopener" target="_blank">https://www.zakonyprolidi.cz/cs/2004-190</a></li><li>Zákony pro lidi — Zákon č. 182/2006 Sb., insolvenční zákon <a href="https://www.zakonyprolidi.cz/cs/2006-182" rel="noopener" target="_blank">https://www.zakonyprolidi.cz/cs/2006-182</a></li><li>Ministerstvo spravedlnosti — Slovníček insolvenčních pojmů <a href="https://insolvence.justice.cz/slovnik-insolvencnich-pojmu/" rel="noopener" target="_blank">https://insolvence.justice.cz/slovnik-insolvencnich-pojmu/</a></li><li>Ministerstvo spravedlnosti — Insolvenční rejstřík (ISIR) <a href="https://isir.justice.cz/isir/common/index.do" rel="noopener" target="_blank">https://isir.justice.cz/isir/common/index.do</a></li>
+</ol>
+<p class="editor-note">Text je původním redakčním zpracováním pro vzdělávací účely. Nepředstavuje investiční doporučení ani nabídku finančního produktu. Foto: Tingey Injury Law Firm / Unsplash (Unsplash License).</p>
+
+        <p class="art-disclaimer">Článek má informační a vzdělávací charakter. Není investičním doporučením, nabídkou ani výzvou k nákupu či prodeji dluhopisů.</p>
+      </article>
+      <aside class="art-aside">
+        <nav class="aside-card art-toc" aria-label="Obsah článku"><h2>Obsah článku</h2><ol><li><a href="#nejdriv-si-overte-co-se-skutecne-stalo">Nejdřív si ověřte, co se skutečně stalo</a></li><li><a href="#schuze-vlastniku-dluhopisu">Schůze vlastníků dluhopisů</a></li><li><a href="#spolecny-zastupce-a-agent-pro-zajisteni">Společný zástupce a agent pro zajištění</a></li><li><a href="#insolvencni-rizeni-a-prihlaska-pohledavky">Insolvenční řízení a přihláška pohledávky</a></li><li><a href="#realisticka-ocekavani">Realistická očekávání</a></li><li><a href="#shrnuti-a-kdy-se-obratit-na-advokata">Shrnutí a kdy se obrátit na advokáta</a></li><li><a href="#odkazy-a-odborne-zdroje">Odkazy a odborné zdroje</a></li></ol></nav>
+        <div class="aside-card art-cta"><h2>Zvažujete konkrétní emisi?</h2><p>Zjistěte, kdo za ní stojí a jak hospodaří.</p><a class="btn btn-primary" href="proverit-emitenta.html">Prověřit emitenta</a><a class="text-link" href="porovnat-emise.html">Porovnat více emisí <svg class="ico"><use href="#i-arrow"/></svg></a></div>
+      </aside>
+    </div>
+    <div class="container art-more"><div class="section-title-line"><h2><span class="green-rule"></span>Další články</h2></div><div class="art-grid"><a class="art-card" href="clanek-dluhopisy-od-a-do-z.html" data-cat="pruvodce"><img class="art-cover" src="assets/photos/dluhopisy-od-a-do-z.jpg?v=2" width="1200" height="675" alt="" loading="lazy"><span class="art-chip">Průvodce</span><strong>Dluhopisy od A do Z: Jak fungují a proč do nich lidé investují</strong><span class="art-perex">Dluhopisy patří mezi nejstarší a nejrozšířenější finanční nástroje na světě. Prostřednictvím dluhopisů získávají financování státy, města i soukromé společnosti. Pro investory představují možnost pravidelného úrokového příjmu a mohou tvořit důležitou součást investičního portfolia. Jak ale dluhopisy skutečně fungují, odkud se bere jejich výnos a jaká rizika jsou s nimi spojena?</span><span class="art-meta">listopad 2026 · 10 min čtení</span></a><a class="art-card" href="clanek-desatero-cnb.html" data-cat="pruvodce"><img class="art-cover" src="assets/photos/desatero-cnb.jpg" width="1200" height="675" alt="" loading="lazy"><span class="art-chip">Průvodce</span><strong>Desatero ČNB k podnikovým dluhopisům: Deset zásad, kterým je dobré rozumět</strong><span class="art-perex">Podnikové dluhopisy umožňují společnostem získávat kapitál přímo od investorů. Jejich držitelé se tím nestávají spoluvlastníky firmy, ale jejími věřiteli. Právě tato jednoduchá skutečnost je klíčem k porozumění výnosům, emisním podmínkám i rizikům, která s sebou firemní dluhopisy nesou.</span><span class="art-meta">listopad 2026 · 6 min čtení</span></a><a class="art-card" href="clanek-agent-pro-zajisteni.html" data-cat="pruvodce"><img class="art-cover" src="assets/photos/agent-pro-zajisteni.jpg" width="1200" height="675" alt="" loading="lazy"><span class="art-chip">Průvodce</span><strong>Agent pro zajištění: kdo hlídá zástavu za vlastníky dluhopisů</strong><span class="art-perex">U zajištěných dluhopisů se v emisních podmínkách objevuje pojem agent pro zajištění. Jde o osobu, která za všechny vlastníky drží a v případě potíží vykonává zástavní právo nebo jiné zajištění. Vysvětlujeme, proč tato role existuje, co agentovi ukládá zákon o dluhopisech a na co se v dokumentech zaměřit.</span><span class="art-meta">listopad 2026 · 5 min čtení</span></a></div></div>
+    </section>
+  </main>
+
+  <footer class="site-footer ft2"><div class="container">
+  <div class="ft2-top">
+    <div class="ft2-brand">
+      <a class="logo footer-logo" href="index.html"><img class="logo-img" src="assets/logo-light.png" width="139" height="44" alt="Dluhopisový Radar"></a>
+      <p>Veřejná data o emitentech a dluhopisových emisích na jednom místě.</p>
+    </div>
+    <nav class="ft2-col" aria-label="Služby"><h3>Služby</h3><a href="proverit-emitenta.html">Prověřit emitenta</a><a href="porovnat-emise.html">Porovnat emise</a><a href="ukazkova-proverka.html">Ukázková prověrka</a></nav>
+    <nav class="ft2-col" aria-label="Databáze"><h3>Databáze</h3><a href="emitenti.html">Emitenti</a><a href="emise.html">Emise</a></nav>
+    <nav class="ft2-col" aria-label="Obsah"><h3>Obsah</h3><a href="clanky.html">Články</a><a href="pruvodce.html">Průvodce</a><a href="jak-funguje.html">Jak funguje Radar</a><a href="o-radaru.html">O Radaru</a></nav>
+    <nav class="ft2-col" aria-label="Kontakt"><h3>Kontakt</h3><a href="o-radaru.html#kontakt">Napište nám</a><a href="o-radaru.html#kontakt">Inzerce a spolupráce</a></nav>
+  </div>
+  <div class="footer-legal">
+      <p><strong>Dluhopisový Radar</strong> je nezávislý informační a analytický portál zaměřený na korporátní dluhopisy a jejich emitenty. Při zpracování informací vycházíme z veřejně dostupných zdrojů. U zveřejňovaných údajů uvádíme jejich zdroje. Dluhopisy neprodáváme ani nezprostředkováváme jejich nákup. Neposkytujeme investiční poradenství, individuální doporučení ani závazné hodnocení bonity emitentů. Veškeré analýzy, srovnání a publikované informace slouží výhradně k informačním a vzdělávacím účelům.</p>
+    </div>
+  <div class="ft2-bottom">
+    <p>© 2026 Dluhopisový Radar · Provozovatel 9394 Group s.r.o., Československé armády 1328/9, 742 21 Kopřivnice · IČO 299 89 019</p>
+    <nav aria-label="Právní informace"><a href="zasady-ochrany-osobnich-udaju.html">Ochrana osobních údajů</a><a href="zasady-cookies.html">Zásady cookies</a><button type="button" data-open="terms">Podmínky používání</button><button type="button" data-open-cookies>Nastavení cookies</button><a href="o-radaru.html#kontakt">Kontakt</a></nav>
+  </div>
+</div></footer>
+
+  <div class="dialog-backdrop" id="dialog-backdrop" hidden>
+    <div class="dialog" role="dialog" aria-modal="true" aria-labelledby="dialog-title" tabindex="-1">
+      <div class="dialog-header"><div><span id="dialog-kicker" class="dialog-kicker">DLUHOPISOVÝ RADAR</span><h2 id="dialog-title">Informace</h2></div><button class="icon-button dialog-close" type="button" id="close-dialog" aria-label="Zavřít okno"><svg class="ico"><use href="#i-close"/></svg></button></div>
+      <div class="dialog-content" id="dialog-content"></div>
+    </div>
+  </div>
+  <noscript><p class="noscript-notice">Pro vyhledávání a formuláře je nutný zapnutý JavaScript. Ostatní obsah zůstává přístupný.</p></noscript>
+</body>
+</html>
