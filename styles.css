@@ -224,3 +224,11 @@ footer.site-footer{height:138px;background:linear-gradient(120deg,#06263f,#031a3
 .step-icon .ico{width:36px;height:36px;stroke-width:1.4}
 @media(max-width:700px){.step-icon .ico{width:30px;height:30px}}
 @media(max-width:700px){.process-item{grid-template-columns:46px minmax(0,1fr)}.process-item p{padding-right:0}}
+
+/* KROKY – spojnice: zelené tečky jen mezi kroužky, na jejich středu */
+.process-list:before{display:none}
+.process-item:not(:last-child):before{content:'';position:absolute;left:-41.5px;top:58px;bottom:-23px;width:0;margin:4px 0;border-left:3px dotted var(--teal);transform:translateX(-50%)}
+@media(max-width:1120px){.process-item:not(:last-child):before{left:-23.5px}}
+@media(max-width:700px){.process-item:not(:last-child):before{left:-26.5px;top:49px;bottom:-22px}}
+.process-item p{padding-left:16px}
+@media(max-width:700px){.process-item p{padding-left:0}}
