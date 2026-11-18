@@ -131,22 +131,22 @@ function submitLead(form){
 
 document.addEventListener('click',(e)=>{
  const trigger=e.target.closest('[data-open]');
- if(trigger){e.preventDefault();openByType(trigger.dataset.open);mobileNav.hidden=true;menuButton.setAttribute('aria-expanded','false');return;}
+ if(trigger){e.preventDefault();openByType(trigger.dataset.open);if(mobileNav){mobileNav.hidden=true;menuButton.setAttribute('aria-expanded','false');}return;}
  const filter=e.target.closest('[data-filter]');
  if(filter){state.type=filter.dataset.filter;updateResults();return;}
  const mobileAnchor=e.target.closest('#mobile-nav a');if(mobileAnchor){mobileNav.hidden=true;menuButton.setAttribute('aria-expanded','false');}
 });
-document.getElementById('open-search').addEventListener('click',()=>openExplorer('search'));
+document.getElementById('open-search')?.addEventListener('click',()=>openExplorer('search'));
 closeButton.addEventListener('click',closeDialog);
 backdrop.addEventListener('click',e=>{if(e.target===backdrop)closeDialog()});
-menuButton.addEventListener('click',()=>{const willOpen=mobileNav.hidden;mobileNav.hidden=!willOpen;menuButton.setAttribute('aria-expanded',String(willOpen));});
+menuButton?.addEventListener('click',()=>{const willOpen=mobileNav.hidden;mobileNav.hidden=!willOpen;menuButton.setAttribute('aria-expanded',String(willOpen));});
 dialogContent.addEventListener('input',e=>{if(e.target.id==='search-query'){state.query=e.target.value;updateResults();}else if(e.target.matches('input[aria-invalid="true"]')){e.target.removeAttribute('aria-invalid');const error=e.target.parentElement.querySelector('.form-error');if(error)error.textContent='';}});
 dialogContent.addEventListener('submit',e=>{if(e.target.id==='lead-form'){e.preventDefault();submitLead(e.target);}});
 dialogContent.addEventListener('reset',e=>{setTimeout(()=>{e.target.querySelectorAll('.form-error').forEach(el=>el.textContent='');document.getElementById('form-status').innerHTML='';},0)});
 document.addEventListener('keydown',e=>{
  if(e.key==='Escape'){
   if(!backdrop.hidden){closeDialog();e.preventDefault()}
-  else if(!mobileNav.hidden){mobileNav.hidden=true;menuButton.setAttribute('aria-expanded','false')}
+  else if(mobileNav&&!mobileNav.hidden){mobileNav.hidden=true;menuButton.setAttribute('aria-expanded','false')}
  }
  if(e.key==='Tab'&&!backdrop.hidden){const focusables=[...dialog.querySelectorAll('button:not(:disabled), input:not(:disabled), textarea:not(:disabled), select:not(:disabled), a[href]')].filter(el=>el.offsetParent!==null);if(!focusables.length)return;const first=focusables[0],last=focusables[focusables.length-1];if(e.shiftKey&&document.activeElement===first){last.focus();e.preventDefault()}else if(!e.shiftKey&&document.activeElement===last){first.focus();e.preventDefault()}}
 });

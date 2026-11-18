@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="cs">
+<head>
+  <meta charset="utf-8">
+  <base href="../">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#f8fbfb">
+  <link rel="icon" type="image/png" href="assets/logo-emblem.png">
+  <meta name="description" content="Nechte si prověřit emitenta dluhopisů: kdo za emisí stojí, jak hospodaří, jak je zadlužený a co je v emisních podmínkách. Z veřejných zdrojů, se zdrojem u každého údaje.">
+  <title>Prověření emitenta dluhopisů – Dluhopisový Radar</title>
+  <link rel="stylesheet" href="assets/fonts.css?v=1">
+  <link rel="stylesheet" href="styles.css?v=89">
+  <script defer src="script.js?v=67"></script>
+  <meta name="robots" content="noindex">
+</head>
+<body class="subpage lp">
+  <svg class="icon-library" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4 12h16m-7-7 7 7-7 7"/></symbol>
+    <symbol id="i-search" viewBox="0 0 24 24"><circle cx="10.7" cy="10.7" r="7.3"/><path d="m16.4 16.4 5 5"/></symbol>
+    <symbol id="i-play" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.3"/><path d="m10 8 6 4-6 4z"/></symbol>
+    <symbol id="i-laptop" viewBox="0 0 24 24"><path d="M4 16V5c0-1 .8-2 2-2h12c1.1 0 2 .9 2 2v7M2 19h13M1 21h15M16 14l7 6-3 1-1 2z"/></symbol>
+    <symbol id="i-layers" viewBox="0 0 24 24"><path d="m12 2 10 5.4-10 5.5L2 7.4 12 2zm-10 10 10 5.5L22 12M2 17l10 5 10-5"/></symbol>
+    <symbol id="i-bars" viewBox="0 0 24 24"><path d="M4 20v-5m5 5v-9m5 9V7m5 13V3"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="m3 12 6 6L21 5"/></symbol>
+    <symbol id="i-building" viewBox="0 0 24 24"><path d="M3 22V9h7v13M10 22V3h11v19M1 22h22M6 12v2m0 3v2m8-12v2m4-2v2m-4 3v2m4-2v2m-4 3v2m4-2v2"/></symbol>
+    <symbol id="i-calendar" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M7 2v6M17 2v6M3 10h18M7 14h2m3 0h2"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l4 3"/></symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path d="M5 5l14 14M19 5 5 19"/></symbol>
+  </svg>
+
+  <header class="lp-head"><div class="container lp-head-in">
+    <a class="logo" href="index.html" aria-label="Dluhopisový Radar – hlavní web"><img class="logo-img" src="assets/logo.png" width="165" height="52" alt="Dluhopisový Radar"></a>
+    <span class="lp-head-tag">Nezávislý portál o emitentech a dluhopisových emisích</span>
+  </div></header>
+
+  <main>
+    <section class="req lp-hero" id="zadost">
+      <div class="container req-grid lp-grid">
+        <div class="lp-intro">
+          <p class="lp-kicker">Prověření emitenta</p>
+          <h1>Víte, komu půjčujete své peníze?</h1>
+          <p class="lp-lead">Za každým dluhopisem stojí konkrétní firma. Dohledáme a přehledně sepíšeme, co o ní říkají veřejné rejstříky, účetní závěrky a emisní dokumenty.</p>
+          <ol class="lp-steps" aria-label="Jak prověření probíhá"><li><b>1</b><div><strong>Vyplníte formulář</strong><span>Stačí název emitenta, případně emise nebo ISIN.</span></div></li><li><b>2</b><div><strong>Dohledáme podklady</strong><span>Projdeme rejstříky, Sbírku listin a emisní dokumentaci.</span></div></li><li><b>3</b><div><strong>Pošleme přehled</strong><span>Strukturovaný výstup se zdrojem u každého údaje.</span></div></li></ol>
+          <p class="lp-note">Dluhopisy neprodáváme ani nezprostředkováváme. Výstup není investičním doporučením.</p>
+        </div>
+        <div class="lp-right">
+        <form class="req-card page-form" id="page-form" data-kind="Prověření emitenta" data-submit-label="Odeslat žádost o prověření" novalidate>
+          <h2>Žádost o prověření emitenta</h2>
+          <ol class="req-steps" aria-label="Části formuláře"><li><a href="#blok-1" data-step="1"><b>1</b><span>Emitent</span></a></li><li><a href="#blok-2" data-step="2"><b>2</b><span>Situace</span></a></li><li><a href="#blok-3" data-step="3"><b>3</b><span>Prověření</span></a></li><li><a href="#blok-4" data-step="4"><b>4</b><span>Dotaz</span></a></li><li><a href="#blok-5" data-step="5"><b>5</b><span>Kontakt</span></a></li></ol>
+          <p class="req-info"><svg class="ico" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8h.01"/></svg><strong>Čím přesněji a detailněji formulář vyplníte, tím relevantněji můžeme emitenta prověřit.</strong></p>
+
+          <fieldset class="req-block" id="blok-1"><legend><b class="req-num">1</b>Jakého emitenta chcete prověřit?</legend><div class="form-grid">
+            <div class="field span-two"><label for="f-topic">Název společnosti / emitenta *</label><input id="f-topic" name="predmet" required maxlength="200" placeholder="Např. ABC Invest s.r.o." data-prefill="emitent"><span class="form-error"></span></div>
+            <div class="field"><label for="f-bond">Název nebo označení emise</label><input id="f-bond" name="emise" maxlength="200" placeholder="Např. ABC 7,5/2029"></div>
+            <div class="field"><label for="f-isin">ISIN emise</label><input id="f-isin" name="isin" maxlength="12" placeholder="Např. CZ0003501234" autocapitalize="characters"></div>
+          </div></fieldset>
+
+          <fieldset class="req-block" id="blok-2"><legend><b class="req-num">2</b>V jaké situaci se nacházíte?</legend><p class="req-info req-info--block"><svg class="ico" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8h.01"/></svg><strong>Vaše odpovědi nám pomáhají zpřesnit analýzy. Vyberte možnosti, které nejlépe vystihují vaši situaci.</strong></p><div class="req-group"><p class="req-group-title">Co nejlépe vystihuje vaši aktuální situaci?</p><div class="check-grid check-list" data-label="Situace" data-required-group="1"><label class="check-row"><input type="checkbox" name="situace" value="Dostal/a jsem nabídku konkrétního dluhopisu."><span>Dostal/a jsem nabídku konkrétního dluhopisu.</span></label><label class="check-row"><input type="checkbox" name="situace" value="Aktuálně zvažuji investici do této emise."><span>Aktuálně zvažuji investici do této emise.</span></label><label class="check-row"><input type="checkbox" name="situace" value="Porovnávám více dluhopisových emisí."><span>Porovnávám více dluhopisových emisí.</span></label><label class="check-row"><input type="checkbox" name="situace" value="Dluhopis tohoto emitenta již vlastním."><span>Dluhopis tohoto emitenta již vlastním.</span></label><label class="check-row"><input type="checkbox" name="situace" value="Vlastním jiné korporátní dluhopisy."><span>Vlastním jiné korporátní dluhopisy.</span></label><label class="check-row"><input type="checkbox" name="situace" value="Zatím pouze hledám informace."><span>Zatím pouze hledám informace.</span></label></div><span class="form-error" data-group-error></span></div></fieldset>
+
+          <fieldset class="req-block" id="blok-3"><legend><b class="req-num">3</b>Co vás při prověření zajímá?</legend><p class="req-info req-info--block"><svg class="ico" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8h.01"/></svg><strong>Zvolte si alespoň 3 možnosti, které jsou pro Vás nejdůležitější.</strong></p><div class="req-group"><p class="req-group-title">Na které oblasti se má prověření zaměřit?</p><div class="check-grid check-list" data-label="Co prověřit"><label class="check-row"><input type="checkbox" name="zajem" value="Finanční zdraví a hospodaření společnosti"><span>Finanční zdraví a hospodaření společnosti</span></label><label class="check-row"><input type="checkbox" name="zajem" value="Zadlužení a finanční závazky"><span>Zadlužení a finanční závazky</span></label><label class="check-row"><input type="checkbox" name="zajem" value="Zajištění dluhopisové emise"><span>Zajištění dluhopisové emise</span></label><label class="check-row"><input type="checkbox" name="zajem" value="Ručení za závazky emitenta"><span>Ručení za závazky emitenta</span></label><label class="check-row"><input type="checkbox" name="zajem" value="Vlastnická a holdingová struktura"><span>Vlastnická a holdingová struktura</span></label><label class="check-row"><input type="checkbox" name="zajem" value="Historie společnosti a její projekty"><span>Historie společnosti a její projekty</span></label><label class="check-row"><input type="checkbox" name="zajem" value="Účel použití získaných prostředků"><span>Účel použití získaných prostředků</span></label><label class="check-row"><input type="checkbox" name="zajem" value="Zdroje pro splácení dluhopisů"><span>Zdroje pro splácení dluhopisů</span></label><label class="check-row"><input type="checkbox" name="zajem" value="Emisní podmínky"><span>Emisní podmínky</span></label><label class="check-row"><input type="checkbox" name="zajem" value="Jiná oblast"><span>Jiná oblast</span></label></div></div></fieldset>
+
+          <fieldset class="req-block" id="blok-4"><legend><b class="req-num">4</b>Máte konkrétní otázku?</legend><div class="field"><label class="sr-only" for="f-msg">Konkrétní otázka</label><textarea id="f-msg" name="zprava" maxlength="2000" placeholder="Například: Zajímá mě, zda mateřská společnost skutečně ručí za splacení dluhopisů."></textarea></div></fieldset>
+
+          
+
+          <fieldset class="req-block" id="blok-5"><legend><b class="req-num">5</b>Kam vám máme poslat výsledek?</legend><div class="form-grid">
+            <div class="field span-two"><label for="f-name">Jméno a příjmení *</label><input id="f-name" name="jmeno" type="text" autocomplete="name" required maxlength="120" placeholder="Jan Novák"><span class="form-error"></span></div>
+            <div class="field"><label for="f-phone">Telefon *</label><input id="f-phone" name="telefon" type="tel" autocomplete="tel" required maxlength="30" placeholder="+420 777 123 456"><span class="form-error"></span></div>
+            <div class="field"><label for="f-email">E-mail pro zaslání výsledku *</label><input id="f-email" name="email" type="email" autocomplete="email" required maxlength="150" placeholder="vas@email.cz"><span class="form-error"></span></div>
+          </div>
+          <p class="req-privacy">Údaje uvedené ve formuláři používáme k vyřízení vaší žádosti. Podrobnosti naleznete v <a href="zasady-ochrany-osobnich-udaju.html">Zásadách ochrany osobních údajů</a>.</p></fieldset>
+
+          <button class="btn req-submit" type="submit">Odeslat žádost o prověření <svg class="ico"><use href="#i-arrow"/></svg></button>
+          <div id="form-status" aria-live="polite"></div>
+        </form>
+        <div class="lp-below">
+          <ul class="lp-points"><li><span class="lp-ck"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span>Kdo za emisí stojí: vlastníci, statutáři, skupina</li><li><span class="lp-ck"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span>Jak firma hospodaří a jak je zadlužená</li><li><span class="lp-ck"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span>Zajištění, ručení a důležité body emisních podmínek</li><li><span class="lp-ck"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span>Insolvence, historie a další dohledatelné údaje</li></ul>
+          <div class="lp-trust">
+            <p class="lp-trust-t">Vycházíme z veřejných zdrojů</p>
+            <p class="lp-trust-s">Obchodní rejstřík · Sbírka listin · ČNB · Insolvenční rejstřík · emisní dokumentace</p>
+          </div>
+        </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="lp-foot"><div class="container">
+  <div class="ft2-bottom">
+    <p>© 2026 Dluhopisový Radar · Provozovatel 9394 Group s.r.o., Československé armády 1328/9, 742 21 Kopřivnice · IČO 299 89 019</p>
+    <nav aria-label="Právní informace"><a href="zasady-ochrany-osobnich-udaju.html">Ochrana osobních údajů</a><a href="zasady-cookies.html">Zásady cookies</a><a href="podminky-pouzivani.html">Podmínky používání</a><button type="button" data-open-cookies>Nastavení cookies</button><a href="o-radaru.html#kontakt">Kontakt</a></nav>
+  </div>
+  </div></footer>
+
+  <div class="dialog-backdrop" id="dialog-backdrop" hidden>
+    <div class="dialog" role="dialog" aria-modal="true" aria-labelledby="dialog-title" tabindex="-1">
+      <div class="dialog-header"><div><span id="dialog-kicker" class="dialog-kicker">DLUHOPISOVÝ RADAR</span><h2 id="dialog-title">Informace</h2></div><button class="icon-button dialog-close" type="button" id="close-dialog" aria-label="Zavřít okno"><svg class="ico"><use href="#i-close"/></svg></button></div>
+      <div class="dialog-content" id="dialog-content"></div>
+    </div>
+  </div>
+  <noscript><p class="noscript-notice">Pro vyhledávání a formuláře je nutný zapnutý JavaScript. Ostatní obsah zůstává přístupný.</p></noscript>
+</body>
+</html>
