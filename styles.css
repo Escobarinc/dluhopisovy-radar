@@ -1245,3 +1245,17 @@ section#adbanner{height:auto;padding:8px 0 20px}
 .sources a,.g-sources a,.g-src a,.legal-prose a{overflow-wrap:anywhere;word-break:break-word}
 .db-table-wrap{position:relative;max-width:100%}
 html,body{overflow-x:clip}
+/* SAMOSTATNÉ LANDING PAGES – hlavička s logem a tlačítkem, úvod: text + kroky */
+.lp2-top{position:sticky;top:0;z-index:40;background:#fff;border-bottom:var(--line)}
+.lp2-top-in{display:flex;align-items:center;justify-content:space-between;gap:16px;height:72px}
+.lp2-top-cta{height:42px;padding:0 20px;font-size:14px;min-width:0}
+.lp2-hero-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,460px);gap:48px;align-items:center}
+.lp2-hero .ph-main{display:block!important}
+.lp2-hero .ph-main .page-lead{max-width:62ch}
+.lp2-hero .ph-steps{background:#fff;border:var(--line);border-radius:18px;padding:22px 24px;box-shadow:var(--shadow-card)}
+.lp2-hero .ph-steps .ph-steps-title{margin-left:0}
+.lp2 .req{scroll-margin-top:72px}
+@media(max-width:1000px){.lp2-hero-grid{grid-template-columns:1fr;gap:26px}}
+@media(max-width:560px){.lp2-top-in{height:62px}.lp2-top-cta{height:38px;padding:0 14px;font-size:13px}.lp2-top .logo-img{width:130px;height:auto}}
+@media(min-width:1001px){.page-head--split .container.lp2-hero-grid{display:grid}}
+.lp2-hero .page-head-cta{margin-top:20px}
