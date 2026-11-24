@@ -394,15 +394,20 @@ const COVER=slug=>PHOTO_COVERS.includes(slug)?`assets/photos/${slug}.jpg?v=2`:`a
    Pravidla: nepovinné technologie až po souhlasu; analytické a marketingové zvlášť; záznam verze, kategorií a času;
    po odvolání smazat vlastní nepovinné identifikátory. Odmítnutí nijak neomezuje formuláře. */
 (()=>{
- const KEY='radar-cookies',VERZE='2026-11-17',PLATNOST=365*864e5;
+ const KEY='radar-cookies',VERZE='2026-11-24',PLATNOST=365*864e5;
  /* Inventář technologií – vyplňovat jen skutečně nasazené (název, poskytovatel, účel, doba platnosti). */
  const INVENTAR={
   nezbytne:[
-   ['radar-cookies','Dluhopisový Radar (9394 Group s.r.o.)','Uložení vaší volby souhlasu (verze textu, kategorie a čas rozhodnutí).','12 měsíců (lokální úložiště prohlížeče)'],
-   ['Hosting GitHub Pages','GitHub, Inc.','Doručení stránek a technické logy serveru. Neukládá cookies.','podle pravidel poskytovatele']
+   ['radar-cookies','9394 Group s.r.o.','Uložení nastavení soukromí, zvolených kategorií, verze a času rozhodnutí.','12 měsíců platnosti volby; lokální úložiště prohlížeče.']
   ],
-  analyticke:[],
-  marketingove:[]
+  analyticke:[
+   ['_ga','Google Analytics','Rozlišení uživatelů webu.','2 roky'],
+   ['_ga_*','Google Analytics','Uchování stavu návštěvy a relace uživatele.','2 roky']
+  ],
+  marketingove:[
+   ['_fbp','Meta','Identifikace prohlížeče pro reklamní měření a optimalizaci reklamy.','90 dní'],
+   ['_fbc','Meta','Přiřazení návštěvy nebo konverze ke kliknutí na reklamu.','90 dní']
+  ]
  };
  const read=()=>{try{const c=JSON.parse(localStorage.getItem(KEY)||'null');if(!c||c.verze!==VERZE||Date.now()-Date.parse(c.cas)>PLATNOST)return null;return c}catch(e){return null}};
  const OPTIONAL=/^(_ga|_gid|_gat|_gcl|_fbp|_fbc|_clck|_clsk)/;
