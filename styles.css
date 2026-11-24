@@ -1264,3 +1264,24 @@ html,body{overflow-x:clip}
 .dialog-legal h2{font-size:18px;margin:22px 0 8px}
 .dialog-legal h2:first-child{margin-top:0}
 .dialog-legal .table-wrap{overflow-x:auto}
+/* COOKIES – kompaktní lišta (cca poloviční výška) */
+.ck-inner{padding:10px 24px 12px}
+.ck-inner:has(.ck-l2[hidden]){display:flex;align-items:center;gap:20px}
+.ck-inner:has(.ck-l2[hidden]) .ck-l1{flex:1;min-width:0}
+.ck-inner:has(.ck-l2[hidden]) .ck-actions{flex:none;margin-top:0}
+.ck-bar h2{display:inline;margin:0 6px 0 0;font:700 13px/1.45 var(--sans)}
+.ck-l1 p{display:inline;font-size:12.5px;line-height:1.45}
+.ck-l2{margin-top:10px;padding-top:10px}
+.ck-grid{gap:10px}
+.ck-cat{padding:10px 12px}
+.ck-docs{margin-top:8px}
+.ck-actions{gap:8px;margin-top:10px}
+.ck-btn{min-width:118px;height:32px;padding:0 14px;border-radius:7px;font-size:12.5px}
+.ck-handle{bottom:4px;height:4px}
+@media(max-width:700px){
+ .ck-inner,.ck-inner:has(.ck-l2[hidden]){display:block;padding:10px 12px 14px}
+ .ck-l1 p{font-size:12px}
+ .ck-actions,.ck-inner:has(.ck-l2[hidden]) .ck-actions{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-top:8px}
+ .ck-actions [hidden]{display:none}
+ .ck-btn{width:auto;min-width:0;height:34px;padding:0 4px;font-size:12px}
+}

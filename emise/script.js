@@ -426,7 +426,7 @@ const COVER=slug=>PHOTO_COVERS.includes(slug)?`assets/photos/${slug}.jpg?v=2`:`a
  const bar=document.createElement('section');
  bar.className='ck-bar';bar.hidden=true;bar.setAttribute('role','dialog');bar.setAttribute('aria-labelledby','ck-title');
  bar.innerHTML=`<div class="ck-inner">
-  <div class="ck-l1"><h2 id="ck-title">Nastavení soukromí</h2><p>Na tomto webu používáme nezbytné technologie pro jeho fungování. S vaším souhlasem využíváme také analytické a marketingové cookies a podobné technologie pro měření návštěvnosti a účinnosti reklam. Podrobnosti najdete v ${LINKS}.</p></div>
+  <div class="ck-l1"><h2 id="ck-title">Nastavení soukromí</h2><p>Používáme nezbytné cookies pro fungování webu, s vaším souhlasem také analytické a marketingové pro měření návštěvnosti a reklam. Více v ${LINKS}.</p></div>
   <div class="ck-l2" hidden><div class="ck-grid">${cat('nezbytne','Nezbytné','Základní funkčnost, bezpečnost a uložení volby souhlasu. Bez souhlasu, jen v zákonném nezbytném rozsahu.')}${cat('analyticke','Analytické','Statistiky návštěvnosti, používání stránek a konverzí. Pouze se souhlasem.')}${cat('marketingove','Marketingové','Měření účinnosti reklam, přiřazení konverzí a případné reklamní publikum. Pouze se souhlasem.')}</div><p class="ck-docs">Podrobnosti v ${LINKS}.</p></div>
   <div class="ck-actions"><button type="button" class="ck-btn" data-ck-act="none">Odmítnout vše</button><button type="button" class="ck-btn" data-ck-act="settings">Nastavení</button><button type="button" class="ck-btn" data-ck-act="save" hidden>Uložit nastavení</button><button type="button" class="ck-btn" data-ck-act="all">Přijmout vše</button></div>
   <button type="button" class="ck-handle" aria-label="Skrýt nastavení soukromí" hidden></button></div>`;
