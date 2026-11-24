@@ -1259,3 +1259,8 @@ html,body{overflow-x:clip}
 @media(max-width:560px){.lp2-top-in{height:62px}.lp2-top-cta{height:38px;padding:0 14px;font-size:13px}.lp2-top .logo-img{width:130px;height:auto}}
 @media(min-width:1001px){.page-head--split .container.lp2-hero-grid{display:grid}}
 .lp2-hero .page-head-cta{margin-top:20px}
+/* Landing pages – právní texty v okně */
+.dialog-legal{max-width:none;font-size:14.5px}
+.dialog-legal h2{font-size:18px;margin:22px 0 8px}
+.dialog-legal h2:first-child{margin-top:0}
+.dialog-legal .table-wrap{overflow-x:auto}

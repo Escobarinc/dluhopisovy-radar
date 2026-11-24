@@ -484,3 +484,19 @@ document.querySelectorAll('[data-max]').forEach(g=>{
  tiles.forEach(t=>t.addEventListener('click',e=>{e.preventDefault();const slug=t.getAttribute('href').replace(/^pruvodce-|\.html$/g,'');history.replaceState(null,'','#'+slug);show(slug,true);}));
  show(location.hash.slice(1),!!location.hash);
 })();
+
+/* LANDING PAGES (body.lp2) – právní texty v okně nad stránkou, návštěvník neodchází z formuláře */
+(()=>{
+ if(!document.body.classList.contains('lp2'))return;
+ const LEGAL={'zasady-ochrany-osobnich-udaju.html':'Zásady ochrany osobních údajů','zasady-cookies.html':'Zásady používání cookies','podminky-pouzivani.html':'Podmínky používání'};
+ const cache={};
+ document.addEventListener('click',e=>{
+  const a=e.target.closest('a[href]');if(!a)return;
+  const file=(a.getAttribute('href')||'').split('#')[0].split('?')[0];
+  if(!LEGAL[file])return;
+  e.preventDefault();
+  const show=html=>{openDialog(LEGAL[file],'PRÁVNÍ INFORMACE','<div class="prose legal-prose dialog-legal">'+html+'</div>');};
+  if(cache[file])return show(cache[file]);
+  fetch(file).then(r=>r.text()).then(t=>{const art=new DOMParser().parseFromString(t,'text/html').querySelector('article.prose');cache[file]=art?art.innerHTML:'';show(cache[file]);}).catch(()=>{location.href=file;});
+ });
+})();
